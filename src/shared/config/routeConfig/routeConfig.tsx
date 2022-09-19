@@ -9,6 +9,7 @@ export enum AppRoutes {
 
 export const routePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
+    // [AppRoutes.MAIN] - синтаксис ES6 для переменных, используемых в качестве ключей объекта
     [AppRoutes.ABOUT]: '/about',
 }
 
