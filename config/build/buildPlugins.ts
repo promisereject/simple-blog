@@ -3,7 +3,7 @@ import webpack from "webpack";
 import {BuildOptions} from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
-export function buildPlugins({paths}: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
 
     return [
         new HtmlWebpackPlugin({
@@ -13,6 +13,11 @@ export function buildPlugins({paths}: BuildOptions): webpack.WebpackPluginInstan
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[name].[contenthash:8].css',
+        }),
+        new webpack.DefinePlugin({
+            // webpack.DefinePlugin плагин, который позволяет получить доступ к глобальным переменным в приложении
+            __IS_DEV__: JSON.stringify(isDev)
+            // __IS_DEV__ глобальная переменная
         })
     ]
 }
