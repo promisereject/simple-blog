@@ -1,12 +1,11 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import webpack from "webpack";
-import {BuildOptions} from "./types/config";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from './types/config';
 
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
-
+export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
         new HtmlWebpackPlugin({
             template: paths.html,
@@ -17,12 +16,13 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
             chunkFilename: 'css/[name].[contenthash:8].css',
         }),
         new webpack.DefinePlugin({
-            // webpack.DefinePlugin плагин, который позволяет получить доступ к глобальным переменным в приложении
-            __IS_DEV__: JSON.stringify(isDev)
+            // webpack.DefinePlugin плагин, который позволяет
+            // получить доступ к глобальным переменным в приложении
+            __IS_DEV__: JSON.stringify(isDev),
             // __IS_DEV__ глобальная переменная
         }),
         new webpack.HotModuleReplacementPlugin(),
         // since webpack-dev-server v4.0.0, Hot Module Replacement is enabled by default
-        new ReactRefreshWebpackPlugin()
-    ]
+        new ReactRefreshWebpackPlugin(),
+    ];
 }

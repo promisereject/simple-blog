@@ -5,10 +5,10 @@ export function classNames(cls: string, mods: Mods = {}, additional: string[] = 
         cls,
         ...additional.filter(Boolean),
         ...Object.entries(mods)
-            .filter(([className, value]) => Boolean(value))
-            // исключаем из массива все false
-            .map(([className]) => className)
-            // возвращаем оставшиеся классы
+            .filter(([_, value]) => Boolean(value))
+        // исключаем из массива все false
+            .map(([className]) => className),
+        // возвращаем оставшиеся классы
     ]
-        .join(' ')
+        .join(' ');
 }

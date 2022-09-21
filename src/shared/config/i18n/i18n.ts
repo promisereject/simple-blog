@@ -13,10 +13,9 @@ i18n
         debug: __IS_DEV__,
         // гадим в консоль только при dev сборке
         backend: {
-            loadPath: '/locales/{{lng}}/{{ns}}.json'
+            loadPath: '/locales/{{lng}}/{{ns}}.json',
             // директория для переводов при асинхронной загрузке
-        }
+        },
     });
-
 
 export default i18n;
