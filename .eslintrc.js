@@ -41,7 +41,10 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'warn',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': [
+            'error',
+            { markupOnly: true, onlyAttribute: [''] },
+        ],
         // ошибка отсутствия перевода только для JSX
         'max-len': ['error', { ignoreComments: true }],
         // не учитывать превышение длины строки в комментариях
