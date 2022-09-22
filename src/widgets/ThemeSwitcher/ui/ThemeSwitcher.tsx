@@ -17,7 +17,9 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
             className={classNames('', {}, [className])}
             onClick={toggleTheme}
         >
-            <ThemeSwitcherIcon className={classNames('', {}, [classes[theme]])} />
+            <ThemeSwitcherIcon
+                className={classNames('', {}, [classes[theme]])}
+            />
             {/* @svgr/webpack loader преобразовывает иконку в компонент */}
             {/* корректная типизация svg модуля позволяет получить правильные пропсы
              в подсказках для компонента */}
