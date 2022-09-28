@@ -27,6 +27,6 @@ export function buildPlugins(
         }),
         new webpack.HotModuleReplacementPlugin(),
         // since webpack-dev-server v4.0.0, Hot Module Replacement is enabled by default
-        new ReactRefreshWebpackPlugin(),
+        new ReactRefreshWebpackPlugin({ overlay: false }),
     ];
 }
