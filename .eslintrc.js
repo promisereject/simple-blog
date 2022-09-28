@@ -46,7 +46,7 @@ module.exports = {
             { markupOnly: true, onlyAttribute: [''] },
         ],
         // ошибка отсутствия перевода только для JSX
-        'max-len': ['error', { ignoreComments: true }],
+        'max-len': ['error', { ignoreComments: true, code: 100 }],
         // не учитывать превышение длины строки в комментариях
     },
     globals: {
