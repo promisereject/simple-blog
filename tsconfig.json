@@ -14,7 +14,7 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"],
+      "*": ["./src/*"]
       // все абсолютные импорты и экспорты начинаются с папки src
     },
     // для поддержки абсолютного импорта
@@ -37,5 +37,8 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "./config/jest/setupTests.ts"
+  ]
 }

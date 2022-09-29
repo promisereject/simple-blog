@@ -39,11 +39,16 @@ module.exports = {
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'import/extensions': 'off',
-        'import/no-extraneous-dependencies': 'warn',
+        'import/no-extraneous-dependencies':
+            [
+                'warn',
+                { devDependencies: true },
+            ],
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': [
             'error',
             { markupOnly: true, onlyAttribute: [''] },
+            // можно использовать ignoreAttribute: [''] с перечислением аттрибутов, проверку в которых необходимо игнорировать
         ],
         // ошибка отсутствия перевода только для JSX
         'max-len': ['error', { ignoreComments: true, code: 100 }],
@@ -52,4 +57,12 @@ module.exports = {
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 };
