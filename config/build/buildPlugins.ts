@@ -5,10 +5,8 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
-export function buildPlugins(
-    { paths, isDev }: BuildOptions,
-): webpack.WebpackPluginInstance[] {
-    return [
+export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+    const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
@@ -23,10 +21,13 @@ export function buildPlugins(
             __IS_DEV__: JSON.stringify(isDev),
             // __IS_DEV__ глобальная переменная
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        // since webpack-dev-server v4.0.0, Hot Module Replacement is enabled by default
-        new ReactRefreshWebpackPlugin({ overlay: false }),
-        !isDev && new BundleAnalyzerPlugin(),
-        // запуск анализатора только для production сборки
     ];
+
+    if (isDev) {
+        plugins.push(new webpack.HotModuleReplacementPlugin()); // since webpack-dev-server v4.0.0, Hot Module Replacement is enabled by default
+        plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
+        plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+    }
+
+    return plugins;
 }
