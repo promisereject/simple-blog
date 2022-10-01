@@ -19,6 +19,8 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
         >
             <ThemeSwitcherIcon
                 className={classNames('', {}, [classes[theme]])}
+                fill={!theme && '#ffc700'}
+                // для видимости в сторибуке
             />
             {/* @svgr/webpack loader преобразовывает иконку в компонент */}
             {/* корректная типизация svg модуля позволяет получить правильные пропсы

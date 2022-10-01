@@ -2,7 +2,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import { Sidebar } from './Sidebar';
 import {
     renderWithTranslation,
-} from '../../../../shared/lib/tests/renderWithTranslation/renderWithTranslation';
+} from '../../../shared/lib/tests/renderWithTranslation/renderWithTranslation';
 
 describe('Sidebar', () => {
     test('render test', () => {
