@@ -16,6 +16,9 @@ i18n
             loadPath: '/locales/{{lng}}/{{ns}}.json',
             // директория для переводов при асинхронной загрузке
         },
+        react: {
+            useSuspense: false, //   <---- this will do the magic
+        },
     });
 
 export default i18n;
