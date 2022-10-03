@@ -19,6 +19,7 @@ ModalNormal.args = {
     children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consequuntur dolores eos eum ex labore magni necessitatibus praesentium sint sunt?',
     isOpen: true,
 };
+ModalNormal.decorators = [themeDecorator(Theme.NORMAL)];
 
 export const ModalDark = Template.bind({});
 ModalDark.args = {
