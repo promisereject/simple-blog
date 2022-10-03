@@ -7,22 +7,19 @@ import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorato
 export default {
     title: 'shared/Modal',
     component: Modal,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
-export const ModalNormal = Template.bind({});
-ModalNormal.args = {
+export const Normal = Template.bind({});
+Normal.args = {
     children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consequuntur dolores eos eum ex labore magni necessitatibus praesentium sint sunt?',
     isOpen: true,
 };
 
-export const ModalDark = Template.bind({});
-ModalDark.args = {
+export const Dark = Template.bind({});
+Dark.args = {
     children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consequuntur dolores eos eum ex labore magni necessitatibus praesentium sint sunt?',
     isOpen: true,
 };
-ModalDark.decorators = [themeDecorator(Theme.DARK)];
+Dark.decorators = [themeDecorator(Theme.DARK)];
