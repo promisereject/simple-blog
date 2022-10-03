@@ -17,22 +17,22 @@
 
 .loader div:nth-child(1) {
     left: 8px;
-    animation: loader-first 0.6s infinite;
+    animation: loader-first .6s infinite;
 }
 
 .loader div:nth-child(2) {
     left: 8px;
-    animation: loader-second 0.6s infinite;
+    animation: loader-second .6s infinite;
 }
 
 .loader div:nth-child(3) {
     left: 32px;
-    animation: loader-second 0.6s infinite;
+    animation: loader-second .6s infinite;
 }
 
 .loader div:nth-child(4) {
     left: 56px;
-    animation: loader-third 0.6s infinite;
+    animation: loader-third .6s infinite;
 }
 
 @keyframes loader-first {

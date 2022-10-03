@@ -51,6 +51,26 @@ ClearSizeXL.args = {
     size: ButtonSize.XL,
 };
 
+export const ClearInverted = Template.bind({});
+ClearInverted.args = {
+    children: 'Button text',
+    theme: ButtonTheme.CLEAR_INVERTED,
+};
+
+export const ClearInvertedSizeL = Template.bind({});
+ClearInvertedSizeL.args = {
+    children: 'Button text',
+    theme: ButtonTheme.CLEAR_INVERTED,
+    size: ButtonSize.L,
+};
+
+export const ClearInvertedSizeXL = Template.bind({});
+ClearInvertedSizeXL.args = {
+    children: 'Button text',
+    theme: ButtonTheme.CLEAR_INVERTED,
+    size: ButtonSize.XL,
+};
+
 export const Outline = Template.bind({});
 Outline.args = {
     children: 'Button text',
