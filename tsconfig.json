@@ -28,10 +28,8 @@
     "allowSyntheticDefaultImports": true
     // если какая-либо библиотека не имеет default exports,
     // лоадеры, вроде ts-loader или babel-loader автоматически создают их
-    // и вместо такого импорта
-    // import * as React from 'react';
-    // можно использовать такой
-    // import React from 'react';
+    // и вместо такого импорта: import * as React from 'react';
+    // можно использовать такой: import React from 'react';
   },
   "ts-node": {
     "compilerOptions": {
