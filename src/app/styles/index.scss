@@ -3,10 +3,6 @@
 @import "./src/app/styles/themes/normal";
 @import "./src/app/styles/themes/dark";
 
-* {
-    transition: none !important;
-}
-
 body {
     font: var(--font-m);
     color: var(--primary-color);
