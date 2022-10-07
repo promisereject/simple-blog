@@ -8,6 +8,7 @@
     pointer-events: none;
     z-index: -1;
     transition: opacity .3s ease-in-out;
+    color: var(--primary-color);
 }
 
 .overlay {
@@ -22,20 +23,11 @@
 .content {
     padding: 20px;
     border-radius: 12px;
+    background: var(--bg-color);
     transition: transform .3s ease-in-out;
     max-width: 60%;
     transform: scale(.5);
     user-select: none;
-}
-
-.content.dark {
-    color: var(--primary-color);
-    background-color: var(--bg-color);
-}
-
-.content.normal {
-    color: var(--inverted-primary-color);
-    background-color: var(--inverted-bg-color);
 }
 
 .opened {
