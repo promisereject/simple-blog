@@ -3,6 +3,7 @@ import { ErrorButton } from 'app/providers/ErrorBoundary';
 
 const MainPage = () => {
     const { t } = useTranslation('main');
+
     return (
         <div>
             {t('Главная страница')}

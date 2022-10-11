@@ -1,0 +1,53 @@
+.inputContainer {
+    display: flex;
+}
+
+.inputWrapper {
+    flex-grow: 1;
+    position: relative;
+}
+
+.input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: transparent;
+    text-shadow: 0 0 0 var(--primary-color);
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.placeholder {
+    margin-right: 5px;
+}
+
+.caret {
+    height: 3px;
+    width: 11px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: blink .7s forwards infinite;
+}
+
+.chevron {
+    margin-left: 3px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .01;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
