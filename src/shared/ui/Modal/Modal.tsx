@@ -24,6 +24,7 @@ export const Modal = (props: ModalProps) => {
         lazy,
     } = props;
 
+    const [isOpening, setIsOpening] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
@@ -34,6 +35,7 @@ export const Modal = (props: ModalProps) => {
             timerRef.current = setTimeout(() => {
                 onClose();
                 setIsClosing(false);
+                setIsMounted(false);
             }, ANIMATION_DELAY);
         }
     }, [onClose]);
@@ -43,7 +45,7 @@ export const Modal = (props: ModalProps) => {
     };
 
     const mods: Record<string, boolean> = {
-        [classes.opened]: isOpen,
+        [classes.opened]: isOpening,
         [classes.closing]: isClosing,
     };
 
@@ -54,16 +56,20 @@ export const Modal = (props: ModalProps) => {
     }, [onCloseHandler]);
 
     useEffect(() => {
-        if (isOpen) {
+        if (isOpen && !isMounted) {
             setIsMounted(true);
         }
-    }, [isOpen]);
+    }, [isMounted, isOpen]);
 
     useEffect(() => {
         if (isOpen) {
+            timerRef.current = setTimeout(() => {
+                setIsOpening(true);
+            }, 0);
             window.addEventListener('keydown', onKeyDown);
         }
         return () => {
+            setIsOpening(false);
             clearTimeout(timerRef.current);
             window.removeEventListener('keydown', onKeyDown);
         };
