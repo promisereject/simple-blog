@@ -1,20 +1,31 @@
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
+import { configureStore, DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 import { counterReducers } from 'entities/Counter';
 import { userReducers } from 'entities/User';
-import { loginReducers } from 'features/AuthByUserName';
+import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
 import { StateSchema } from './StateSchema';
 
-export function createReduxStore(initialState?: StateSchema) {
+export function createReduxStore(
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>,
+) {
     const rootReducers: ReducersMapObject<StateSchema> = {
+        ...asyncReducers,
         counter: counterReducers,
         user: userReducers,
-        loginForm: loginReducers,
     };
-    return configureStore<StateSchema>({
-        reducer: rootReducers,
+
+    const reducerManager = createReducerManager(rootReducers);
+
+    const store = configureStore<StateSchema>({
+        reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
         preloadedState: initialState,
     });
+
+    // @ts-ignore
+    store.reducerManager = reducerManager;
+
+    return store;
 }
 // 1. Создаём store
 // 2. Возвращаем стандартный метод создания @reduxjs/toolkit store из функции, чтобы в будущем её можно было переиспользовать и настраивать для разных тестовых сред
