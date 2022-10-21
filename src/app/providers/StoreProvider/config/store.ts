@@ -33,3 +33,5 @@ export function createReduxStore(
 // 4. Для тестовых сред необходимо инициализировать store. Например, чтобы подготовить данные для теста. Эти данные мы можем принять аргументом в качестве InitialState.
 // 5. Передаём InitialState в StoreProvider
 // 6. Не забыть обернуть приложение в <StoreProvider> в index.tsx
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

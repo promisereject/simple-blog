@@ -25,27 +25,6 @@
     z-index: 2;
 }
 
-.items {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.icon {
-    fill: var(--inverted-secondary-color);
-}
-
-.link {
-    display: flex;
-    align-items: center;
-}
-
-.linkName {
-    opacity: 1;
-    white-space: nowrap;
-    margin-left: 10px;
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
@@ -60,4 +39,10 @@
         visibility: hidden;
         margin-left: 0;
     }
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 }

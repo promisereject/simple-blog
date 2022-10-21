@@ -2,17 +2,20 @@
  * Created by Sergei Mitrofanov from rjadysh.com on 28.09.2022
  */
 
-import { FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
+import { memo } from 'react';
 import classes from './PageError.module.scss';
 
 interface PageErrorProps {
     className?: string
 }
 
-export const PageError: FC<PageErrorProps> = ({ className }) => {
+export const PageError = memo((props: PageErrorProps) => {
+    const {
+        className,
+    } = props;
     const { t } = useTranslation();
 
     const reloadPage = () => {
@@ -33,4 +36,4 @@ export const PageError: FC<PageErrorProps> = ({ className }) => {
             </Button>
         </div>
     );
-};
+});

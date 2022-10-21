@@ -21,9 +21,18 @@
   "users": [
     {
       "id": 1,
-      "username": "jessy",
-      "password": "christ"
+      "username": "sergey",
+      "password": "12345"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "Сергей",
+    "surname": "Митрофанов",
+    "age": 33,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Tver",
+    "username": "admin",
+    "avatar": "https://rjadysh.com/wp-content/uploads/rjadyshcom-glavnaja-1.png"
+  }
 }

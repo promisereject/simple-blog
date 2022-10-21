@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { ErrorButton } from 'app/providers/ErrorBoundary';
+import { memo } from 'react';
 
-const MainPage = () => {
+const MainPage = memo(() => {
     const { t } = useTranslation('main');
 
     return (
@@ -10,6 +11,6 @@ const MainPage = () => {
             <ErrorButton />
         </div>
     );
-};
+});
 
 export default MainPage;
