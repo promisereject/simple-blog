@@ -34,7 +34,8 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'warn',
         'react/require-default-props': 'off',
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',
@@ -59,9 +60,11 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
+        'no-undef': 'off',
     },
     globals: {
         __IS_DEV__: true,
+        __API_URL__: true,
     },
     overrides: [
         {

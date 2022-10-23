@@ -2,7 +2,6 @@
  * Created by Sergei Mitrofanov from rjadysh.com on вт, 18-10-22, 18:00
  */
 
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getLoginIsLoading } from './getLoginIsLoading';
 

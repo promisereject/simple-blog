@@ -2,7 +2,6 @@
  * Created by Sergei Mitrofanov from rjadysh.com on пт, 7-10-22, 13:5
  */
 
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getCounterValue } from './getCounterValue';
 
