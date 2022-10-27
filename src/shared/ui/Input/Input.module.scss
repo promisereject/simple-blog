@@ -38,6 +38,12 @@
     margin-left: 3px;
 }
 
+.readOnly {
+    opacity: .6;
+    pointer-events: none;
+    user-select: none;
+}
+
 @keyframes blink {
     0% {
         opacity: 0;

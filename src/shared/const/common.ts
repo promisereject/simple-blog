@@ -1,12 +1,3 @@
-export enum Currency {
-    RUB = 'RUB',
-    EUR = 'EUR',
-    USD = 'USD',
-}
-export enum Country {
-    Russia = 'Russia',
-    Belarus = 'Belarus',
-    Ukraine = 'Ukraine',
-    Kazakhstan = 'Kazakhstan',
-    Armenia = 'Armenia'
-}
+import React from 'react';
+
+export const validateNumbers = (e: React.KeyboardEvent<HTMLInputElement>) => !/^\d+$/.test(e.key) && e.preventDefault();

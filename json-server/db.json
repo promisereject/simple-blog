@@ -29,10 +29,10 @@
     "name": "Сергей",
     "surname": "Митрофанов",
     "age": 33,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Tver",
-    "username": "admin",
+    "currency": "USD",
+    "country": "Armenia",
+    "city": "Тверь",
+    "username": "sergey",
     "avatar": "https://rjadysh.com/wp-content/uploads/rjadyshcom-glavnaja-1.png"
   }
 }

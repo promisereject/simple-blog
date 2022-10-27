@@ -6,14 +6,26 @@
     gap: 30px;
 }
 
-.header {
-    display: flex;
-}
-
-.editButton {
-    margin-left: auto;
-}
-
 .data {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
+}
+
+.loading,
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.avatarWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.editing {
+    border: 2px solid var(--red-light);
 }

@@ -38,5 +38,6 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T> {
     rejectValue: T;
     extra: ThunkExtraArg;
+    state: StateSchema;
 }
 // Типизация must have, т.к. в больших приложениях без типизации работать с кодом практически невозможно

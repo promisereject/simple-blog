@@ -8,9 +8,6 @@ import { storeDecorator } from 'shared/config/storybook/decorators/storeDecorato
 export default {
     title: 'pages/ProfilePage',
     component: ProfilePage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => (
