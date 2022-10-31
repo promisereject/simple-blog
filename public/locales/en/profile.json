@@ -12,5 +12,10 @@
   "Введите имя пользователя": "Enter username",
   "Ссылка на аватар": "Avatar link",
   "Выберите валюту": "Select currency",
-  "Выберите страну": "Select country"
+  "Выберите страну": "Select country",
+  "Ошибка получения данных с сервера": "Error receiving data from server",
+  "Нет данных для отображения": "No data to display",
+  "Некорректные значения имени, фамилии или города": "Incorrect values of name, surname or city",
+  "Некорректное значение возраста": "Incorrect age value",
+  "Некорректно указана страна": "Incorrect country specified"
 }
