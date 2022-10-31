@@ -8,7 +8,7 @@ import { buildFileLoader } from './loaders/buildFileLoader';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const svgLoader = buildSvgLoader();
-    const babelLoader = buildBabelLoader();
+    const babelLoader = buildBabelLoader(isDev);
     const cssLoader = buildCssLoader(isDev);
     const typescriptLoader = buildTypescriptLoader(); // Если не используем typescript - нужен babel-loader
     const fileLoader = buildFileLoader();

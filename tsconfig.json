@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "strict": true,
+    // esModuleInterop позволяет работать с пакетами, которые используют common js,
+    "esModuleInterop": true,
     "outDir": "./build/",
     "noImplicitAny": true,
     // подсвечивает все места, где не указан тип
@@ -19,8 +21,6 @@
       // все абсолютные импорты и экспорты начинаются с папки src
     },
     // для поддержки абсолютного импорта
-    "esModuleInterop": true,
-    // esModuleInterop позволяет работать с пакетами, которые используют common js,
     // как с обычными пакетами с помощью import ( require() module.export === common js )
     // import Moment from 'moment';
     // console.log(Moment)
