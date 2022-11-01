@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
-import { validateNumbers } from 'shared/const/common';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
+import { validateNumbers } from '../../model/lib/validateNumbers/validateNumbers';
 import classes from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 

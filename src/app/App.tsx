@@ -3,11 +3,12 @@ import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInitiated, userActions } from 'entities/User';
 
 export function App() {
     const dispatch = useDispatch();
+    const initiated = useSelector(getUserInitiated);
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
@@ -19,7 +20,7 @@ export function App() {
                 <Navbar />
                 <div className="content-page">
                     <Sidebar />
-                    <AppRouter />
+                    {initiated && <AppRouter />}
                 </div>
             </Suspense>
         </div>

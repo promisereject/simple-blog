@@ -39,8 +39,8 @@ describe('loginByUserName', () => {
 
     // test('login error', async () => {
     //     mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }));
-    //     const action = loginByUserName({ username: 'boomboom', password: '1234567890' });
-    //     const result = await action(dispatch, getState, undefined);
+    //     lib action = loginByUserName({ username: 'boomboom', password: '1234567890' });
+    //     lib result = await action(dispatch, getState, undefined);
     //
     //     expect(dispatch).toHaveBeenCalledTimes(2);
     //     expect(mockedAxios.post).toHaveBeenCalled();
