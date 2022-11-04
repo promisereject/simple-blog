@@ -3,6 +3,12 @@
     color: var(--primary-color);
     font-family: var(--font-family-main);
     padding: 6px 15px;
+
+    &:hover {
+        opacity: .8;
+        fill-opacity: .8;
+        stroke-opacity: .8;
+    }
 }
 
 .clear,

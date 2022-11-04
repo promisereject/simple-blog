@@ -1,0 +1,21 @@
+.Code {
+    border: 1px solid var(--primary-color);
+    padding: 20px;
+    position: relative;
+    background-color: var(--code-bg);
+    overflow: auto;
+}
+
+.copyButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.copyIcon {
+    stroke: var(--primary-color);
+    fill: none;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
