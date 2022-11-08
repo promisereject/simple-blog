@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Article } from 'entities/Article';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { storeDecorator } from 'shared/config/storybook/decorators/storeDecorator';
-import ArticleDetailsPage from './ArticleDetailsPage';
+import ArticleDetailsPage from '../../ui/ArticleDetailsPage/ArticleDetailsPage';
 
 const article: Article = {
     id: '1',
@@ -87,5 +87,9 @@ Default.args = {};
 Default.decorators = [storeDecorator({
     articleDetails: {
         data: article,
+    },
+    articleDetailsComments: {
+        ids: [],
+        entities: {},
     },
 })];

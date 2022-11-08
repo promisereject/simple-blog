@@ -2,7 +2,7 @@
  * Created by Sergei Mitrofanov from rjadysh.com on 20.10.2022
  */
 
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import {
@@ -22,6 +22,8 @@ import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 
 // import classes from './ProfilePage.module.scss';
@@ -41,6 +43,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
         } = props;
 
     const dispatch = useAppDispatch();
+    const { id } = useParams<{id: string}>();
     const { t } = useTranslation('profile');
     const formData = useSelector(getProfileForm);
     const error = useSelector(getProfileError);
@@ -89,11 +92,11 @@ const ProfilePage = memo((props: ProfilePageProps) => {
         [ValidateProfileError.INCORRECT_USER_COUNTRY]: t('Некорректно указана страна'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>

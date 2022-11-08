@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -85,21 +87,39 @@
   "comments": [
     {
       "id": "1",
-      "text": "some comment",
+      "text": "Агрессивный комментарий",
       "articleId": "1",
       "userId": "1"
     },
     {
       "id": "2",
-      "text": "some comment 2",
+      "text": "Умный ответ",
+      "articleId": "1",
+      "userId": "2"
+    },
+    {
+      "id": "3",
+      "text": "Вдвойне агрессивный комментарий",
       "articleId": "1",
       "userId": "1"
     },
     {
-      "id": "3",
-      "text": "some comment 3",
       "articleId": "1",
-      "userId": "1"
+      "userId": 1,
+      "text": "Агрессивный комментарий из формы отправки комментария",
+      "id": "AVOq86p"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Умный ответ из формы отправки комментария",
+      "id": "yFtxnZq"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Очень агрессивный комментарий из формы отправки с автоматическим рендером",
+      "id": "w3H4HAS"
     }
   ],
   "users": [
@@ -118,14 +138,28 @@
       "avatar": "https://ru-static.z-dn.net/files/ddd/02bd3a23f077cda4cc1843b6467a4db1.jpg"
     }
   ],
-  "profile": {
-    "name": "Сергей",
-    "surname": "Митрофанов",
-    "age": 33,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Москва",
-    "username": "sergey",
-    "avatar": "https://rjadysh.com/wp-content/uploads/rjadyshcom-glavnaja-1.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "name": "Сергей",
+      "surname": "Митрофанов",
+      "age": 33,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Москва",
+      "username": "sergey",
+      "avatar": "https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Jessie",
+      "surname": "Christ",
+      "age": 33,
+      "currency": "USD",
+      "country": "Armenia",
+      "city": "Ереван",
+      "username": "jessie",
+      "avatar": "https://ru-static.z-dn.net/files/ddd/02bd3a23f077cda4cc1843b6467a4db1.jpg"
+    }
+  ]
 }

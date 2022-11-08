@@ -9,6 +9,7 @@ import { Country } from 'entities/Country';
 import { profileActions, profileReducers } from './profileSlice';
 
 const data = {
+    id: '1',
     name: 'Сергей',
     surname: 'Митрофанов',
     age: 33,

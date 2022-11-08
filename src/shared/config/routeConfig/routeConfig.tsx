@@ -25,7 +25,7 @@ export const routePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     // [AppRoutes.MAIN] - синтаксис ES6 для переменных, используемых в качестве ключей объекта
     [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.PROFILE]: '/profile',
+    [AppRoutes.PROFILE]: '/profile/', // + :id
     [AppRoutes.ARTICLES]: '/articles',
     [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
 
@@ -42,7 +42,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
         element: <AboutPage />,
     },
     [AppRoutes.PROFILE]: {
-        path: routePath.profile,
+        path: `${routePath.profile}:id`,
         element: <ProfilePage />,
         authOnly: true,
     },
