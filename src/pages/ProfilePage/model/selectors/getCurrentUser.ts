@@ -1,11 +1,9 @@
-import { StateSchema } from 'app/providers/StoreProvider';
 import { createSelector } from '@reduxjs/toolkit';
-
-const userAuthData = (state: StateSchema) => state.user.authData;
-const profileData = (state: StateSchema) => state.profile?.data;
+import { getUserAuthData } from 'entities/User';
+import { getProfileData } from 'entities/Profile';
 
 export const getCurrentUser = createSelector(
-    userAuthData,
-    profileData,
+    getUserAuthData,
+    getProfileData,
     (authUserId, profileId) => authUserId?.id === profileId?.id,
 );

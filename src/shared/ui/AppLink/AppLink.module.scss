@@ -1,6 +1,6 @@
 .appLink {
     color: var(--primary-color);
-    text-decoration: none;
+    text-underline-offset: 3px;
 
     &:hover {
         opacity: .8;
