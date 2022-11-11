@@ -10,6 +10,11 @@ const article = {
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
+    user: {
+        id: '1',
+        username: 'sergey',
+        avatar: 'https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg',
+    },
     createdAt: '26.02.2022',
     type: [ArticleType.IT],
     blocks: [
@@ -75,7 +80,7 @@ const article = {
 };
 
 export default {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails,
 } as ComponentMeta<typeof ArticleDetails>;
 

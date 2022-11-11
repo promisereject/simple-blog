@@ -74,12 +74,14 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         );
     } else if (error) {
         content = (
-            <Text
-                theme={TextTheme.ERROR}
-                align={TextAlign.CENTER}
-                title={t('Произошла ошибка при загрузке статьи')}
-                text={t('Попробуйте обновить страницу')}
-            />
+            <div className={classes.errorWrapper}>
+                <Text
+                    theme={TextTheme.ERROR}
+                    align={TextAlign.CENTER}
+                    title={t('Произошла ошибка при загрузке статьи')}
+                    text={t('Попробуйте обновить страницу')}
+                />
+            </div>
         );
     } else {
         content = (

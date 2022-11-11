@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text/Text';
 import { CommentsList } from 'entities/Comment';
@@ -10,6 +10,9 @@ import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
+import { Button } from 'shared/ui/Button/Button';
+import { routePath } from 'shared/config/routeConfig/routeConfig';
+import { getArticleDetailsError } from 'entities/Article/model/selectors/articleDetails';
 import {
     addCommentForArticle,
 } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -40,14 +43,21 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{id: string}>();
     const comments = useSelector(getArticleDetailsComments.selectAll);
+    const error = useSelector(getArticleDetailsError);
     const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading);
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
 
+    const navigate = useNavigate();
+
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
     });
+
+    const onBackToList = useCallback(() => {
+        navigate(routePath.articles);
+    }, [navigate]);
 
     // TODO: условие отключает отображение статьи в сторибуке. Подумать как оставить и проверку и сторибук.
 
@@ -62,13 +72,18 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
             <div className={classNames(classes.ArticleDetailsPage, {}, [className])}>
+                <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
                 <ArticleDetails id={id} />
-                <Text className={classes.commentsTitle} title={t('Комментарии')} />
-                <AddCommentForm onSendComment={onSendComment} />
-                <CommentsList
-                    isLoading={commentsIsLoading}
-                    comments={comments}
-                />
+                {!error && (
+                    <>
+                        <Text className={classes.commentsTitle} title={t('Комментарии')} />
+                        <AddCommentForm onSendComment={onSendComment} />
+                        <CommentsList
+                            isLoading={commentsIsLoading}
+                            comments={comments}
+                        />
+                    </>
+                )}
             </div>
         </DynamicModuleLoader>
     );
