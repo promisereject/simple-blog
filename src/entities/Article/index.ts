@@ -1,3 +1,4 @@
+export { ArticleViewSwitcher } from './ui/ArticleViewSwitcher/ArticleViewSwitcher';
 export { Article, ArticleView } from './model/types/article';
 export type { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
