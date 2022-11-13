@@ -24,6 +24,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 
 // import classes from './ProfilePage.module.scss';
@@ -37,6 +38,7 @@ const reducers: ReducersList = {
 };
 
 const ProfilePage = memo((props: ProfilePageProps) => {
+    // Вынести всю логику в фичу EditableProfileCard. Страница должна содержать только разметку
     const
         {
             className,
@@ -100,7 +102,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-            <div className={classNames('classes.profilePage', {}, [className])}>
+            <Page className={classNames('classes.profilePage', {}, [className])}>
                 <ProfileHeader />
                 {validationErrors?.length && validationErrors.map((error) => (
                     <Text
@@ -123,7 +125,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
                     onChangeCountry={onChangeCountry}
                     readOnly={readOnly}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 });

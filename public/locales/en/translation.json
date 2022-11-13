@@ -15,5 +15,7 @@
   "Комментарии отсутствуют": "No comments",
   "Введите текст комментария": "Enter comment text",
   "Отправить": "Publish",
-  "Читать далее": "Read"
+  "Читать далее": "Read",
+  "Ошибка при загрузке статей": "Error loading articles",
+  "Перезагрузите страницу или попробуйте ещё раз позже": "Reload the page or try again later"
 }

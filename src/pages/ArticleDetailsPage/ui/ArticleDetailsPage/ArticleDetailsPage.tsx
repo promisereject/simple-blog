@@ -13,6 +13,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { Button } from 'shared/ui/Button/Button';
 import { routePath } from 'shared/config/routeConfig/routeConfig';
 import { getArticleDetailsError } from 'entities/Article/model/selectors/articleDetails';
+import { Page } from 'shared/ui/Page/Page';
 import {
     addCommentForArticle,
 } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -59,19 +60,19 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
         navigate(routePath.articles);
     }, [navigate]);
 
-    // TODO: условие отключает отображение статьи в сторибуке. Подумать как оставить и проверку и сторибук.
+    // TODO: условие отключает отображение статьи в сторибуке. Не забыть замокать стейт в сторикейсе
 
     if (!id) {
         return (
-            <div className={classNames(classes.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(classes.ArticleDetailsPage, {}, [className])}>
                 {t('Статья не найдена')}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-            <div className={classNames(classes.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(classes.ArticleDetailsPage, {}, [className])}>
                 <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
                 <ArticleDetails id={id} />
                 {!error && (
@@ -84,7 +85,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
                         />
                     </>
                 )}
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 });
