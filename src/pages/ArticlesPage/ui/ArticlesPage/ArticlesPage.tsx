@@ -6,10 +6,10 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
@@ -42,16 +42,11 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
     }, [dispatch]);
 
     const onLoadNextArticlesPart = useCallback(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchNextArticlesPage());
-        }
+        dispatch(fetchNextArticlesPage());
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(articlesPageActions.initState());
-        dispatch(fetchArticlesList({
-            page: 1,
-        }));
+        dispatch(initArticlesPage());
     });
 
     if (error) {
@@ -67,7 +62,7 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
     }
 
     return (
-        <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
+        <DynamicModuleLoader removeAfterUnmount={false} reducers={reducers}>
             <Page
                 onScrollEnd={onLoadNextArticlesPart}
                 className={classNames(classes.ArticlesPage, {}, [className])}

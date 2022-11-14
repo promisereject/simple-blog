@@ -5,13 +5,12 @@ import { counterReducers } from 'entities/Counter';
 import { userReducers } from 'entities/User';
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
 import { $api } from 'shared/api/api';
-import { NavigateOptions, To } from 'react-router-dom';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
     initialState?: StateSchema,
     asyncReducers?: ReducersMapObject<StateSchema>,
-    navigate?: (to: To, options?: NavigateOptions) => void,
+    // navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
@@ -23,7 +22,7 @@ export function createReduxStore(
 
     const extraArgument: ThunkExtraArg = {
         api: $api,
-        navigate,
+        // navigate,
     };
 
     const store = configureStore({
@@ -46,7 +45,5 @@ export function createReduxStore(
 // 2. Возвращаем стандартный метод создания @reduxjs/toolkit store из функции, чтобы в будущем её можно было переиспользовать и настраивать для разных тестовых сред
 // 3. Типизируем стейт в StateSchema.ts
 // 4. Для тестовых сред необходимо инициализировать store. Например, чтобы подготовить данные для теста. Эти данные мы можем принять аргументом в качестве InitialState.
-// 5. Передаём InitialState в StoreProvider
-// 6. Не забыть обернуть приложение в <StoreProvider> в index.tsx
 
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

@@ -22,12 +22,18 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     } = props;
 
     const store = useStore() as ReduxStoreWithReducerManager;
+    const mountedReducers = store.reducerManager.getMountedReducers();
+
     const dispatch = useDispatch();
 
     useEffect(() => {
         Object.entries(reducers).forEach(([name, reducer]) => {
-            store.reducerManager.add(name as StateSchemaKey, reducer);
-            dispatch({ type: `@INIT ${name} reducer` });
+            const mounted = mountedReducers[name as StateSchemaKey];
+            // добавляем новый редъюсер только если его нет
+            if (!mounted) {
+                store.reducerManager.add(name as StateSchemaKey, reducer);
+                dispatch({ type: `@INIT ${name} reducer` });
+            }
         });
         return () => {
             if (removeAfterUnmount) {
