@@ -92,6 +92,7 @@ Default.args = {};
 Default.decorators = [storeDecorator({
     articleDetails: {
         data: article,
+        isLoading: false,
     },
     articleDetailsComments: {
         ids: [],
