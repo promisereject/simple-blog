@@ -5,7 +5,7 @@ const initialState: ScrollSchema = {
     scroll: {},
 };
 
-export const saveScrollPosition = createSlice({
+export const saveScrollPositionSlice = createSlice({
     name: 'saveScrollPosition',
     initialState,
     reducers: {
@@ -15,5 +15,5 @@ export const saveScrollPosition = createSlice({
     },
 });
 
-export const { actions: saveScrollPositionActions } = saveScrollPosition;
-export const { reducer: saveScrollPositionReducers } = saveScrollPosition;
+export const { actions: saveScrollPositionActions } = saveScrollPositionSlice;
+export const { reducer: saveScrollPositionReducers } = saveScrollPositionSlice;
