@@ -13,7 +13,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { Button } from 'shared/ui/Button/Button';
 import { routePath } from 'shared/config/routeConfig/routeConfig';
 import { getArticleDetailsError } from 'entities/Article/model/selectors/articleDetails';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page';
 import {
     addCommentForArticle,
 } from '../../model/services/addCommentForArticle/addCommentForArticle';

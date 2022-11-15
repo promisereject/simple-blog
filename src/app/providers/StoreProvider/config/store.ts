@@ -5,6 +5,7 @@ import { counterReducers } from 'entities/Counter';
 import { userReducers } from 'entities/User';
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
 import { $api } from 'shared/api/api';
+import { saveScrollPositionReducers } from 'widgets/Page';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
@@ -16,6 +17,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducers,
         user: userReducers,
+        scroll: saveScrollPositionReducers,
     };
 
     const reducerManager = createReducerManager(rootReducers);
