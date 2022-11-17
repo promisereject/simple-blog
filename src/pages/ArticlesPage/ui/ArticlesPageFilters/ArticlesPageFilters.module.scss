@@ -1,0 +1,16 @@
+.ArticlesPageFilters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.sortWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search {
+    margin-bottom: 15px;
+}

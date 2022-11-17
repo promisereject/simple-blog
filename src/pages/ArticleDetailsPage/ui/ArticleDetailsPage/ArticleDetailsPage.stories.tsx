@@ -81,7 +81,7 @@ const article: Article = {
 };
 
 export default {
-    title: 'pages/ArticleDetailsPage',
+    title: 'pages/Articles/ArticleDetailsPage',
     component: ArticleDetailsPage,
 } as ComponentMeta<typeof ArticleDetailsPage>;
 

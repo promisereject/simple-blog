@@ -63,7 +63,7 @@ export const Page = (props: PageProps) => {
             className={classNames(classes.Page, {}, [className])}
         >
             {children}
-            {onScrollEnd && <div className={classes.triggerRef} ref={triggerRef} />}
+            {onScrollEnd ? <div className={classes.triggerRef} ref={triggerRef} /> : null}
         </section>
     );
 };
