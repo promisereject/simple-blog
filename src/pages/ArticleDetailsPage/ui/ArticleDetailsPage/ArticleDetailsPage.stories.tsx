@@ -94,8 +94,10 @@ Default.decorators = [storeDecorator({
         data: article,
         isLoading: false,
     },
-    articleDetailsComments: {
-        ids: [],
-        entities: {},
+    articleDetailsPage: {
+        comments: {
+            ids: [],
+            entities: {},
+        },
     },
 })];

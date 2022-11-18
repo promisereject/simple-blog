@@ -1,7 +1,7 @@
 .BLOCK {
     width: 100%;
-    cursor: pointer;
     transition: all .2s ease-in-out;
+    text-decoration: none;
 
     .views {
         margin-left: auto;
@@ -58,10 +58,10 @@
 }
 
 .TILE {
-    min-width: 260px;
     width: 100%;
     cursor: pointer;
     transition: all .2s ease-in-out;
+    text-decoration: none;
 
     .storybookCardWidth {
         width: 280px;
@@ -126,10 +126,17 @@
         .date {
             visibility: visible;
             opacity: 1;
+            background-color: var(--card-bg);
+            padding: 5px;
         }
     }
 }
 
-.image:hover {
-    filter: none;
+.TILE:hover,
+.BLOCK:hover {
+    opacity: 1;
+
+    .image {
+        filter: none;
+    }
 }

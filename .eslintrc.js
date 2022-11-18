@@ -53,7 +53,7 @@ module.exports = {
             // можно использовать ignoreAttribute: [''] с перечислением аттрибутов, проверку в которых необходимо игнорировать
         ],
         // ошибка отсутствия перевода только для JSX
-        'max-len': ['error', { ignoreComments: true, code: 120 }],
+        'max-len': ['error', { ignoreComments: true, code: 140 }],
         // не учитывать превышение длины строки в комментариях
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
