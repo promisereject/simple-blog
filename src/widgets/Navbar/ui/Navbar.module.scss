@@ -12,3 +12,13 @@
     display: flex;
     gap: 15px;
 }
+
+.logo {
+    width: calc(var(--sidebar-width) - 20px);
+    display: flex;
+    justify-content: center;
+}
+
+.createArticleButton {
+    padding-left: 90px;
+}

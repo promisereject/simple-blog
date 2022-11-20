@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
 import { ArticleDetails, ArticleList } from 'entities/Article';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Text, TextSizes } from 'shared/ui/Text/Text';
 import { CommentsList } from 'entities/Comment';
@@ -10,11 +10,12 @@ import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
-import { Button } from 'shared/ui/Button/Button';
-import { routePath } from 'shared/config/routeConfig/routeConfig';
 import { getArticleDetailsError } from 'entities/Article/model/selectors/articleDetails';
 import { Page } from 'widgets/Page';
 import { articleDetailsPageReducers } from 'pages/ArticleDetailsPage/model/slices';
+import {
+    ArticleDetailsPageHeader,
+} from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {
     fetchArticleRecommendations,
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
@@ -52,16 +53,10 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
 
-    const navigate = useNavigate();
-
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
         dispatch(fetchArticleRecommendations());
     });
-
-    const onBackToList = useCallback(() => {
-        navigate(routePath.articles);
-    }, [navigate]);
 
     // TODO: условие отключает отображение статьи в сторибуке. Не забыть замокать стейт в сторикейсе
 
@@ -76,7 +71,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
             <Page className={classNames(classes.ArticleDetailsPage, {}, [className])}>
-                <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 {!error && (
                     <div className={classes.extraWrapper}>
