@@ -61,6 +61,11 @@ export const Navbar = memo((props: NavbarProps) => {
     }
     return (
         <header className={classNames(classes.navbar, {}, [className])}>
+            <Text
+                theme={TextTheme.INVERTED}
+                className={classes.logo}
+                title="APP_LOGO"
+            />
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
                 className={classes.items}

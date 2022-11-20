@@ -21,4 +21,6 @@ i18n
         },
     });
 
+i18n.languages = ['ru', 'en'];
+
 export default i18n;
