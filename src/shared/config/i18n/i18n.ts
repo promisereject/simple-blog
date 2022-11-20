@@ -9,7 +9,8 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        fallbackLng: 'ru',
+        fallbackLng: 'en',
+        lng: 'ru',
         debug: __IS_DEV__,
         // гадим в консоль только при dev сборке
         backend: {
@@ -20,7 +21,5 @@ i18n
             useSuspense: false, //   <---- this will do the magic
         },
     });
-
-i18n.languages = ['ru', 'en'];
 
 export default i18n;
