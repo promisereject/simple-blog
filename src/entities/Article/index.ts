@@ -4,7 +4,7 @@ export { ArticleViewSwitcher } from './ui/ArticleViewSwitcher/ArticleViewSwitche
 export {
     Article, ArticleView, ArticleSortField, ArticleType,
 } from './model/types/article';
-export type { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema';
+export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export { articleDetailsReducers } from './model/slice/articleDetailsSlice';
