@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+import { ArticleBlockType, ArticleType } from '../../types/article';
+import { fetchArticleById } from './fetchArticleById';
 
 const data = {
     id: '1',

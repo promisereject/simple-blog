@@ -2,7 +2,7 @@
  * Created by Sergei Mitrofanov from rjadysh.com on пт, 7-10-22, 13:9
  */
 
-import { CounterSchema } from 'entities/Counter';
+import { CounterSchema } from '../types/counterSchema';
 import { counterReducers, counterActions } from './counterSlice';
 
 describe('getCounterValue', () => {

@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'fsd-stable',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -61,6 +62,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'fsd-stable/fsd-paths-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
@@ -73,6 +75,7 @@ module.exports = {
             rules: {
                 'i18next/no-literal-string': 'off',
                 'max-len': 'off',
+                'fsd-stable/fsd-paths-checker': 'off',
             },
         },
     ],

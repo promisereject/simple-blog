@@ -2,7 +2,7 @@
  * Created by Sergei Mitrofanov from rjadysh.com on ср, 19-10-22, 14:20
  */
 
-import { LoginSchema } from 'features/AuthByUserName';
+import { LoginSchema } from '../types/loginSchema';
 import { loginActions, loginReducers } from './loginSlice';
 
 describe('loginSlice', () => {
