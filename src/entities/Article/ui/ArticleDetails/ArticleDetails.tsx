@@ -97,6 +97,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 <Text
                     className={classes.title}
                     title={article?.title}
+                    titleTag="h1"
                     text={article?.subtitle}
                     size={TextSizes.L}
                 />
@@ -121,9 +122,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }, [dispatch, id]);
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-            <VStack gap="8" className={classNames(classes.ArticleDetails, {}, [className])}>
-                {content}
-            </VStack>
+            <article>
+                <VStack gap="8" className={classNames(classes.ArticleDetails, {}, [className])}>
+                    {content}
+                </VStack>
+            </article>
         </DynamicModuleLoader>
     );
 });

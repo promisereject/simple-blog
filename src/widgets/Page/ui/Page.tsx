@@ -5,11 +5,12 @@ import {
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useLocation } from 'react-router-dom';
-import { getScrollPositionByPathName, saveScrollPositionActions } from 'widgets/Page';
 import { useSelector } from 'react-redux';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
+import { getScrollPositionByPathName } from '../model/selectors/getScrollPosition';
+import { saveScrollPositionActions } from '../model/slices/saveScrollPositionSlice';
 import classes from './Page.module.scss';
 
 interface PageProps {
@@ -57,13 +58,13 @@ export const Page = (props: PageProps) => {
     });
 
     return (
-        <section
+        <main
             ref={wrapperRef}
             onScroll={onScrollHandler}
             className={classNames(classes.Page, {}, [className])}
         >
             {children}
             {onScrollEnd ? <div className={classes.triggerRef} ref={triggerRef} /> : null}
-        </section>
+        </main>
     );
 };

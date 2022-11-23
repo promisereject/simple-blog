@@ -1,5 +1,5 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import classes from './Flex.module.scss';
 
 // расширять типы при необходимости
@@ -8,7 +8,12 @@ export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '32';
 
-export interface FlexProps {
+// добавляет обёрткам HStack и VStack все пропсы обычного div
+// например, теперь можно удобно определять role
+// крайне удобная штука с точки зрения возможности определять разную семантическую принадлежность
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+export interface FlexProps extends DivProps{
     className?: string;
     children: ReactNode;
     justify?: FlexJustify;
