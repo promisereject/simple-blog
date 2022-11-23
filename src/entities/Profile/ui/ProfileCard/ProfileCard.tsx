@@ -6,6 +6,7 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { validateNumbers } from '../../model/lib/validateNumbers/validateNumbers';
 import classes from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
@@ -51,90 +52,88 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(classes.profileCard, { [classes.loading]: true }, [className])}>
+            <HStack justify="center" max className={classNames(classes.profileCard, { [classes.loading]: true }, [className])}>
                 <Loader />
-            </div>
+            </HStack>
         );
     }
 
     if (error) {
         return (
-            <div className={classNames(classes.profileCard, { }, [className, classes.error])}>
+            <HStack justify="center" max className={classNames(classes.profileCard, { }, [className, classes.error])}>
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке профиля')}
                     text={t('Попробуйте обновить страницу')}
                     align={TextAlign.CENTER}
                 />
-            </div>
+            </HStack>
         );
     }
 
     return (
-        <div className={classNames(classes.profileCard, mods, [className])}>
-            <div className={classes.data}>
-                {data?.avatar && (
-                    <div className={classes.avatarWrapper}>
-                        <Avatar src={data?.avatar} alt={data?.username} size={150} />
-                    </div>
-                )}
-                <Input
-                    value={data?.name}
-                    placeholder={t('Ваше имя')}
-                    className={classes.input}
-                    onChange={onChangeName}
-                    readOnly={readOnly}
-                />
-                <Input
-                    value={data?.surname}
-                    placeholder={t('Ваша фамилия')}
-                    className={classes.input}
-                    onChange={onChangeSurname}
-                    readOnly={readOnly}
-                />
-                <Input
-                    value={data?.age}
-                    placeholder={t('Ваш возраст')}
-                    className={classes.input}
-                    onChange={onChangeAge}
-                    readOnly={readOnly}
-                    onKeyPress={validateNumbers}
+        <VStack gap="16" max className={classNames(classes.profileCard, mods, [className])}>
+            {data?.avatar && (
+                <HStack justify="center" max>
+                    <Avatar src={data?.avatar} alt={data?.username} size={150} />
+                </HStack>
+            )}
+            <Input
+                value={data?.name}
+                placeholder={t('Ваше имя')}
+                className={classes.input}
+                onChange={onChangeName}
+                readOnly={readOnly}
+            />
+            <Input
+                value={data?.surname}
+                placeholder={t('Ваша фамилия')}
+                className={classes.input}
+                onChange={onChangeSurname}
+                readOnly={readOnly}
+            />
+            <Input
+                value={data?.age}
+                placeholder={t('Ваш возраст')}
+                className={classes.input}
+                onChange={onChangeAge}
+                readOnly={readOnly}
+                onKeyPress={validateNumbers}
 
-                />
-                <Input
-                    value={data?.city}
-                    placeholder={t('Ваш город')}
-                    className={classes.input}
-                    onChange={onChangeCity}
-                    readOnly={readOnly}
-                />
-                <Input
-                    value={data?.username}
-                    placeholder={t('Введите имя пользователя')}
-                    className={classes.input}
-                    onChange={onChangeUsername}
-                    readOnly={readOnly}
-                />
-                <Input
-                    value={data?.avatar}
-                    placeholder={t('Ссылка на аватар')}
-                    className={classes.input}
-                    onChange={onChangeAvatar}
-                    readOnly={readOnly}
-                />
+            />
+            <Input
+                value={data?.city}
+                placeholder={t('Ваш город')}
+                className={classes.input}
+                onChange={onChangeCity}
+                readOnly={readOnly}
+            />
+            <Input
+                value={data?.username}
+                placeholder={t('Введите имя пользователя')}
+                className={classes.input}
+                onChange={onChangeUsername}
+                readOnly={readOnly}
+            />
+            <Input
+                value={data?.avatar}
+                placeholder={t('Ссылка на аватар')}
+                className={classes.input}
+                onChange={onChangeAvatar}
+                readOnly={readOnly}
+            />
 
-                <CurrencySelect
-                    value={data?.currency}
-                    onChange={onChangeCurrency}
-                    readonly={readOnly}
-                />
+            <CurrencySelect
+                value={data?.currency}
+                onChange={onChangeCurrency}
+                readonly={readOnly}
+            />
 
-                <CountrySelect
-                    value={data?.country}
-                    readonly={readOnly}
-                    onChange={onChangeCountry}
-                />
-            </div>
-        </div>
+            <CountrySelect
+                value={data?.country}
+                readonly={readOnly}
+                onChange={onChangeCountry}
+            />
+        </VStack>
     );
 };

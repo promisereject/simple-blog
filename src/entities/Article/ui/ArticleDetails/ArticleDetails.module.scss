@@ -2,12 +2,6 @@
     min-height: 100%;
 }
 
-.avatarWrapper {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
 .avatar {
     margin: 0 auto;
 }
@@ -18,18 +12,6 @@
 
 .skeleton {
     margin-top: 15px;
-}
-
-.articleInfo {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.blocks {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
 }
 
 .errorWrapper {

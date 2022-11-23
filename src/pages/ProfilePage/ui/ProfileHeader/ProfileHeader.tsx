@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux';
 import { getProfileReadOnly, profileActions, updateProfileData } from 'entities/Profile';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getCurrentUser } from 'pages/ProfilePage/model/selectors/getCurrentUser';
-import classes from './ProfileHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
+import { getCurrentUser } from '../../model/selectors/getCurrentUser';
 
 interface ProfileHeaderProps {
     className?: string
@@ -36,22 +36,20 @@ export const ProfileHeader = (props: ProfileHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(classes.profileHeader, {}, [className])}>
+        <HStack max justify="between" className={classNames('', {}, [className])}>
             <Text title={t('Профиль')} />
             {canEdit && (
                 readOnly
                     ? (
-                        <div className={classes.controls}>
-                            <Button
-                                theme={ButtonTheme.OUTLINE}
-                                onClick={onEdit}
-                            >
-                                {t('Редактировать')}
-                            </Button>
-                        </div>
+                        <Button
+                            theme={ButtonTheme.OUTLINE}
+                            onClick={onEdit}
+                        >
+                            {t('Редактировать')}
+                        </Button>
                     )
                     : (
-                        <div className={classes.controls}>
+                        <HStack gap="16">
                             <Button
                                 theme={ButtonTheme.OUTLINE}
                                 onClick={onCancelEdit}
@@ -64,9 +62,9 @@ export const ProfileHeader = (props: ProfileHeaderProps) => {
                             >
                                 {t('Сохранить')}
                             </Button>
-                        </div>
+                        </HStack>
                     )
             )}
-        </div>
+        </HStack>
     );
 };

@@ -12,13 +12,9 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
 import { getArticleDetailsError } from 'entities/Article/model/selectors/articleDetails';
 import { Page } from 'widgets/Page';
-import { articleDetailsPageReducers } from 'pages/ArticleDetailsPage/model/slices';
-import {
-    ArticleDetailsPageHeader,
-} from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import {
-    fetchArticleRecommendations,
-} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { articleDetailsPageReducers } from '../../model/slices';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { getArticleDetailsRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { getArticleRecommendations } from '../../model/slices/articleDetailsRecommendationsSlice';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
