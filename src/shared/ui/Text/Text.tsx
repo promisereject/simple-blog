@@ -21,17 +21,7 @@ export enum TextSizes {
     L = 'l'
 }
 
-type SemanticHeaderTagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-
-const mapPropsToHeaderTag: Record<SemanticHeaderTagType, SemanticHeaderTagType> = {
-    h1: 'h1',
-    h2: 'h2',
-    h3: 'h4',
-    h4: 'h4',
-    h5: 'h5',
-    h6: 'h6',
-    p: 'p',
-};
+type SemanticHeadingTagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
 interface TextProps {
     className?: string;
@@ -40,8 +30,18 @@ interface TextProps {
     theme?: TextTheme;
     align?: TextAlign;
     size?: TextSizes
-    titleTag?: SemanticHeaderTagType;
+    titleTag?: SemanticHeadingTagType;
 }
+
+const mapPropsToHeadingTag: Record<SemanticHeadingTagType, SemanticHeadingTagType> = {
+    h1: 'h1',
+    h2: 'h2',
+    h3: 'h4',
+    h4: 'h4',
+    h5: 'h5',
+    h6: 'h6',
+    p: 'p',
+};
 
 export const Text = memo((props: TextProps) => {
     const {
@@ -61,11 +61,11 @@ export const Text = memo((props: TextProps) => {
         classes[size],
     ];
 
-    const HeaderTag = mapPropsToHeaderTag[titleTag];
+    const HeadingTag = mapPropsToHeadingTag[titleTag];
 
     return (
         <div className={classNames(classes.text, {}, additional)}>
-            {title && <HeaderTag className={classes.title}>{title}</HeaderTag>}
+            {title && <HeadingTag className={classes.title}>{title}</HeadingTag>}
             {text && <p className={classes.text}>{text}</p>}
         </div>
     );
