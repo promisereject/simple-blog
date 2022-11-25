@@ -19,6 +19,7 @@
     padding: 10px 20px;
     border-radius: 12px;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .active {
@@ -30,12 +31,32 @@
     cursor: not-allowed;
 }
 
-.optionsTop {
-    bottom: 100%;
+.optionsTopLeft,
+.optionsTopRight {
     margin-bottom: 10px;
 }
 
-.optionsBottom {
-    top: 100%;
+.optionsBottomLeft,
+.optionsBottomRight {
     margin-top: 10px;
+}
+
+.optionsTopLeft {
+    bottom: 100%;
+    left: 0;
+}
+
+.optionsTopRight {
+    bottom: 100%;
+    right: 0;
+}
+
+.optionsBottomLeft {
+    top: 100%;
+    left: 0;
+}
+
+.optionsBottomRight {
+    top: 100%;
+    right: 0;
 }

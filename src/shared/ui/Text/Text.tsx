@@ -33,16 +33,6 @@ interface TextProps {
     titleTag?: SemanticHeadingTagType;
 }
 
-const mapPropsToHeadingTag: Record<SemanticHeadingTagType, SemanticHeadingTagType> = {
-    h1: 'h1',
-    h2: 'h2',
-    h3: 'h4',
-    h4: 'h4',
-    h5: 'h5',
-    h6: 'h6',
-    p: 'p',
-};
-
 export const Text = memo((props: TextProps) => {
     const {
         className,
@@ -61,7 +51,7 @@ export const Text = memo((props: TextProps) => {
         classes[size],
     ];
 
-    const HeadingTag = mapPropsToHeadingTag[titleTag];
+    const HeadingTag = titleTag;
 
     return (
         <div className={classNames(classes.text, {}, additional)}>

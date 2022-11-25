@@ -43,7 +43,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
                 {},
                 [className],
             )}
-            direction="top"
+            direction="top right"
             label={t('Выберите страну')}
         />
     );
