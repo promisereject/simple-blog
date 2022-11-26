@@ -38,7 +38,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
     const dispatch = useAppDispatch();
     const { t } = useTranslation('article');
-    const { id = '1' } = useParams<{id: string}>();
+    const { id } = useParams<{id: string}>();
     const comments = useSelector(getArticleDetailsComments.selectAll);
     const recommendations = useSelector(getArticleRecommendations.selectAll);
 

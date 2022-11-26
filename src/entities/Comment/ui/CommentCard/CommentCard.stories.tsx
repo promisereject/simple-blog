@@ -21,21 +21,21 @@ const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...
 export const Normal = Template.bind({});
 Normal.args = { comment };
 
-export const NormalLoading = Template.bind({});
-NormalLoading.args = { comment, isLoading: true };
-
 export const Dark = Template.bind({});
 Dark.args = { comment };
 Dark.decorators = [themeDecorator(Theme.DARK)];
-
-export const DarkLoading = Template.bind({});
-DarkLoading.args = { comment, isLoading: true };
-DarkLoading.decorators = [themeDecorator(Theme.DARK)];
 
 export const Orange = Template.bind({});
 Orange.args = { comment };
 Orange.decorators = [themeDecorator(Theme.ORANGE)];
 
-export const OrangeLoading = Template.bind({});
-OrangeLoading.args = { comment, isLoading: true };
-OrangeLoading.decorators = [themeDecorator(Theme.ORANGE)];
+export const NormalIsLoading = Template.bind({});
+NormalIsLoading.args = { comment, isLoading: true };
+
+export const DarkIsLoading = Template.bind({});
+DarkIsLoading.args = { comment, isLoading: true };
+DarkIsLoading.decorators = [themeDecorator(Theme.DARK)];
+
+export const OrangeIsLoading = Template.bind({});
+OrangeIsLoading.args = { comment, isLoading: true };
+OrangeIsLoading.decorators = [themeDecorator(Theme.ORANGE)];

@@ -1,6 +1,13 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Select } from 'shared/ui/Select/Select';
+import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
+
+const options = [
+    { value: '1', content: 'Первый пункт' },
+    { value: '2', content: 'Второй пункт' },
+];
 
 export default {
     title: 'shared/Select',
@@ -12,8 +19,19 @@ const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
 export const Normal = Template.bind({});
 Normal.args = {
     label: 'Значение',
-    options: [
-        { value: '1', content: 'Первый пункт' },
-        { value: '2', content: 'Второй пункт' },
-    ],
+    options,
 };
+
+export const Dark = Template.bind({});
+Dark.args = {
+    label: 'Значение',
+    options,
+};
+Dark.decorators = [themeDecorator(Theme.DARK)];
+
+export const Orange = Template.bind({});
+Orange.args = {
+    label: 'Значение',
+    options,
+};
+Orange.decorators = [themeDecorator(Theme.ORANGE)];

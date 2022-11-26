@@ -73,14 +73,14 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         );
     } else if (error) {
         content = (
-            <div className={classes.errorWrapper}>
+            <HStack justify="center" max className={classes.errorWrapper}>
                 <Text
                     theme="error"
                     align="center"
                     title={t('Произошла ошибка при загрузке статьи')}
                     text={t('Попробуйте обновить страницу')}
                 />
-            </div>
+            </HStack>
         );
     } else {
         content = (

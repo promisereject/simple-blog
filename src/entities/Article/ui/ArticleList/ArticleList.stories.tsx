@@ -95,54 +95,8 @@ export default {
 
 const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
 
-export const TileIsLoading = Template.bind({});
-TileIsLoading.args = {
-    view: ArticleView.TILE,
-    articles: [],
-    isLoading: true,
-};
-
-export const TileIsLoadingDark = Template.bind({});
-TileIsLoadingDark.args = {
-    view: ArticleView.TILE,
-    articles: [],
-    isLoading: true,
-};
-TileIsLoadingDark.decorators = [themeDecorator(Theme.DARK)];
-
-export const TileIsLoadingOrange = Template.bind({});
-TileIsLoadingOrange.args = {
-    view: ArticleView.TILE,
-    articles: [],
-    isLoading: true,
-};
-TileIsLoadingOrange.decorators = [themeDecorator(Theme.ORANGE)];
-
-export const BlockIsLoading = Template.bind({});
-BlockIsLoading.args = {
-    view: ArticleView.BLOCK,
-    articles: [],
-    isLoading: true,
-};
-
-export const BlockIsLoadingDark = Template.bind({});
-BlockIsLoadingDark.args = {
-    view: ArticleView.BLOCK,
-    articles: [],
-    isLoading: true,
-};
-BlockIsLoadingDark.decorators = [themeDecorator(Theme.DARK)];
-
-export const BlockIsLoadingOrange = Template.bind({});
-BlockIsLoadingOrange.args = {
-    view: ArticleView.BLOCK,
-    articles: [],
-    isLoading: true,
-};
-BlockIsLoadingOrange.decorators = [themeDecorator(Theme.ORANGE)];
-
-export const Tile = Template.bind({});
-Tile.args = {
+export const TileNormal = Template.bind({});
+TileNormal.args = {
     view: ArticleView.TILE,
     articles,
     isLoading: false,
@@ -170,8 +124,31 @@ TileOrange.args = {
 };
 TileOrange.decorators = [themeDecorator(Theme.ORANGE)];
 
-export const Block = Template.bind({});
-Block.args = {
+export const TileNormalIsLoading = Template.bind({});
+TileNormalIsLoading.args = {
+    view: ArticleView.TILE,
+    articles: [],
+    isLoading: true,
+};
+
+export const TileDarkIsLoading = Template.bind({});
+TileDarkIsLoading.args = {
+    view: ArticleView.TILE,
+    articles: [],
+    isLoading: true,
+};
+TileDarkIsLoading.decorators = [themeDecorator(Theme.DARK)];
+
+export const TileOrangeIsLoading = Template.bind({});
+TileOrangeIsLoading.args = {
+    view: ArticleView.TILE,
+    articles: [],
+    isLoading: true,
+};
+TileOrangeIsLoading.decorators = [themeDecorator(Theme.ORANGE)];
+
+export const BlockNormal = Template.bind({});
+BlockNormal.args = {
     view: ArticleView.BLOCK,
     articles,
     isLoading: false,
@@ -192,3 +169,26 @@ BlockOrange.args = {
     isLoading: false,
 };
 BlockOrange.decorators = [themeDecorator(Theme.ORANGE)];
+
+export const BlockNormalIsLoading = Template.bind({});
+BlockNormalIsLoading.args = {
+    view: ArticleView.BLOCK,
+    articles: [],
+    isLoading: true,
+};
+
+export const BlockDarkIsLoading = Template.bind({});
+BlockDarkIsLoading.args = {
+    view: ArticleView.BLOCK,
+    articles: [],
+    isLoading: true,
+};
+BlockDarkIsLoading.decorators = [themeDecorator(Theme.DARK)];
+
+export const BlockOrangeIsLoading = Template.bind({});
+BlockOrangeIsLoading.args = {
+    view: ArticleView.BLOCK,
+    articles: [],
+    isLoading: true,
+};
+BlockOrangeIsLoading.decorators = [themeDecorator(Theme.ORANGE)];

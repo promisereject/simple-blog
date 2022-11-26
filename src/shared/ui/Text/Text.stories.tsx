@@ -41,6 +41,13 @@ NormalDark.args = {
 };
 NormalDark.decorators = [themeDecorator(Theme.DARK)];
 
+export const NormalOrange = Template.bind({});
+NormalOrange.args = {
+    title: 'Заголовок',
+    text: 'Описание в одно предложение',
+};
+NormalOrange.decorators = [themeDecorator(Theme.ORANGE)];
+
 export const ErrorDark = Template.bind({});
 ErrorDark.args = {
     title: 'Заголовок',
@@ -49,11 +56,25 @@ ErrorDark.args = {
 };
 ErrorDark.decorators = [themeDecorator(Theme.DARK)];
 
+export const ErrorOrange = Template.bind({});
+ErrorOrange.args = {
+    title: 'Заголовок',
+    text: 'Описание в одно предложение',
+    theme: 'error',
+};
+ErrorOrange.decorators = [themeDecorator(Theme.ORANGE)];
+
 export const OnlyTitleDark = Template.bind({});
 OnlyTitleDark.args = {
     title: 'Заголовок',
 };
 OnlyTitleDark.decorators = [themeDecorator(Theme.DARK)];
+
+export const OnlyTitleOrange = Template.bind({});
+OnlyTitleOrange.args = {
+    title: 'Заголовок',
+};
+OnlyTitleOrange.decorators = [themeDecorator(Theme.ORANGE)];
 
 export const OnlyTextDark = Template.bind({});
 OnlyTextDark.args = {
@@ -61,21 +82,11 @@ OnlyTextDark.args = {
 };
 OnlyTextDark.decorators = [themeDecorator(Theme.DARK)];
 
-export const SizeMNormal = Template.bind({});
-SizeMNormal.args = {
-    title: 'Заголовок',
+export const OnlyTextOrange = Template.bind({});
+OnlyTextOrange.args = {
     text: 'Описание в одно предложение',
-    size: 'm',
 };
-OnlyTextDark.decorators = [themeDecorator(Theme.DARK)];
-
-export const SizeMDark = Template.bind({});
-SizeMDark.args = {
-    title: 'Заголовок',
-    text: 'Описание в одно предложение',
-    size: 'm',
-};
-SizeMDark.decorators = [themeDecorator(Theme.DARK)];
+OnlyTextOrange.decorators = [themeDecorator(Theme.ORANGE)];
 
 export const SizeLNormal = Template.bind({});
 SizeLNormal.args = {
@@ -91,3 +102,11 @@ SizeLDark.args = {
     size: 'l',
 };
 SizeLDark.decorators = [themeDecorator(Theme.DARK)];
+
+export const SizeOrange = Template.bind({});
+SizeOrange.args = {
+    title: 'Заголовок',
+    text: 'Описание в одно предложение',
+    size: 'l',
+};
+SizeOrange.decorators = [themeDecorator(Theme.ORANGE)];

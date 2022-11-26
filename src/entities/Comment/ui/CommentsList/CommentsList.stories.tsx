@@ -30,21 +30,21 @@ const Template: ComponentStory<typeof CommentsList> = (args) => <CommentsList {.
 export const Normal = Template.bind({});
 Normal.args = { comments };
 
-export const NormalLoading = Template.bind({});
-NormalLoading.args = { comments, isLoading: true };
-
 export const Dark = Template.bind({});
 Dark.args = { comments };
 Dark.decorators = [themeDecorator(Theme.DARK)];
-
-export const DarkLoading = Template.bind({});
-DarkLoading.args = { comments, isLoading: true };
-DarkLoading.decorators = [themeDecorator(Theme.DARK)];
 
 export const Orange = Template.bind({});
 Orange.args = { comments };
 Orange.decorators = [themeDecorator(Theme.ORANGE)];
 
-export const OrangeLoading = Template.bind({});
-OrangeLoading.args = { comments, isLoading: true };
-OrangeLoading.decorators = [themeDecorator(Theme.ORANGE)];
+export const NormalIsLoading = Template.bind({});
+NormalIsLoading.args = { comments, isLoading: true };
+
+export const DarkIsLoading = Template.bind({});
+DarkIsLoading.args = { comments, isLoading: true };
+DarkIsLoading.decorators = [themeDecorator(Theme.DARK)];
+
+export const OrangeIsLoading = Template.bind({});
+OrangeIsLoading.args = { comments, isLoading: true };
+OrangeIsLoading.decorators = [themeDecorator(Theme.ORANGE)];

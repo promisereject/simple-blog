@@ -27,14 +27,26 @@ Dark.decorators = [themeDecorator(Theme.DARK), storeDecorator({
     user: { authData: {} },
 })];
 
-export const NoAuth = Template.bind({});
-NoAuth.args = {};
-NoAuth.decorators = [storeDecorator({
+export const Orange = Template.bind({});
+Orange.args = {};
+Orange.decorators = [themeDecorator(Theme.ORANGE), storeDecorator({
+    user: { authData: {} },
+})];
+
+export const NoAuthNormal = Template.bind({});
+NoAuthNormal.args = {};
+NoAuthNormal.decorators = [storeDecorator({
     user: {},
 })];
 
 export const NoAuthDark = Template.bind({});
 NoAuthDark.args = {};
 NoAuthDark.decorators = [themeDecorator(Theme.DARK), storeDecorator({
+    user: {},
+})];
+
+export const NoAuthOrange = Template.bind({});
+NoAuthOrange.args = {};
+NoAuthOrange.decorators = [themeDecorator(Theme.ORANGE), storeDecorator({
     user: {},
 })];

@@ -1,5 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
 
@@ -90,14 +92,42 @@ export default {
 
 const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
 
-export const Tile = Template.bind({});
-Tile.args = {
+export const TileNormal = Template.bind({});
+TileNormal.args = {
     view: ArticleView.TILE,
     article,
 };
 
-export const Block = Template.bind({});
-Block.args = {
+export const TileDark = Template.bind({});
+TileDark.args = {
+    view: ArticleView.TILE,
+    article,
+};
+TileDark.decorators = [themeDecorator(Theme.DARK)];
+
+export const TileOrange = Template.bind({});
+TileOrange.args = {
+    view: ArticleView.TILE,
+    article,
+};
+TileOrange.decorators = [themeDecorator(Theme.ORANGE)];
+
+export const BlockNormal = Template.bind({});
+BlockNormal.args = {
     view: ArticleView.BLOCK,
     article,
 };
+
+export const BlockDark = Template.bind({});
+BlockDark.args = {
+    view: ArticleView.BLOCK,
+    article,
+};
+BlockDark.decorators = [themeDecorator(Theme.DARK)];
+
+export const BlockOrange = Template.bind({});
+BlockOrange.args = {
+    view: ArticleView.BLOCK,
+    article,
+};
+BlockOrange.decorators = [themeDecorator(Theme.ORANGE)];

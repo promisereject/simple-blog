@@ -11,18 +11,22 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const Default = Template.bind({});
-
-Default.args = {
+export const Normal = Template.bind({});
+Normal.args = {
     placeholder: 'Введите логин',
     value: 'ohuel.ru',
 };
 
 export const Dark = Template.bind({});
-
 Dark.args = {
     placeholder: 'Введите логин',
     value: 'ohuel.ru',
 };
-
 Dark.decorators = [themeDecorator(Theme.DARK)];
+
+export const Orange = Template.bind({});
+Orange.args = {
+    placeholder: 'Введите логин',
+    value: 'ohuel.ru',
+};
+Orange.decorators = [themeDecorator(Theme.ORANGE)];

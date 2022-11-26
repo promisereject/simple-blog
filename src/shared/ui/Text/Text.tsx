@@ -2,8 +2,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import classes from './Text.module.scss';
 
-// TODO: Заменить все enum во всём проекте на union типы
-
 type TextTheme = 'normal' | 'inverted' | 'error';
 
 type TextAlign = 'left' | 'right' | 'center';

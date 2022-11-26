@@ -4,6 +4,8 @@ import { Modal } from 'shared/ui/Modal/Modal';
 import { Theme } from 'app/providers/ThemeProvider';
 import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorator';
 
+const children = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consequuntur dolores eos eum ex labore magni necessitatibus praesentium sint sunt?';
+
 export default {
     title: 'shared/Modal',
     component: Modal,
@@ -13,13 +15,20 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
-    children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consequuntur dolores eos eum ex labore magni necessitatibus praesentium sint sunt?',
+    children,
     isOpen: true,
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
-    children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consequuntur dolores eos eum ex labore magni necessitatibus praesentium sint sunt?',
+    children,
     isOpen: true,
 };
 Dark.decorators = [themeDecorator(Theme.DARK)];
+
+export const Orange = Template.bind({});
+Orange.args = {
+    children,
+    isOpen: true,
+};
+Orange.decorators = [themeDecorator(Theme.ORANGE)];

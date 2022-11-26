@@ -3,7 +3,20 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ProfileCard } from 'entities/Profile';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import avatar from 'shared/assets/images/storybook/avatar.png';
+import avatar from 'shared/assets/images/storybook/sergey.webp';
+import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
+
+const data = {
+    name: 'Сергей',
+    surname: 'Митрофанов',
+    age: 33,
+    city: 'Тверь',
+    username: 'sergey',
+    avatar,
+    currency: Currency.RUB,
+    country: Country.Russia,
+};
 
 export default {
     title: 'entities/ProfileCard',
@@ -12,41 +25,73 @@ export default {
 
 const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
 
-export const Editing = Template.bind({});
-Editing.args = {
-    data: {
-        name: 'Сергей',
-        surname: 'Митрофанов',
-        age: 33,
-        city: 'Тверь',
-        username: 'sergey',
-        avatar,
-        currency: Currency.RUB,
-        country: Country.Russia,
-    },
+export const NormalIsEditing = Template.bind({});
+NormalIsEditing.args = {
+    data,
 };
 
-export const Readonly = Template.bind({});
-Readonly.args = {
-    data: {
-        name: 'Сергей',
-        surname: 'Митрофанов',
-        age: 33,
-        city: 'Тверь',
-        username: 'sergey',
-        avatar: 'https://rjadysh.com/wp-content/uploads/rjadyshcom-glavnaja-1.png',
-        currency: Currency.RUB,
-        country: Country.Russia,
-    },
+export const NormalIsReadonly = Template.bind({});
+NormalIsReadonly.args = {
+    data,
     readOnly: true,
 };
 
-export const Error = Template.bind({});
-Error.args = {
+export const NormalIsError = Template.bind({});
+NormalIsError.args = {
     error: 'true',
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
+export const NormalIsLoading = Template.bind({});
+NormalIsLoading.args = {
     isLoading: true,
 };
+
+export const DarkIsEditing = Template.bind({});
+DarkIsEditing.args = {
+    data,
+};
+DarkIsEditing.decorators = [themeDecorator(Theme.DARK)];
+
+export const DarkIsReadonly = Template.bind({});
+DarkIsReadonly.args = {
+    data,
+    readOnly: true,
+};
+DarkIsReadonly.decorators = [themeDecorator(Theme.DARK)];
+
+export const DarkIsError = Template.bind({});
+DarkIsError.args = {
+    error: 'true',
+};
+DarkIsError.decorators = [themeDecorator(Theme.DARK)];
+
+export const DarkIsLoading = Template.bind({});
+DarkIsLoading.args = {
+    isLoading: true,
+};
+DarkIsLoading.decorators = [themeDecorator(Theme.DARK)];
+
+export const OrangeIsEditing = Template.bind({});
+OrangeIsEditing.args = {
+    data,
+};
+OrangeIsEditing.decorators = [themeDecorator(Theme.ORANGE)];
+
+export const OrangeIsReadonly = Template.bind({});
+OrangeIsReadonly.args = {
+    data,
+    readOnly: true,
+};
+OrangeIsReadonly.decorators = [themeDecorator(Theme.ORANGE)];
+
+export const OrangeIsError = Template.bind({});
+OrangeIsError.args = {
+    error: 'true',
+};
+OrangeIsError.decorators = [themeDecorator(Theme.ORANGE)];
+
+export const OrangeIsLoading = Template.bind({});
+OrangeIsLoading.args = {
+    isLoading: true,
+};
+OrangeIsLoading.decorators = [themeDecorator(Theme.ORANGE)];

@@ -11,8 +11,8 @@ export default {
 
 const Template: ComponentStory<typeof Skeleton> = (args) => <Skeleton {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Block = Template.bind({});
+Block.args = {
     width: '100%',
     height: 200,
 };
@@ -24,12 +24,12 @@ Circle.args = {
     height: 100,
 };
 
-export const DefaultDark = Template.bind({});
-DefaultDark.args = {
+export const BlockDark = Template.bind({});
+BlockDark.args = {
     width: '100%',
     height: 200,
 };
-DefaultDark.decorators = [themeDecorator(Theme.DARK)];
+BlockDark.decorators = [themeDecorator(Theme.DARK)];
 
 export const CircleDark = Template.bind({});
 CircleDark.args = {
@@ -39,12 +39,12 @@ CircleDark.args = {
 };
 CircleDark.decorators = [themeDecorator(Theme.DARK)];
 
-export const DefaultOrange = Template.bind({});
-DefaultOrange.args = {
+export const BlockOrange = Template.bind({});
+BlockOrange.args = {
     width: '100%',
     height: 200,
 };
-DefaultOrange.decorators = [themeDecorator(Theme.ORANGE)];
+BlockOrange.decorators = [themeDecorator(Theme.ORANGE)];
 
 export const CircleOrange = Template.bind({});
 CircleOrange.args = {

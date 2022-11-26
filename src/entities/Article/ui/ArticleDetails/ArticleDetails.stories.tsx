@@ -2,6 +2,8 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { storeDecorator } from 'shared/config/storybook/decorators/storeDecorator';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 import { ArticleDetails } from './ArticleDetails';
 
 const article = {
@@ -86,26 +88,74 @@ export default {
 
 const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
-Default.decorators = [storeDecorator({
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [storeDecorator({
     articleDetails: {
         data: article,
     },
 })];
 
-export const Loading = Template.bind({});
-Loading.args = {};
-Loading.decorators = [storeDecorator({
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [storeDecorator({
+    articleDetails: {
+        data: article,
+    },
+}), themeDecorator(Theme.DARK)];
+
+export const Orange = Template.bind({});
+Orange.args = {};
+Orange.decorators = [storeDecorator({
+    articleDetails: {
+        data: article,
+    },
+}), themeDecorator(Theme.ORANGE)];
+
+export const NormalLoading = Template.bind({});
+NormalLoading.args = {};
+NormalLoading.decorators = [storeDecorator({
     articleDetails: {
         isLoading: true,
     },
 })];
 
-export const Error = Template.bind({});
-Error.args = {};
-Error.decorators = [storeDecorator({
+export const DarkLoading = Template.bind({});
+DarkLoading.args = {};
+DarkLoading.decorators = [storeDecorator({
+    articleDetails: {
+        isLoading: true,
+    },
+}), themeDecorator(Theme.DARK)];
+
+export const OrangeLoading = Template.bind({});
+OrangeLoading.args = {};
+OrangeLoading.decorators = [storeDecorator({
+    articleDetails: {
+        isLoading: true,
+    },
+}), themeDecorator(Theme.ORANGE)];
+
+export const NormalError = Template.bind({});
+NormalError.args = {};
+NormalError.decorators = [storeDecorator({
     articleDetails: {
         error: 'error',
     },
 })];
+
+export const DarkError = Template.bind({});
+DarkError.args = {};
+DarkError.decorators = [storeDecorator({
+    articleDetails: {
+        error: 'error',
+    },
+}), themeDecorator(Theme.DARK)];
+
+export const OrangeError = Template.bind({});
+OrangeError.args = {};
+OrangeError.decorators = [storeDecorator({
+    articleDetails: {
+        error: 'error',
+    },
+}), themeDecorator(Theme.ORANGE)];

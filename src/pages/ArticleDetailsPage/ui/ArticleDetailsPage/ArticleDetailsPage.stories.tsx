@@ -87,9 +87,9 @@ export default {
 
 const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
-Default.decorators = [storeDecorator({
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [storeDecorator({
     articleDetails: {
         data: article,
         isLoading: false,

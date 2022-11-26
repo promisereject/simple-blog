@@ -4,6 +4,7 @@ import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorato
 import { Theme } from 'app/providers/ThemeProvider';
 import { Navbar } from 'widgets/Navbar';
 import { storeDecorator } from 'shared/config/storybook/decorators/storeDecorator';
+import avatar from 'shared/assets/images/storybook/sergey.webp';
 
 export default {
     title: 'widgets/Navbar',
@@ -19,14 +20,22 @@ export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [storeDecorator({})];
 
-export const NormalAuth = Template.bind({});
-NormalAuth.args = {};
-NormalAuth.decorators = [storeDecorator({ user: { authData: {} } })];
-
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [themeDecorator(Theme.DARK), storeDecorator({})];
 
+export const Orange = Template.bind({});
+Orange.args = {};
+Orange.decorators = [themeDecorator(Theme.ORANGE), storeDecorator({})];
+
+export const NormalAuth = Template.bind({});
+NormalAuth.args = {};
+NormalAuth.decorators = [storeDecorator({ user: { authData: { avatar } } })];
+
 export const DarkAuth = Template.bind({});
 DarkAuth.args = {};
-DarkAuth.decorators = [storeDecorator({ user: { authData: {} } })];
+DarkAuth.decorators = [themeDecorator(Theme.DARK), storeDecorator({ user: { authData: { avatar } } })];
+
+export const OrangeAuth = Template.bind({});
+OrangeAuth.args = {};
+OrangeAuth.decorators = [themeDecorator(Theme.ORANGE), storeDecorator({ user: { authData: { avatar } } })];
