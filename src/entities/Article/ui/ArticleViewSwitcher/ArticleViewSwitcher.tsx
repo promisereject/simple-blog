@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import ViewTileIcon from 'shared/assets/icons/articles-view-tile-icon.svg';
 import ViewBlockIcon from 'shared/assets/icons/articles-view-block-icon.svg';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { ArticleView } from '../../model/types/article';
 import classes from './ArticleViewSwitcher.module.scss';
@@ -40,7 +40,7 @@ export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
             {viewTypes.map((viewType) => (
                 <Button
                     key={viewType.view}
-                    theme={ButtonTheme.CLEAR}
+                    theme="clear"
                     onClick={onClick(viewType.view)}
                 >
                     <Icon

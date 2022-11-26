@@ -1,8 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { Article, ArticleView } from '../../model/types/article';
 import classes from './ArticleList.module.scss';
@@ -45,7 +45,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         return (
             <div className={classNames(classes.ArticleList, {}, [className, classes[view]])}>
                 <Text
-                    theme={TextTheme.ERROR}
+                    theme="error"
                     title={t('Нет статей')}
                     text={t('Попробуйте расширить поисковый запрос или изменить фильтры')}
                 />

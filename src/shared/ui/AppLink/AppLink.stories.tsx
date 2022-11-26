@@ -1,9 +1,8 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { OutlineDark } from 'shared/ui/Button/Button.stories';
 
 export default {
     title: 'shared/AppLink',
@@ -22,28 +21,28 @@ export const Primary = Template.bind({});
 
 Primary.args = {
     children: 'Button text',
-    theme: AppLinkTheme.PRIMARY,
+    theme: 'primary',
 };
 
 export const Secondary = Template.bind({});
 
 Secondary.args = {
     children: 'Button text',
-    theme: AppLinkTheme.SECONDARY,
+    theme: 'secondary',
 };
 
 export const Red = Template.bind({});
 
 Red.args = {
     children: 'Button text',
-    theme: AppLinkTheme.RED,
+    theme: 'red',
 };
 
 export const PrimaryDark = Template.bind({});
 
 PrimaryDark.args = {
     children: 'Button text',
-    theme: AppLinkTheme.PRIMARY,
+    theme: 'primary',
 };
 
 PrimaryDark.decorators = [themeDecorator(Theme.DARK)];
@@ -52,7 +51,7 @@ export const SecondaryDark = Template.bind({});
 
 SecondaryDark.args = {
     children: 'Button text',
-    theme: AppLinkTheme.SECONDARY,
+    theme: 'secondary',
 };
 
 SecondaryDark.decorators = [themeDecorator(Theme.DARK)];
@@ -61,7 +60,7 @@ export const RedDark = Template.bind({});
 
 RedDark.args = {
     children: 'Button text',
-    theme: AppLinkTheme.RED,
+    theme: 'red',
 };
 
 RedDark.decorators = [themeDecorator(Theme.DARK)];

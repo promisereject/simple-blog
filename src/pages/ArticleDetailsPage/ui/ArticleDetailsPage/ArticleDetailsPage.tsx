@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react';
 import { ArticleDetails, ArticleList } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Text, TextSizes } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
 import { CommentsList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
@@ -74,7 +74,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
                         <Text
                             className={classes.commentsTitle}
                             title={t('Рекомендуем')}
-                            size={TextSizes.L}
+                            size="l"
                         />
                         <ArticleList
                             target="_blank"
@@ -85,7 +85,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
                         <Text
                             className={classes.commentsTitle}
                             title={t('Комментарии')}
-                            size={TextSizes.L}
+                            size="l"
                         />
                         <AddCommentForm onSendComment={onSendComment} />
                         <CommentsList

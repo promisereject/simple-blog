@@ -1,12 +1,12 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUserName';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { Text } from 'shared/ui/Text/Text';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { routePath } from 'shared/config/routeConfig/routeConfig';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
@@ -40,12 +40,12 @@ export const Navbar = memo((props: NavbarProps) => {
         return (
             <header className={classNames(classes.navbar, {}, [className])}>
                 <Text
-                    theme={TextTheme.INVERTED}
+                    theme="inverted"
                     className={classes.logo}
                     title="APP_LOGO"
                 />
                 <AppLink
-                    theme={AppLinkTheme.SECONDARY}
+                    theme="secondary"
                     to={routePath.article_create}
                     className={classes.createArticleButton}
                 >
@@ -72,12 +72,12 @@ export const Navbar = memo((props: NavbarProps) => {
     return (
         <header className={classNames(classes.navbar, {}, [className])}>
             <Text
-                theme={TextTheme.INVERTED}
+                theme="inverted"
                 className={classes.logo}
                 title="APP_LOGO"
             />
             <Button
-                theme={ButtonTheme.CLEAR_INVERTED}
+                theme="clearInverted"
                 className={classes.items}
                 onClick={onShowModal}
             >

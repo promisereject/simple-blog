@@ -6,7 +6,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
 import { Page } from 'widgets/Page';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
@@ -54,7 +54,7 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
         return (
             <Page>
                 <Text
-                    theme={TextTheme.ERROR}
+                    theme="error"
                     title={t('Ошибка при загрузке статей')}
                     text={t('Перезагрузите страницу или попробуйте ещё раз позже')}
                 />

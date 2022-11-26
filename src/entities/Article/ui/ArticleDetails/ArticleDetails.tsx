@@ -4,9 +4,7 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoade
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import {
-    Text, TextAlign, TextSizes, TextTheme,
-} from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import ViewsIcon from 'shared/assets/icons/article-views-icon.svg';
@@ -77,8 +75,8 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         content = (
             <div className={classes.errorWrapper}>
                 <Text
-                    theme={TextTheme.ERROR}
-                    align={TextAlign.CENTER}
+                    theme="error"
+                    align="center"
                     title={t('Произошла ошибка при загрузке статьи')}
                     text={t('Попробуйте обновить страницу')}
                 />
@@ -99,7 +97,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     title={article?.title}
                     titleTag="h1"
                     text={article?.subtitle}
-                    size={TextSizes.L}
+                    size="l"
                 />
                 <HStack gap="4">
                     <Icon Svg={ViewsIcon} />

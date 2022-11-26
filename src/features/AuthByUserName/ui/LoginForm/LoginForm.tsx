@@ -1,10 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { loginActions, loginReducers } from '../../model/slice/loginSlice';
@@ -55,7 +55,7 @@ const LoginForm = memo((props: LoginFormProps) => {
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames(classes.loginForm, {}, [className])}>
                 <Text title={t('Форма авторизации')} />
-                {error && <Text text={t('Неверный логин или пароль')} theme={TextTheme.ERROR} />}
+                {error && <Text text={t('Неверный логин или пароль')} theme="error" />}
                 <Input
                     autoFocus
                     placeholder={t('Введите логин')}
@@ -68,7 +68,6 @@ const LoginForm = memo((props: LoginFormProps) => {
                     value={password}
                 />
                 <Button
-                    theme={ButtonTheme.OUTLINE}
                     className={classes.loginButton}
                     onClick={onLoginClick}
                     disabled={isLoading}

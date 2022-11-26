@@ -1,6 +1,6 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
@@ -62,10 +62,10 @@ export const ProfileCard = (props: ProfileCardProps) => {
         return (
             <HStack justify="center" max className={classNames(classes.profileCard, { }, [className, classes.error])}>
                 <Text
-                    theme={TextTheme.ERROR}
+                    theme="error"
                     title={t('Произошла ошибка при загрузке профиля')}
                     text={t('Попробуйте обновить страницу')}
-                    align={TextAlign.CENTER}
+                    align="center"
                 />
             </HStack>
         );

@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
 
 interface LanguageSwitcherProps {
     className?: string;
@@ -23,10 +23,10 @@ export const LanguageSwitcher = memo((props: LanguageSwitcherProps) => {
     return (
         <Button
             className={classNames('', {}, [className])}
-            theme={ButtonTheme.CLEAR}
+            theme="clear"
             onClick={toggle}
         >
-            <Text theme={TextTheme.INVERTED} text={t(short ? 'Короткий язык' : 'Язык')} />
+            <Text theme="inverted" text={t(short ? 'Короткий язык' : 'Язык')} />
         </Button>
     );
 });

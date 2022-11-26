@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Text, TextSizes, TextTheme } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
 import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 
@@ -21,7 +21,7 @@ export const Error = Template.bind({});
 Error.args = {
     title: 'Заголовок',
     text: 'Описание в одно предложение',
-    theme: TextTheme.ERROR,
+    theme: 'error',
 };
 
 export const OnlyTitle = Template.bind({});
@@ -45,7 +45,7 @@ export const ErrorDark = Template.bind({});
 ErrorDark.args = {
     title: 'Заголовок',
     text: 'Описание в одно предложение',
-    theme: TextTheme.ERROR,
+    theme: 'error',
 };
 ErrorDark.decorators = [themeDecorator(Theme.DARK)];
 
@@ -65,7 +65,7 @@ export const SizeMNormal = Template.bind({});
 SizeMNormal.args = {
     title: 'Заголовок',
     text: 'Описание в одно предложение',
-    size: TextSizes.M,
+    size: 'm',
 };
 OnlyTextDark.decorators = [themeDecorator(Theme.DARK)];
 
@@ -73,7 +73,7 @@ export const SizeMDark = Template.bind({});
 SizeMDark.args = {
     title: 'Заголовок',
     text: 'Описание в одно предложение',
-    size: TextSizes.M,
+    size: 'm',
 };
 SizeMDark.decorators = [themeDecorator(Theme.DARK)];
 
@@ -81,13 +81,13 @@ export const SizeLNormal = Template.bind({});
 SizeLNormal.args = {
     title: 'Заголовок',
     text: 'Описание в одно предложение',
-    size: TextSizes.L,
+    size: 'l',
 };
 
 export const SizeLDark = Template.bind({});
 SizeLDark.args = {
     title: 'Заголовок',
     text: 'Описание в одно предложение',
-    size: TextSizes.L,
+    size: 'l',
 };
 SizeLDark.decorators = [themeDecorator(Theme.DARK)];

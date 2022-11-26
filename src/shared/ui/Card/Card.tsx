@@ -2,10 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { HTMLAttributes, ReactNode } from 'react';
 import classes from './Card.module.scss';
 
-export enum CardTheme {
-    NORMAL = 'normal',
-    OUTLINED = 'outlined',
-}
+type CardTheme = 'normal' | 'outlined';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement>{
     className?: string;
@@ -17,7 +14,7 @@ export const Card = (props: CardProps) => {
     const {
         className,
         children,
-        theme = CardTheme.NORMAL,
+        theme = 'normal',
         ...otherProps
     } = props;
     return (

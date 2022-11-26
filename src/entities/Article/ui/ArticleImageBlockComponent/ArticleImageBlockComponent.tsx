@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { Text, TextAlign } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
 import classes from './ArticleImageBlockComponent.module.scss';
 import { ArticleImageBlock } from '../../model/types/article';
 
@@ -18,7 +18,7 @@ export const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponen
         <div className={classNames(classes.ArticleImageBlockComponent, {}, [className])}>
             <img src={block.src} alt={block?.title} className={classes.image} />
             {block.title && (
-                <Text text={block.title} align={TextAlign.CENTER} />
+                <Text text={block.title} align="center" />
             )}
         </div>
     );

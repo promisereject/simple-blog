@@ -4,22 +4,11 @@ import classes from './Text.module.scss';
 
 // TODO: Заменить все enum во всём проекте на union типы
 
-export enum TextTheme {
-    NORMAL = 'normal',
-    INVERTED = 'inverted',
-    ERROR = 'error'
-}
+type TextTheme = 'normal' | 'inverted' | 'error';
 
-export enum TextAlign {
-    LEFT = 'left',
-    RIGHT = 'right',
-    CENTER = 'center'
-}
+type TextAlign = 'left' | 'right' | 'center';
 
-export enum TextSizes {
-    M = 'm',
-    L = 'l'
-}
+type TextSizes = 'm' | 'l';
 
 type SemanticHeadingTagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
@@ -39,9 +28,9 @@ export const Text = memo((props: TextProps) => {
         text,
         title,
         titleTag = 'p',
-        align = TextAlign.LEFT,
-        theme = TextTheme.NORMAL,
-        size = TextSizes.M,
+        align = 'left',
+        theme = 'normal',
+        size = 'm',
     } = props;
 
     const additional = [
