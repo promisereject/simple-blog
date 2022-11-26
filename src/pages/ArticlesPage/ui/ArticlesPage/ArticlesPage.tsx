@@ -43,7 +43,9 @@ const ArticlesPage = memo((props: ArticlesPageProps) => {
     const [searchParams] = useSearchParams();
 
     const onLoadNextArticlesPart = useCallback(() => {
-        dispatch(fetchNextArticlesPage());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchNextArticlesPage());
+        }
     }, [dispatch]);
 
     useInitialEffect(() => {
