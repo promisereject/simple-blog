@@ -34,6 +34,7 @@
         object-fit: cover;
         object-position: center center;
         margin: 15px 0;
+        border-radius: 12px;
     }
 
     .footer {
@@ -79,6 +80,7 @@
         object-fit: cover;
         object-position: center center;
         filter: grayscale(60%);
+        border-radius: 12px;
     }
 
     .date {
@@ -125,9 +127,11 @@
 
         .date {
             visibility: visible;
+            transform: scale(1.01);
             opacity: 1;
             background-color: var(--card-bg);
-            padding: 5px;
+            padding: 5px 10px;
+            border-radius: 0 0 0 6px;
         }
     }
 }

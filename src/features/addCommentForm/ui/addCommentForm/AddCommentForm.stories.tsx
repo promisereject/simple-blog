@@ -7,7 +7,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import AddCommentForm from './AddCommentForm';
 
 export default {
-    title: 'features/AddCommentForm',
+    title: 'features/addCommentForm',
     component: AddCommentForm,
 } as ComponentMeta<typeof AddCommentForm>;
 

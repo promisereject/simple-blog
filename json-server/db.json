@@ -2542,6 +2542,12 @@
       "userId": "1",
       "text": "Тест",
       "id": "ljDGe4E"
+    },
+    {
+      "articleId": "9",
+      "userId": "1",
+      "text": "Очередной тестовый комент",
+      "id": "VtGFW9m"
     }
   ],
   "users": [
@@ -2564,10 +2570,10 @@
     {
       "id": "1",
       "name": "Сергей",
-      "surname": "М.",
+      "surname": "Митрофанов",
       "age": 33,
-      "currency": "RUB",
-      "country": "Armenia",
+      "currency": "EUR",
+      "country": "Russia",
       "city": "Москва",
       "username": "sergey",
       "avatar": "https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg"

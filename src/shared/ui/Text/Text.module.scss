@@ -4,6 +4,8 @@
 
 .text {
     color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .inverted {
@@ -56,4 +58,16 @@
     .text {
         font: var(--font-l);
     }
+}
+
+.gap4 {
+    gap: 4px;
+}
+
+.gap8 {
+    gap: 8px;
+}
+
+.gap16 {
+    gap: 16px;
 }

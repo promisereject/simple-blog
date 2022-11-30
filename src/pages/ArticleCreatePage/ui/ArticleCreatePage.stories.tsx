@@ -6,7 +6,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import ArticleCreatePage from './ArticleCreatePage';
 
 export default {
-    title: 'pages/ArticleCreatePage',
+    title: 'pages/Articles/ArticleCreatePage',
     component: ArticleCreatePage,
 } as ComponentMeta<typeof ArticleCreatePage>;
 

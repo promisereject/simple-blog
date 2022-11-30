@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { LoginModal } from 'features/AuthByUserName';
+import { LoginModal } from 'features/authByUserName';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
 import { Text } from 'shared/ui/Text/Text';

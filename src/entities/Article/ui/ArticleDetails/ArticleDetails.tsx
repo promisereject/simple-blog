@@ -84,7 +84,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         );
     } else {
         content = (
-            <>
+            <article className={classNames(classes.ArticleDetails, {}, [className])}>
                 <HStack justify="center" max>
                     <Avatar
                         size={200}
@@ -93,6 +93,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     />
                 </HStack>
                 <Text
+                    gap="4"
                     className={classes.title}
                     title={article?.title}
                     titleTag="h1"
@@ -110,7 +111,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 <VStack gap="32">
                     {article?.blocks.map(renderBlock)}
                 </VStack>
-            </>
+            </article>
         );
     }
     useEffect(() => {
@@ -120,11 +121,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }, [dispatch, id]);
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-            <article>
-                <VStack gap="8" className={classNames(classes.ArticleDetails, {}, [className])}>
-                    {content}
-                </VStack>
-            </article>
+            <VStack max gap="8">
+                {content}
+            </VStack>
         </DynamicModuleLoader>
     );
 });

@@ -17,5 +17,6 @@
   "Нет данных для отображения": "No data to display",
   "Некорректные значения имени, фамилии или города": "Incorrect values of name, surname or city",
   "Некорректное значение возраста": "Incorrect age value",
-  "Некорректно указана страна": "Incorrect country specified"
+  "Некорректно указана страна": "Incorrect country specified",
+  "Профиль не найден": "User profile not found"
 }
