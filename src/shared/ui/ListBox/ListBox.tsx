@@ -48,7 +48,18 @@ export function ListBox(props: ListBoxProps) {
 
     return (
         <HStack gap="8" align="center">
-            {label && <span className={classNames('', { [classes.disabled]: readonly }, [])}>{`${label}:>`}</span>}
+            {label
+                && (
+                    <span
+                        className={classNames(
+                            '',
+                            { [classes.disabled]: readonly },
+                            [],
+                        )}
+                    >
+                        {`${label}:>`}
+                    </span>
+                )}
             <Listbox
                 as="div"
                 className={classNames(classes.ListBox, {}, [className])}

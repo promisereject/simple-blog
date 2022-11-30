@@ -16,8 +16,8 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     const { t } = useTranslation('article');
     const { isLoading, data: articles, error } = useArticleRecommendationsList(10);
 
-    // TODO: реализовать нормальную обработку загрузки и ошибки
-    if (isLoading || error) {
+    // TODO: реализовать нормальную обработку загрузки и ошибок
+    if (isLoading || error || !articles) {
         return null;
     }
     return (

@@ -79,6 +79,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 </HStack>
             )}
             <Input
+                data-testid="ProfileCard.Name"
                 value={data?.name}
                 placeholder={t('Ваше имя')}
                 className={classes.input}
@@ -86,6 +87,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 readOnly={readOnly}
             />
             <Input
+                data-testid="ProfileCard.Surname"
                 value={data?.surname}
                 placeholder={t('Ваша фамилия')}
                 className={classes.input}
@@ -93,6 +95,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 readOnly={readOnly}
             />
             <Input
+                data-testid="ProfileCard.Age"
                 value={data?.age}
                 placeholder={t('Ваш возраст')}
                 className={classes.input}
@@ -102,6 +105,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
             />
             <Input
+                data-testid="ProfileCard.City"
                 value={data?.city}
                 placeholder={t('Ваш город')}
                 className={classes.input}
@@ -109,6 +113,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 readOnly={readOnly}
             />
             <Input
+                data-testid="ProfileCard.Username"
                 value={data?.username}
                 placeholder={t('Введите имя пользователя')}
                 className={classes.input}
@@ -116,6 +121,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 readOnly={readOnly}
             />
             <Input
+                data-testid="ProfileCard.Avatar"
                 value={data?.avatar}
                 placeholder={t('Ссылка на аватар')}
                 className={classes.input}
