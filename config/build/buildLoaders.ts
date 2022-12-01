@@ -3,21 +3,23 @@ import { BuildOptions } from './types/config';
 import { buildCssLoader } from './loaders/buildCssLoader';
 import { buildSvgLoader } from './loaders/buildSvgLoader';
 import { buildBabelLoader } from './loaders/buildBabelLoader';
-import { buildTypescriptLoader } from './loaders/buildTypescriptLoader';
 import { buildFileLoader } from './loaders/buildFileLoader';
 
-export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+    const { isDev } = options;
     const svgLoader = buildSvgLoader();
-    const babelLoader = buildBabelLoader(isDev);
+    // для раздельной обработки, делаем из одного лоадера два, поднимая нужный флаг
+    const babelLoader = buildBabelLoader({ ...options, isTsx: false });
+    const tsxBabelLoader = buildBabelLoader({ ...options, isTsx: true });
+
     const cssLoader = buildCssLoader(isDev);
-    const typescriptLoader = buildTypescriptLoader(); // Если не используем typescript - нужен babel-loader
     const fileLoader = buildFileLoader();
 
     return [
         fileLoader,
         svgLoader,
         babelLoader,
-        typescriptLoader,
+        tsxBabelLoader,
         cssLoader,
     ];
 }

@@ -2561,14 +2561,19 @@
       "id": "1",
       "username": "sergey",
       "password": "12345",
-      "roles": ["ADMIN", "MANAGER"],
+      "roles": [
+        "ADMIN",
+        "MANAGER"
+      ],
       "avatar": "https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg"
     },
     {
       "id": "2",
       "username": "jessie",
       "password": "67890",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://ru-static.z-dn.net/files/ddd/02bd3a23f077cda4cc1843b6467a4db1.jpg"
     }
   ],
@@ -2579,7 +2584,7 @@
       "surname": "Митрофанов",
       "age": 33,
       "currency": "RUB",
-      "country": "Kazakhstan",
+      "country": "Belarus",
       "city": "Москва",
       "username": "sergey",
       "avatar": "https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg"
