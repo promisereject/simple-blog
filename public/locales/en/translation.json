@@ -32,5 +32,8 @@
   "Наука": "Science",
   "Нет статей": "No articles",
   "Попробуйте расширить поисковый запрос или изменить фильтры": "Try broadening your search query or changing filters",
-  "Создать статью": "Create article"
+  "Создать статью": "Create article",
+  "Страница панели администратора": "Admin panel page",
+  "Вам запрещён доступ к этой странице": "You are not allowed to access this page",
+  "Админка": "Admin"
 }

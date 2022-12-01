@@ -11,7 +11,7 @@ i18n
     .init({
         fallbackLng: 'en',
         lng: 'ru',
-        debug: __IS_DEV__,
+        debug: false, // или __IS_DEV__
         // гадим в консоль только при dev сборке
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json',
