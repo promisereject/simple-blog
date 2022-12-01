@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useCallback } from 'react';
+import { memo, Suspense, useCallback } from 'react';
 import { Text } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/addCommentForm';
 import { CommentsList } from 'entities/Comment';
@@ -8,6 +8,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from 'shared/ui/Stack';
+import { Loader } from 'shared/ui/Loader/Loader';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -20,7 +21,7 @@ import classes from './ArticleDetailsPageComments.module.scss';
 
 interface ArticleDetailsPageCommentsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const ArticleDetailsPageComments = memo((props: ArticleDetailsPageCommentsProps) => {
@@ -46,7 +47,9 @@ export const ArticleDetailsPageComments = memo((props: ArticleDetailsPageComment
                 size="l"
                 className={classes.title}
             />
-            <AddCommentForm onSendComment={onSendComment} />
+            <Suspense fallback={<Loader />}>
+                <AddCommentForm onSendComment={onSendComment} />
+            </Suspense>
             <CommentsList
                 isLoading={commentsIsLoading}
                 comments={comments}
