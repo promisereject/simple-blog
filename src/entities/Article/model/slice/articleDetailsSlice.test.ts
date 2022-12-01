@@ -2,9 +2,11 @@
  * Created by Sergei Mitrofanov from rjadysh.com on ср, 4-11-22, 14:32
  */
 
-import { Article, articleDetailsReducers, ArticleDetailsSchema } from 'entities/Article';
+import {
+    Article, articleDetailsReducers, ArticleDetailsSchema, ArticleType,
+} from 'entities/Article';
+import { ArticleBlockType } from 'entities/Article/model/consts/consts';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
-import { ArticleBlockType, ArticleType } from '../types/article';
 
 const data: Article = {
     id: '1',

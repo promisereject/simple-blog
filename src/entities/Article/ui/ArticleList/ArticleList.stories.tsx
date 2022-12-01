@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Article, ArticleView } from 'entities/Article';
 import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticleBlockType, ArticleType } from '../../model/types/article';
+import { ArticleBlockType, ArticleType } from 'entities/Article/model/consts/consts';
 import { ArticleList } from './ArticleList';
 
 const article = {

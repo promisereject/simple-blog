@@ -4,7 +4,7 @@ import ViewTileIcon from 'shared/assets/icons/articles-view-tile-icon.svg';
 import ViewBlockIcon from 'shared/assets/icons/articles-view-block-icon.svg';
 import { Button } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/consts';
 import classes from './ArticleViewSwitcher.module.scss';
 
 interface ArticleViewSwitcherProps {

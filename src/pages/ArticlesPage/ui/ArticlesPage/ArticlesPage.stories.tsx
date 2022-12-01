@@ -4,7 +4,7 @@ import { storeDecorator } from 'shared/config/storybook/decorators/storeDecorato
 import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ArticleSortField, ArticleType } from 'entities/Article';
-import { ArticleBlockType } from 'entities/Article/model/types/article';
+import { ArticleBlockType } from 'entities/Article/model/consts/consts';
 import ArticlesPage from './ArticlesPage';
 
 const entities = {

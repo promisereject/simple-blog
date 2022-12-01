@@ -10,6 +10,7 @@ import { VStack } from 'shared/ui/Stack';
 import { ProfileCard } from 'entities/Profile';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { ValidateProfileError } from '../../model/consts/consts';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { profileActions, profileReducers } from '../../model/slice/profileSlice';
@@ -18,7 +19,6 @@ import { getProfileError } from '../../model/selectors/getProfileError/getProfil
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 
 interface EditableProfileCardProps {
     className?: string;

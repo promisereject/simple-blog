@@ -26,11 +26,12 @@
     // console.log(Moment)
     // без флага esModuleInterop результат undefined
     // с флагом результат [object Object]
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
     // если какая-либо библиотека не имеет default exports,
     // лоадеры, вроде ts-loader или babel-loader автоматически создают их
     // и вместо такого импорта: import * as React from 'react'
     // можно использовать такой: import React from 'react'
+    "isolatedModules": true
   },
   "ts-node": {
     "compilerOptions": {

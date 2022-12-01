@@ -1,9 +1,10 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { storeDecorator } from 'shared/config/storybook/decorators/storeDecorator';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { ArticleType } from 'entities/Article';
+import { ArticleBlockType } from 'entities/Article/model/consts/consts';
 import { ArticleDetails } from './ArticleDetails';
 
 const article = {
