@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useMemo } from 'react';
-import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/Popups';
 import { Country } from '../../model/types/country';
 
 interface CountrySelectProps {
@@ -43,7 +43,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
                 {},
                 [className],
             )}
-            direction="top right"
+            direction="top left"
             label={t('Выберите страну')}
         />
     );

@@ -1,0 +1,10 @@
+.notificationsIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.notifications {
+    width: 300px;
+    max-height: calc(100vh - var(--navbar-height) - 10px);
+    overflow-y: auto;
+}

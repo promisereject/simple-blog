@@ -1,0 +1,49 @@
+.popup {
+    position: relative;
+}
+
+.active {
+    background: var(--inverted-primary-color);
+}
+
+.disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.itemsTopLeft,
+.itemsTopRight {
+    margin-bottom: 10px;
+}
+
+.itemsBottomLeft,
+.itemsBottomRight {
+    margin-top: 10px;
+}
+
+.itemsTopLeft {
+    bottom: 100%;
+    left: 0;
+}
+
+.itemsTopRight {
+    bottom: 100%;
+    right: 0;
+}
+
+.itemsBottomLeft {
+    top: 100%;
+    left: 0;
+}
+
+.itemsBottomRight {
+    top: 100%;
+    right: 0;
+}
+
+.trigger {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

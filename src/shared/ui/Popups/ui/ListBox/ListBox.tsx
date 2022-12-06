@@ -2,22 +2,17 @@ import { Fragment, ReactNode } from 'react';
 import { Listbox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
-import { HStack } from '../Stack';
-import { Button } from '../Button/Button';
+import { mapPropsToDirectionClass } from '../../consts/consts';
+import { HStack } from '../../../Stack';
+import { Button } from '../../../Button/Button';
 import classes from './ListBox.module.scss';
+import generalClasses from '../../styles/popups.module.scss';
 
 export interface ListBoxItem {
     value: string;
     content: ReactNode;
     disabled?: boolean;
 }
-
-const mapPropsToDirectionClass: Record<DropdownDirection, string> = {
-    'top left': classes.optionsTopLeft,
-    'top right': classes.optionsTopRight,
-    'bottom left': classes.optionsBottomLeft,
-    'bottom right': classes.optionsBottomRight,
-};
 
 interface ListBoxProps {
     className?: string;
@@ -26,7 +21,7 @@ interface ListBoxProps {
     defaultValue?: string;
     onChange: (value: string) => void;
     readonly?: boolean;
-    direction?: DropdownDirection;
+    direction: DropdownDirection;
     label?: string;
 }
 
@@ -38,7 +33,7 @@ export function ListBox(props: ListBoxProps) {
         defaultValue,
         onChange,
         readonly,
-        direction = 'bottom left',
+        direction,
         label,
     } = props;
 
@@ -53,7 +48,7 @@ export function ListBox(props: ListBoxProps) {
                     <span
                         className={classNames(
                             '',
-                            { [classes.disabled]: readonly },
+                            { [generalClasses.disabled]: readonly },
                             [],
                         )}
                     >
@@ -62,12 +57,12 @@ export function ListBox(props: ListBoxProps) {
                 )}
             <Listbox
                 as="div"
-                className={classNames(classes.ListBox, {}, [className])}
+                className={classNames('', {}, [className, generalClasses.popup])}
                 value={value}
                 onChange={onChange}
                 disabled={readonly}
             >
-                <Listbox.Button as="div" className={classes.trigger}>
+                <Listbox.Button as="div" className={generalClasses.trigger}>
                     <Button disabled={readonly}>
                         {value ?? defaultValue}
                     </Button>
@@ -86,8 +81,8 @@ export function ListBox(props: ListBoxProps) {
                                 <li className={classNames(
                                     classes.option,
                                     {
-                                        [classes.active]: active,
-                                        [classes.disabled]: item.disabled,
+                                        [generalClasses.active]: active,
+                                        [generalClasses.disabled]: item.disabled,
                                     },
                                     [],
                                 )}
