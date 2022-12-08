@@ -3,6 +3,7 @@ import React, {
     MutableRefObject,
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
+import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import classes from './Modal.module.scss';
 
@@ -40,10 +41,6 @@ export const Modal = (props: ModalProps) => {
             }, ANIMATION_DELAY);
         }
     }, [onClose]);
-
-    const onContentClick = (e: React.MouseEvent) => {
-        e.stopPropagation();
-    };
 
     const mods: Mods = {
         [classes.opened]: isOpening,
@@ -83,13 +80,9 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(classes.modal, mods, [className])}>
-                <div className={classes.overlay} onClick={onCloseHandler}>
-                    <div
-                        className={classes.content}
-                        onClick={onContentClick}
-                    >
-                        {children}
-                    </div>
+                <Overlay onClick={onCloseHandler} />
+                <div className={classes.content}>
+                    {children}
                 </div>
             </div>
         </Portal>
