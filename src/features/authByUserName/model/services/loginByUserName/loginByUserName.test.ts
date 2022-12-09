@@ -2,8 +2,8 @@
  * Created by Sergei Mitrofanov from rjadysh.com on вт, 18-10-22, 18:10
  */
 
-import { userActions } from 'entities/User';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { userActions } from '@/entities/User';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { loginByUserName } from './loginByUserName';
 
 describe('loginByUserName', () => {

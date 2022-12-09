@@ -1,10 +1,10 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { Navbar } from 'widgets/Navbar';
-import { storeDecorator } from 'shared/config/storybook/decorators/storeDecorator';
-import avatar from 'shared/assets/images/storybook/sergey.webp';
+import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { Navbar } from '@/widgets/Navbar';
+import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
+import avatar from '@/shared/assets/images/storybook/sergey.webp';
 
 export default {
     title: 'widgets/Navbar',

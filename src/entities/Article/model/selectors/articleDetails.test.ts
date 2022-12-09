@@ -2,7 +2,7 @@
  * Created by Sergei Mitrofanov from rjadysh.com on вс, 04-11-22, 13:14
  */
 
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { getArticleDetailsData, getArticleDetailsIsLoading, getArticleDetailsError } from './articleDetails';
 
 describe('getArticleDetailsData, getArticleDetailsIsLoading, getArticleDetailsError', () => {

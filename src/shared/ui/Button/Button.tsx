@@ -1,5 +1,5 @@
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import classes from './Button.module.scss';
 
 type ButtonTheme = 'clear' | 'clearInverted' | 'outline' | 'outlineRed' | 'background' | 'backgroundInverted';

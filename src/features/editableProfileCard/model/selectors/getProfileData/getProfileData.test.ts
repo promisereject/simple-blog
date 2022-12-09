@@ -2,9 +2,9 @@
  * Created by Sergei Mitrofanov from rjadysh.com on вс, 30-10-22, 21:37
  */
 
-import { StateSchema } from 'app/providers/StoreProvider';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 import { getProfileData } from './getProfileData';
 
 describe('getProfileData', () => {

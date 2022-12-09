@@ -55,6 +55,8 @@ export default {
         '\\.(s?css)$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'JestEmptyComponent.tsx'),
         // мок для всех импортов svg в тестах
+        // для работы с алиасами
+        '^@/(.*)$': '<rootDir>/src/$1',
     },
     reporters: [
         'default',

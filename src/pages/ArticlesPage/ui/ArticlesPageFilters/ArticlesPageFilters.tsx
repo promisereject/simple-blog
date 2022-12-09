@@ -1,22 +1,27 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useCallback, useMemo } from 'react';
-import {
-    ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSwitcher,
-    ArticleType, ArticlesTabsCategories,
-} from 'entities/Article';
-import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTranslation } from 'react-i18next';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
-import { SortOrder } from 'shared/types/sort';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
-    getArticlesPageOrder, getArticlesPageSearch,
-    getArticlesPageSort, getArticlesPageType,
+    ArticleSortField,
+    ArticleSortSelector,
+    ArticlesTabsCategories,
+    ArticleType,
+    ArticleView,
+    ArticleViewSwitcher,
+} from '@/entities/Article';
+import { articlesPageActions } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Card } from '@/shared/ui/Card/Card';
+import { Input } from '@/shared/ui/Input/Input';
+import { SortOrder } from '@/shared/types/sort';
+import { fetchArticlesList } from '@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import {
+    getArticlesPageOrder,
+    getArticlesPageSearch,
+    getArticlesPageSort,
+    getArticlesPageType,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import classes from './ArticlesPageFilters.module.scss';

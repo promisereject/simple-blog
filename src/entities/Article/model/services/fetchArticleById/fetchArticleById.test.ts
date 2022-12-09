@@ -1,6 +1,6 @@
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { ArticleType } from 'entities/Article';
-import { ArticleBlockType } from 'entities/Article/model/consts/consts';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { ArticleType } from '@/entities/Article';
+import { ArticleBlockType } from '@/entities/Article/model/consts/consts';
 import { fetchArticleById } from './fetchArticleById';
 
 const data = {
@@ -77,7 +77,7 @@ describe('fetchArticleById', () => {
     test('success', async () => {
         const thunk = new TestAsyncThunk(fetchArticleById);
         thunk.api.get.mockReturnValue(Promise.resolve({ data }));
-        const result = await thunk.callThunk('');
+        const result = await thunk.callThunk('1');
 
         expect(thunk.api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');

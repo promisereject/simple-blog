@@ -1,10 +1,10 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { storeDecorator } from 'shared/config/storybook/decorators/storeDecorator';
-import { themeDecorator } from 'shared/config/storybook/decorators/themeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { ArticleSortField, ArticleType } from 'entities/Article';
-import { ArticleBlockType } from 'entities/Article/model/consts/consts';
+import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
+import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { ArticleSortField, ArticleType } from '@/entities/Article';
+import { ArticleBlockType } from '@/entities/Article/model/consts/consts';
 import ArticlesPage from './ArticlesPage';
 
 const entities = {
