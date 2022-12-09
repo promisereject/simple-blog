@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from 'widgets/Page';
 import { ArticleRecommendationsList } from 'features/articleRecommendationsList';
 import { VStack } from 'shared/ui/Stack';

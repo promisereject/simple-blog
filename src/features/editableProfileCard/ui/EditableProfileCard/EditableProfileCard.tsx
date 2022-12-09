@@ -8,7 +8,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { Text } from 'shared/ui/Text/Text';
 import { VStack } from 'shared/ui/Stack';
 import { ProfileCard } from 'entities/Profile';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ValidateProfileError } from '../../model/consts/consts';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
