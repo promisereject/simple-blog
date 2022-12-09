@@ -1,7 +1,7 @@
 import React, { ReactNode, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/app/providers/ThemeProvider';
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import { Overlay } from '../Overlay/Overlay';
 import classes from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';
@@ -94,8 +94,8 @@ const DrawerContent = (props: DrawerProps) => {
     );
 };
 
-// в Drawer загружаем библиотеки и обрабатываем ошибки
-export const Drawer = (props: DrawerProps) => {
+// в DrawerAsync загружаем библиотеки и обрабатываем ошибки
+const DrawerAsync = (props: DrawerProps) => {
     const { isLoaded } = useAnimationLibs();
 
     // TODO: обработать ошибку
@@ -103,3 +103,9 @@ export const Drawer = (props: DrawerProps) => {
 
     return <DrawerContent {...props} />;
 };
+
+export const Drawer = (props: DrawerProps) => (
+    <AnimationProvider>
+        <DrawerAsync {...props} />
+    </AnimationProvider>
+);

@@ -7,7 +7,6 @@ import NotificationsIcon from '@/shared/assets/icons/navbar-notifications-icon.s
 import { NotificationsList } from '@/entities/Notification';
 import { Popover } from '@/shared/ui/Popups';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import classes from './NotificationsButton.module.scss';
 
 interface NotificationsButtonProps {
@@ -48,11 +47,9 @@ export const NotificationsButton = memo((props: NotificationsButtonProps) => {
             </BrowserView>
             <MobileView>
                 {trigger}
-                <AnimationProvider>
-                    <Drawer isOpen={isDrawerOpen} onClose={onDrawerClose}>
-                        <NotificationsList />
-                    </Drawer>
-                </AnimationProvider>
+                <Drawer isOpen={isDrawerOpen} onClose={onDrawerClose}>
+                    <NotificationsList />
+                </Drawer>
             </MobileView>
         </div>
     );
