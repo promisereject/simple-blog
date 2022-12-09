@@ -26,6 +26,7 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
     if (item.href) {
         return (
             <AppLink to={item.href} className={classes.withLink}>
+
                 <Card theme="outlined" className={classNames(classes.NotificationItem, {}, [className])}>
                     <Text gap="8" title={item.title} text={item.description} />
                 </Card>
