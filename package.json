@@ -107,7 +107,7 @@
     "vite-plugin-svgr": "2.2.1"
   },
   "dependencies": {
-    "@headlessui/react": "1.7.4",
+    "@headlessui/react": "1.7.5",
     "@reduxjs/toolkit": "1.9.1",
     "axios": "0.26.1",
     "i18next": "21.9.0",
