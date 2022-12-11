@@ -2628,5 +2628,111 @@
       "username": "jessie",
       "avatar": "https://ru-static.z-dn.net/files/ddd/02bd3a23f077cda4cc1843b6467a4db1.jpg"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Статья на четвёрочку",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 3,
+      "feedback": "Статья на троечку",
+      "userId": "2",
+      "articleId": "2"
+    },
+    {
+      "id": "3",
+      "rate": 2,
+      "feedback": "Двоечник писал, что-ли?",
+      "userId": "1",
+      "articleId": "3"
+    },
+    {
+      "id": "4",
+      "rate": 5,
+      "feedback": "Заебись написал!",
+      "userId": "2",
+      "articleId": "4"
+    },
+    {
+      "id": "5",
+      "rate": 1,
+      "feedback": "Не, ну это полное днище",
+      "userId": "1",
+      "articleId": "5"
+    },
+    {
+      "userId": "1",
+      "articleId": "6",
+      "rate": 3,
+      "feedback": "",
+      "id": "b4yH-og"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 5,
+      "feedback": "Восхитительно!",
+      "id": "JZs8fxM"
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 3,
+      "feedback": "Эта статья говно!",
+      "id": "aE92_DN"
+    },
+    {
+      "userId": "1",
+      "articleId": "32",
+      "rate": 5,
+      "feedback": "",
+      "id": "r5psbod"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 3,
+      "id": "o7JpJ0K"
+    },
+    {
+      "userId": "1",
+      "articleId": "16",
+      "rate": 3,
+      "id": "Qbts6bM"
+    },
+    {
+      "userId": "1",
+      "articleId": "40",
+      "rate": 3,
+      "id": "QpVrWp4"
+    },
+    {
+      "userId": "1",
+      "articleId": "44",
+      "rate": 4,
+      "feedback": "",
+      "id": "2FTO3DR"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 3,
+      "feedback": "Ни туда ни сюда",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 1,
+      "feedback": "Был у меня похожий друг...",
+      "userId": "2",
+      "profileId": "2"
+    }
   ]
 }

@@ -8,6 +8,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement>{
     className?: string;
     children: ReactNode;
     theme?: CardTheme;
+    max?: boolean;
 }
 
 export const Card = (props: CardProps) => {
@@ -15,12 +16,17 @@ export const Card = (props: CardProps) => {
         className,
         children,
         theme = 'normal',
+        max,
         ...otherProps
     } = props;
+
+    const mods = {
+        [classes.max]: max,
+    };
     return (
         <div
             {...otherProps}
-            className={classNames(classes.Card, {}, [className, classes[theme]])}
+            className={classNames(classes.Card, mods, [className, classes[theme]])}
         >
             {children}
         </div>

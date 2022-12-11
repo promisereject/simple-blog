@@ -2,7 +2,6 @@ import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import classes from './Rating.module.scss';
 import { Card } from '@/shared/ui/Card/Card';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text/Text';
@@ -11,6 +10,7 @@ import { Modal } from '@/shared/ui/Modal/Modal';
 import { Input } from '@/shared/ui/Input/Input';
 import { Button } from '@/shared/ui/Button/Button';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import classes from './Rating.module.scss';
 
 interface RatingProps {
     className?: string;
@@ -19,6 +19,7 @@ interface RatingProps {
     hasFeedback?: boolean;
     onCancel?: (starsCount: number) => void;
     onAccept?: (starsCount: number, feedback?: string) => void;
+    rate?: number;
 }
 
 export const Rating = memo((props: RatingProps) => {
@@ -29,10 +30,11 @@ export const Rating = memo((props: RatingProps) => {
         hasFeedback,
         onCancel,
         onAccept,
+        rate = 0,
     } = props;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starsCount, setStarsCount] = useState(0);
+    const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
     const { t } = useTranslation();
     const onStarsSelect = useCallback((selectedStarsCount: number) => {
@@ -58,7 +60,7 @@ export const Rating = memo((props: RatingProps) => {
         <>
             <Text title={feedbackTitle} />
             <Input
-                placeholder={t('Оставьте отзыв')}
+                placeholder={t('Текст отзыва')}
                 value={feedback}
                 onChange={setFeedback}
             />
@@ -66,10 +68,10 @@ export const Rating = memo((props: RatingProps) => {
     );
 
     return (
-        <Card className={classNames(classes.Rating, {}, [className])}>
+        <Card max className={classNames(classes.Rating, {}, [className])}>
             <VStack gap="8" align="center">
-                <Text title={title} />
-                <StarsRating size={40} onSelect={onStarsSelect} />
+                <Text title={starsCount ? t('Спасибо за оценку!') : title} />
+                <StarsRating selectedStars={starsCount} size={40} onSelect={onStarsSelect} />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>

@@ -69,7 +69,7 @@ export const Input = memo((props: InputProps) => {
             {placeholder && (
                 <div className={classes.placeholder}>
                     {`${placeholder}`}
-                    <span className={classes.chevron}>{'>'}</span>
+                    <span className={classes.chevron}>{':>'}</span>
                 </div>
             )}
             <div className={classes.inputWrapper}>
