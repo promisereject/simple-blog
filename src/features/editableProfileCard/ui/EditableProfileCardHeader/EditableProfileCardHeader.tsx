@@ -6,10 +6,10 @@ import { HStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text/Text';
 import { Button } from '@/shared/ui/Button/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getCurrentUser } from '@/pages/ProfilePage/model/selectors/getCurrentUser';
 import { profileActions } from '../../model/slice/profileSlice';
 import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly/getProfileReadOnly';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { getProfileUser } from '../../model/selectors/getProfileUser/getProfileUser';
 
 interface EditableProfileCardHeaderProps {
     className?: string;
@@ -23,7 +23,7 @@ export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderP
     const { t } = useTranslation('profile');
     const readOnly = useSelector(getProfileReadOnly);
     const dispatch = useAppDispatch();
-    const canEdit = useSelector(getCurrentUser);
+    const canEdit = useSelector(getProfileUser);
 
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadOnly(false));

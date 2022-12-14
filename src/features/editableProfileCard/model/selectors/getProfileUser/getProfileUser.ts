@@ -1,8 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getUserAuthData } from '@/entities/User';
-import { getProfileData } from '@/features/editableProfileCard';
+import { getProfileData } from '../getProfileData/getProfileData';
 
-export const getCurrentUser = createSelector(
+export const getProfileUser = createSelector(
     getUserAuthData,
     getProfileData,
     (authUserId, profileId) => authUserId?.id === profileId?.id,
