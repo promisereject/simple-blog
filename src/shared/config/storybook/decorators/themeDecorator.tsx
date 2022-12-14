@@ -1,7 +1,6 @@
 import { Story } from '@storybook/react';
 import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 
-// TODO: освежить замыкания
 export const themeDecorator = (theme: Theme) => (StoryComponent: Story) => (
     <ThemeProvider initialTheme={theme}>
         <div className={`app ${theme}`}>

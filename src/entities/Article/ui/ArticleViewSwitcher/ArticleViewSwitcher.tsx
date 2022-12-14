@@ -31,7 +31,6 @@ export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
         onViewClick,
     } = props;
 
-    // TODO: Посмотреть другие примеры замыканий
     const onClick = (newView: ArticleView) => () => {
         onViewClick?.(newView);
     };
