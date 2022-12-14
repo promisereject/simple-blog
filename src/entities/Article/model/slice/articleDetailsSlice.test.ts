@@ -3,10 +3,8 @@
  */
 
 import {
-    Article, articleDetailsReducers, ArticleDetailsSchema, ArticleType,
+    Article, articleDetailsReducers, ArticleDetailsSchema, ArticleType, ArticleBlockType,
 } from '@/entities/Article';
-// eslint-disable-next-line fsd-stable/public-api-imports-only
-import { ArticleBlockType } from '@/entities/Article/model/consts/consts';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 
 const data: Article = {

@@ -1,7 +1,5 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { ArticleType } from '@/entities/Article';
-// eslint-disable-next-line fsd-stable/public-api-imports-only
-import { ArticleBlockType } from '@/entities/Article/model/consts/consts';
+import { ArticleType, ArticleBlockType } from '@/entities/Article';
 import { fetchArticleById } from './fetchArticleById';
 
 const data = {
