@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getUserAuthData } from '@/entities/User';
-import { getProfileData } from '@/features/editableProfileCard/model/selectors/getProfileData/getProfileData';
+import { getProfileData } from '@/features/editableProfileCard';
 
 export const getCurrentUser = createSelector(
     getUserAuthData,

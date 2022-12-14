@@ -5,6 +5,7 @@
 import {
     Article, articleDetailsReducers, ArticleDetailsSchema, ArticleType,
 } from '@/entities/Article';
+// eslint-disable-next-line fsd-stable/public-api-imports-only
 import { ArticleBlockType } from '@/entities/Article/model/consts/consts';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 
