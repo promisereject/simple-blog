@@ -5,7 +5,7 @@ import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import avatar from '@/shared/assets/images/storybook/sergey.webp';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 
 const data = {
     name: 'Сергей',

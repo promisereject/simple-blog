@@ -2,10 +2,9 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ArticleSortField, ArticleType } from '@/entities/Article';
-import { ArticleBlockType } from '@/entities/Article/model/consts/consts';
+import { ArticleSortField, ArticleType, ArticleBlockType } from '@/entities/Article';
 import ArticlesPage from './ArticlesPage';
+import { Theme } from '@/shared/const/theme';
 
 const entities = {
     1: {

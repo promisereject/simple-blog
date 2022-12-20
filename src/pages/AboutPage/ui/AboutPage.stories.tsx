@@ -1,9 +1,10 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
-import AboutPage from '@/pages/AboutPage/ui/AboutPage';
+// eslint-disable-next-line fsd-stable/fsd-layer-imports
+import { AboutPage } from '@/pages/AboutPage';
 import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'pages/AboutPage',

@@ -1,18 +1,16 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { Theme } from '@/shared/const/theme';
+// eslint-disable-next-line fsd-stable/fsd-layer-imports
+import { LanguageSwitcher } from '@/features/LanguageSwitcher';
 
 export default {
-    title: 'widgets/ThemeSwitcher',
-    component: ThemeSwitcher,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof ThemeSwitcher>;
+    title: 'features/LanguageSwitcher',
+    component: LanguageSwitcher,
+} as ComponentMeta<typeof LanguageSwitcher>;
 
-const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />;
+const Template: ComponentStory<typeof LanguageSwitcher> = (args) => <LanguageSwitcher {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};
@@ -22,5 +20,4 @@ Dark.args = {};
 Dark.decorators = [themeDecorator(Theme.DARK)];
 
 export const Orange = Template.bind({});
-Orange.args = {};
 Orange.decorators = [themeDecorator(Theme.ORANGE)];

@@ -4,8 +4,8 @@ import sergey from '@/shared/assets/images/storybook/sergey.webp';
 import jessie from '@/shared/assets/images/storybook/jessie.jpeg';
 
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { CommentsList } from './CommentsList';
+import { Theme } from '@/shared/const/theme';
 
 const comments = [
     {

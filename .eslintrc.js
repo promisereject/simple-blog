@@ -69,6 +69,12 @@ module.exports = {
                     alias: '@',
                     testFilesPatterns: ['**/*.test.ts', '**/*.test.ts', '**/storeDecorator.tsx'],
                 }],
+        'fsd-stable/fsd-layer-imports':
+            ['error',
+                {
+                    alias: '@',
+                    ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+                }],
     },
     globals: {
         __IS_DEV__: true,

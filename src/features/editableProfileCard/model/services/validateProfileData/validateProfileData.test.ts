@@ -1,5 +1,6 @@
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
+// eslint-disable-next-line fsd-stable/fsd-layer-imports
 import { ValidateProfileError } from '@/features/editableProfileCard';
 import { validateProfileData } from './validateProfileData';
 

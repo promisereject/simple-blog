@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+// eslint-disable-next-line fsd-stable/fsd-layer-imports
 import { PageError } from '@/widgets/PageError';
+import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'widgets/PageError',

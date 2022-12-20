@@ -5,6 +5,7 @@
 import { DeepPartial } from '@reduxjs/toolkit';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
+// eslint-disable-next-line fsd-stable/fsd-layer-imports
 import { ProfileSchema, ValidateProfileError } from '@/features/editableProfileCard';
 import { profileActions, profileReducers } from './profileSlice';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';

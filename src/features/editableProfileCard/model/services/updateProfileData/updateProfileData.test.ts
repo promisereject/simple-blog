@@ -1,6 +1,7 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
+// eslint-disable-next-line fsd-stable/fsd-layer-imports
 import { ValidateProfileError } from '@/features/editableProfileCard';
 import { updateProfileData } from './updateProfileData';
 

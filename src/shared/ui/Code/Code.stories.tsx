@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { Code } from './Code';
+import { Theme } from '@/shared/const/theme';
 
 const code = '<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\\"hello\\"></p>\n\n    <script>\n      document.getElementById(\\"hello\\").innerHTML = \\"Hello, world!\\";\n    </script>\n  </body>\n</html>;';
 export default {

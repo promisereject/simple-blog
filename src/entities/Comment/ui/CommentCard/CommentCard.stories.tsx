@@ -2,8 +2,8 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import sergey from '@/shared/assets/images/storybook/sergey.webp';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { CommentCard } from './CommentCard';
+import { Theme } from '@/shared/const/theme';
 
 const comment = {
     id: '1',

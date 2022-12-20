@@ -3,10 +3,10 @@ import {
 } from '@reduxjs/toolkit';
 import { counterReducers } from '@/entities/Counter';
 import { userReducers } from '@/entities/User';
-import { createReducerManager } from '@/app/providers/StoreProvider/config/reducerManager';
 import { $api } from '@/shared/api/api';
-import { saveScrollPositionReducers } from '@/widgets/Page';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { saveScrollPositionReducers } from '@/widgets/Page';
+import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
@@ -45,9 +45,5 @@ export function createReduxStore(
 
     return store;
 }
-// 1. Создаём store
-// 2. Возвращаем стандартный метод создания @reduxjs/toolkit store из функции, чтобы в будущем её можно было переиспользовать и настраивать для разных тестовых сред
-// 3. Типизируем стейт в StateSchema.ts
-// 4. Для тестовых сред необходимо инициализировать store. Например, чтобы подготовить данные для теста. Эти данные мы можем принять аргументом в качестве InitialState.
 
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

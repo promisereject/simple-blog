@@ -1,4 +1,5 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
+// eslint-disable-next-line fsd-stable/fsd-layer-imports
 import { ValidateProfileError } from '@/features/editableProfileCard';
 import { getProfileValidateErrors } from './getProfileValidateErrors';
 
