@@ -1,16 +1,19 @@
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { ArticleDetails } from '@/entities/Article';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from '@/widgets/Page';
-import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
-import { VStack } from '@/shared/ui/Stack';
-import { ArticleDetailsPageComments } from '../ArticleDetailsPageComments/ArticleDetailsPageComments';
+
 import { articleDetailsPageReducers } from '../../model/slices';
+import { ArticleDetailsPageComments } from '../ArticleDetailsPageComments/ArticleDetailsPageComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+
 import classes from './ArticleDetailsPage.module.scss';
+
+import { ArticleDetails } from '@/entities/Article';
 import { ArticleRating } from '@/features/articleRating';
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { VStack } from '@/shared/ui/Stack';
+import { Page } from '@/widgets/Page';
 
 interface ArticleDetailsPageProps {
     className?: string;

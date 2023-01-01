@@ -1,20 +1,23 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
-import ArticleViewsIcon from '@/shared/assets/icons/article-views-icon.svg';
-import { Icon } from '@/shared/ui/Icon';
-import { Card } from '@/shared/ui/Card';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Button } from '@/shared/ui/Button';
-import { AppLink } from '@/shared/ui/AppLink';
+
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {
     Article, ArticleTextBlock,
 } from '../../model/types/article';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+
 import classes from './ArticleListItem.module.scss';
+
+import ArticleViewsIcon from '@/shared/assets/icons/article-views-icon.svg';
 import { routePath } from '@/shared/const/router';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button } from '@/shared/ui/Button';
+import { Card } from '@/shared/ui/Card';
+import { Icon } from '@/shared/ui/Icon';
+import { Text } from '@/shared/ui/Text';
 
 interface ArticleListItemProps {
     className?: string;

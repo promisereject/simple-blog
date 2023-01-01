@@ -2,10 +2,13 @@
  * Created by Sergei Mitrofanov from rjadysh.com on 06.10.2022
  */
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from '@/shared/ui/Button';
+
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { counterActions } from '../model/slice/counterSlice';
+
 import classes from './Counter.module.scss';
+
+import { Button } from '@/shared/ui/Button';
 
 export const Counter = () => {
     const dispatch = useDispatch();
