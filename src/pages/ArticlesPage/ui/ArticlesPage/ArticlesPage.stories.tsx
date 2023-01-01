@@ -1,9 +1,11 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
+
+import ArticlesPage from './ArticlesPage';
+
+import { ArticleSortField, ArticleType, ArticleBlockType } from '@/entities/Article';
 import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { ArticleSortField, ArticleType, ArticleBlockType } from '@/entities/Article';
-import ArticlesPage from './ArticlesPage';
 import { Theme } from '@/shared/const/theme';
 
 const entities = {

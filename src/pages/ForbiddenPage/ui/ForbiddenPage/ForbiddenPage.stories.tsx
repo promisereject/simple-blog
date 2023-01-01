@@ -1,8 +1,9 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react';
+
+import ForbiddenPage from './ForbiddenPage';
 
 import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
-import ForbiddenPage from './ForbiddenPage';
 
 export default {
     title: 'pages/ForbiddenPage',

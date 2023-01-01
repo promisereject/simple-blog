@@ -1,10 +1,11 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import sergey from '@/shared/assets/images/storybook/sergey.webp';
-import jessie from '@/shared/assets/images/storybook/jessie.jpeg';
+import React from 'react';
 
-import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
 import { CommentsList } from './CommentsList';
+
+import jessie from '@/shared/assets/images/storybook/jessie.jpeg';
+import sergey from '@/shared/assets/images/storybook/sergey.webp';
+import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 const comments = [

@@ -1,9 +1,11 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react';
 import withMock from 'storybook-addon-mock';
-import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
-import { Article, ArticleType } from '@/entities/Article';
+
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
+
+import { Article, ArticleType } from '@/entities/Article';
+import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
 
 const article: Article = {
     id: '1',

@@ -2,8 +2,9 @@
  * Created by Sergei Mitrofanov from rjadysh.com on вт, 18-10-22, 18:00
  */
 
-import { StateSchema } from '@/app/providers/StoreProvider';
 import { getLoginIsLoading } from './getLoginIsLoading';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 describe('getLoginIsLoading', () => {
     test('should return true', () => {

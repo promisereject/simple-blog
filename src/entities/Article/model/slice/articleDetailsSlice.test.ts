@@ -2,10 +2,11 @@
  * Created by Sergei Mitrofanov from rjadysh.com on ср, 4-11-22, 14:32
  */
 
+import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
+
 import {
     Article, articleDetailsReducers, ArticleDetailsSchema, ArticleType, ArticleBlockType,
 } from '@/entities/Article';
-import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 
 const data: Article = {
     id: '1',

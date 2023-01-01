@@ -1,8 +1,10 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import classes from './ArticleCreatePage.module.scss';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page';
-import classes from './ArticleCreatePage.module.scss';
 
 interface ArticleCreatePageProps {
     className?: string;

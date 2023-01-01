@@ -1,12 +1,14 @@
 import { memo, useCallback } from 'react';
+
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { articlesPageReducers } from '../../model/slices/articlesPageSlice';
+import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList';
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from '@/widgets/Page';
-import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList';
-import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
-import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { articlesPageReducers } from '../../model/slices/articlesPageSlice';
 
 interface ArticlesPageProps {
     className?: string;

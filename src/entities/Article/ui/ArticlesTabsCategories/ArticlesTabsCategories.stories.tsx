@@ -1,8 +1,10 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { ArticleType } from '@/entities/Article';
+import React from 'react';
+
 import { ArticlesTabsCategories } from './ArticlesTabsCategories';
+
+import { ArticleType } from '@/entities/Article';
+import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 export default {

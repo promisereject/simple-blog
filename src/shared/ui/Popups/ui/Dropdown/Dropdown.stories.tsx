@@ -1,9 +1,11 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Button } from '@/shared/ui/Button';
-import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
+import React from 'react';
+
 import { Dropdown } from './Dropdown';
+
+import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
 import { Theme } from '@/shared/const/theme';
+import { Button } from '@/shared/ui/Button';
 
 const items = [
     {

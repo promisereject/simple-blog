@@ -1,8 +1,9 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react';
+
+import AdminPanelPage from './AdminPanelPage';
 
 import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
-import AdminPanelPage from './AdminPanelPage';
 
 export default {
     title: 'pages/AdminPanelPage',

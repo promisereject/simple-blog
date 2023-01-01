@@ -2,8 +2,9 @@
  * Created by Sergei Mitrofanov from rjadysh.com on вт, 18-10-22, 18:06
  */
 
-import { StateSchema } from '@/app/providers/StoreProvider';
 import { getLoginUserName } from './getLoginUserName';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 describe('getLoginUserName', () => {
     test('should return username', () => {

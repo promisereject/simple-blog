@@ -2,9 +2,10 @@
  * Created by Sergei Mitrofanov from rjadysh.com on вт, 18-10-22, 18:10
  */
 
+import { loginByUserName } from './loginByUserName';
+
 import { userActions } from '@/entities/User';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { loginByUserName } from './loginByUserName';
 
 describe('loginByUserName', () => {
     test('login success', async () => {

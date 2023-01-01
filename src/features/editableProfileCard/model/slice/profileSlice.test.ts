@@ -3,12 +3,15 @@
  */
 
 import { DeepPartial } from '@reduxjs/toolkit';
-import { Currency } from '@/entities/Currency';
+
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+
+import { profileActions, profileReducers } from './profileSlice';
+
 import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 // eslint-disable-next-line fsd-stable/fsd-layer-imports
 import { ProfileSchema, ValidateProfileError } from '@/features/editableProfileCard';
-import { profileActions, profileReducers } from './profileSlice';
-import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 
 const data = {
     id: '1',

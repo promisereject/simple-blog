@@ -1,8 +1,10 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
+
+import { CommentCard } from './CommentCard';
+
 import sergey from '@/shared/assets/images/storybook/sergey.webp';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { CommentCard } from './CommentCard';
 import { Theme } from '@/shared/const/theme';
 
 const comment = {

@@ -1,8 +1,9 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Modal } from '@/shared/ui/Modal';
+import React from 'react';
+
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
 import { Theme } from '@/shared/const/theme';
+import { Modal } from '@/shared/ui/Modal';
 
 const children = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consequuntur dolores eos eum ex labore magni necessitatibus praesentium sint sunt?';
 

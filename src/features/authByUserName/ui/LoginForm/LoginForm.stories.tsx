@@ -1,8 +1,10 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
+import React from 'react';
+
 import LoginForm from './LoginForm';
+
+import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
+import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 export default {

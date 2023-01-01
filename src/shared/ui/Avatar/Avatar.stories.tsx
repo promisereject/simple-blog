@@ -1,7 +1,9 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Avatar } from '@/shared/ui/Avatar';
+import React from 'react';
+
 import avatar from '../../assets/images/storybook/sergey.webp';
+
+import { Avatar } from '@/shared/ui/Avatar';
 
 export default {
     title: 'shared/Avatar',

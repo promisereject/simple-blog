@@ -2,8 +2,9 @@
  * Created by Sergei Mitrofanov from rjadysh.com on вт, 18-10-22, 17:53
  */
 
-import { StateSchema } from '@/app/providers/StoreProvider';
 import { getLoginError } from './getLoginError';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 describe('getLoginError', () => {
     test('should return error', () => {

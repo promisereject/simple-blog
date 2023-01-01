@@ -1,8 +1,9 @@
-import { Currency } from '@/entities/Currency';
+import { validateProfileData } from './validateProfileData';
+
 import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 // eslint-disable-next-line fsd-stable/fsd-layer-imports
 import { ValidateProfileError } from '@/features/editableProfileCard';
-import { validateProfileData } from './validateProfileData';
 
 const data = {
     name: 'Сергей',

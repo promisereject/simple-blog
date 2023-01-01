@@ -1,6 +1,8 @@
 import { HTMLAttributes, ReactNode } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
+
 import classes from './Card.module.scss';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 type CardTheme = 'normal' | 'outlined';
 

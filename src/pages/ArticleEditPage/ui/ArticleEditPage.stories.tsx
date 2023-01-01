@@ -1,8 +1,10 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
+
+import ArticleEditPage from './ArticleEditPage';
+
 import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import ArticleEditPage from './ArticleEditPage';
 import { Theme } from '@/shared/const/theme';
 
 export default {

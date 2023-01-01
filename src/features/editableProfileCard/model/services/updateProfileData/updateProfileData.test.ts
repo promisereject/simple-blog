@@ -1,9 +1,10 @@
-import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { Currency } from '@/entities/Currency';
-import { Country } from '@/entities/Country';
-// eslint-disable-next-line fsd-stable/fsd-layer-imports
-import { ValidateProfileError } from '@/features/editableProfileCard';
+import { ValidateProfileError } from '../../consts/consts';
+
 import { updateProfileData } from './updateProfileData';
+
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 const data = {
     id: '1',

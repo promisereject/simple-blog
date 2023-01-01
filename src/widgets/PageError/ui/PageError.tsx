@@ -2,11 +2,13 @@
  * Created by Sergei Mitrofanov from rjadysh.com on 28.09.2022
  */
 
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import classes from './PageError.module.scss';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button';
-import classes from './PageError.module.scss';
 
 interface PageErrorProps {
     className?: string

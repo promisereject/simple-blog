@@ -3,6 +3,7 @@
  */
 
 import { CounterSchema } from '../types/counterSchema';
+
 import { counterReducers, counterActions } from './counterSlice';
 
 describe('getCounterValue', () => {

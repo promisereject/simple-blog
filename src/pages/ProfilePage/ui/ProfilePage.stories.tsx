@@ -1,12 +1,13 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
+import React from 'react';
+
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 // eslint-disable-next-line fsd-stable/fsd-layer-imports
 import { ProfilePage } from '@/pages/ProfilePage';
-import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
 import avatar from '@/shared/assets/images/storybook/sergey.webp';
-import { Currency } from '@/entities/Currency';
-import { Country } from '@/entities/Country';
+import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
+import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 const form = {

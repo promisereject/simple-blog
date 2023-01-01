@@ -2,11 +2,12 @@
  * Created by Sergei Mitrofanov from rjadysh.com on 06.10.2022
  */
 
+import { ReducersMapObject } from '@reduxjs/toolkit';
 import { ReactNode, useMemo } from 'react';
 import { Provider } from 'react-redux';
-import { ReducersMapObject } from '@reduxjs/toolkit';
-import { createReduxStore } from '../config/store';
+
 import { StateSchema } from '../config/StateSchema';
+import { createReduxStore } from '../config/store';
 
 interface StoreProviderProps {
     children: ReactNode;

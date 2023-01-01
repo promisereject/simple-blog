@@ -1,11 +1,14 @@
 import { memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import ViewTileIcon from '@/shared/assets/icons/articles-view-tile-icon.svg';
+
+import { ArticleView } from '../../model/consts/consts';
+
+import classes from './ArticleViewSwitcher.module.scss';
+
 import ViewBlockIcon from '@/shared/assets/icons/articles-view-block-icon.svg';
+import ViewTileIcon from '@/shared/assets/icons/articles-view-tile-icon.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
-import { ArticleView } from '../../model/consts/consts';
-import classes from './ArticleViewSwitcher.module.scss';
 
 interface ArticleViewSwitcherProps {
     className?: string;

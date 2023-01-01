@@ -1,9 +1,12 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
-import { ArticleView } from '@/entities/Article';
+import React from 'react';
+
 import { Article } from '../../model/types/article';
+
 import { ArticleListItem } from './ArticleListItem';
+
+import { ArticleView } from '@/entities/Article';
+import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 const article = {

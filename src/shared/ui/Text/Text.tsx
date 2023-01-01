@@ -1,6 +1,8 @@
 import { memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
+
 import classes from './Text.module.scss';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 type TextTheme = 'normal' | 'inverted' | 'error';
 type TextAlign = 'left' | 'right' | 'center';

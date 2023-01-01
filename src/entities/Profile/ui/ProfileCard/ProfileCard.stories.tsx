@@ -1,8 +1,9 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ProfileCard } from '@/entities/Profile';
-import { Currency } from '@/entities/Currency';
+import React from 'react';
+
 import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { ProfileCard } from '@/entities/Profile';
 import avatar from '@/shared/assets/images/storybook/sergey.webp';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
 import { Theme } from '@/shared/const/theme';

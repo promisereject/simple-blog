@@ -1,8 +1,10 @@
 import React, {
     InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+
 import classes from './Input.module.scss';
+
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
 // решение при конфликте типов
 // Omit позволяет забрать из типа все пропсы и исключить те, что не нужны

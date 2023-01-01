@@ -1,21 +1,23 @@
 import { memo } from 'react';
-import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ArticleList } from '@/entities/Article';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Page } from '@/widgets/Page';
-import { Text } from '@/shared/ui/Text';
-import { VStack } from '@/shared/ui/Stack';
-import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { getArticles } from '../../model/slices/articlesPageSlice';
+
+import { ArticleList } from '@/entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { Page } from '@/widgets/Page';
 
 interface ArticlesInfiniteListProps {
     className?: string;

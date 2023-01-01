@@ -2,6 +2,7 @@
  * Created by Sergei Mitrofanov from rjadysh.com on 28.09.2022
  */
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
+
 import { PageError } from '@/widgets/PageError';
 
 interface ErrorBoundaryProps {
