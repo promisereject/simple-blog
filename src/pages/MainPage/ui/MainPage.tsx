@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+// компонент для тестирования ErrorBoundary
+// eslint-disable-next-line fsd-stable/fsd-layer-imports
 import { ErrorButton } from '@/app/providers/ErrorBoundary';
 import { Page } from '@/widgets/Page';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { VStack } from '@/shared/ui/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 

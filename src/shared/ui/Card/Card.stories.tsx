@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
 import { Card } from './Card';
 import { Theme } from '@/shared/const/theme';
