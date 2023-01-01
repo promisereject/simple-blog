@@ -30,7 +30,7 @@ const createReadmeForSlice = (slice: string) => {
         const readmeFilePath = `${directory.getPath()}/README.md`;
         const readmeFile = directory.getSourceFile((f) => f.getBaseName() === 'README.md');
         if (!readmeFile) {
-            const sourceCode = `## ${sliceMap[slice]} ${directory.getBaseName()} is for ...`;
+            const sourceCode = `## ${sliceMap[slice]} ${directory.getBaseName()}`;
             const file = directory.createSourceFile(readmeFilePath, sourceCode, { overwrite: true });
             file.save();
         }

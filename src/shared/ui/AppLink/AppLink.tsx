@@ -5,6 +5,8 @@ import classes from './AppLink.module.scss';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
+// TODO: написать js doc для shared слоя
+
 type AppLinkTheme = 'primary' | 'secondary' | 'red';
 
 interface AppLinkProps extends LinkProps {
