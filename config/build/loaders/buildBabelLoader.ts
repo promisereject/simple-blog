@@ -7,6 +7,7 @@ interface BuildBabelLoaderProps {
 
 export function buildBabelLoader(props: BuildBabelLoaderProps) {
     const { isTsx, isDev } = props;
+    const isProd = !isDev;
     return {
         // раздельная обработка tsx и ts по флагу
         test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
@@ -14,14 +15,9 @@ export function buildBabelLoader(props: BuildBabelLoaderProps) {
         use: {
             loader: 'babel-loader',
             options: {
+                cacheDirectory: true,
                 presets: ['@babel/preset-env'],
                 plugins: [
-                    ['i18next-extract',
-                        {
-                            locales: ['ru', 'en'],
-                            keyAsDefaultValue: true,
-                        },
-                    ],
                     [
                         '@babel/plugin-transform-typescript',
                         {
@@ -29,7 +25,8 @@ export function buildBabelLoader(props: BuildBabelLoaderProps) {
                         },
                     ],
                     '@babel/plugin-transform-runtime',
-                    isTsx && [
+                    // используем плагин только в прод-сборке
+                    isTsx && isProd && [
                         removeAttributesPlugin,
                         {
                             props: ['data-testid'],

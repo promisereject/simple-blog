@@ -9,18 +9,19 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import { BuildOptions } from './types/config';
 
-export function buildPlugins({
-    paths, isDev, apiUrl, project,
-}: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins(props: BuildOptions): webpack.WebpackPluginInstance[] {
+    const {
+        paths,
+        isDev,
+        apiUrl,
+        project,
+    } = props;
+    const isProd = !isDev;
     const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
         new webpack.ProgressPlugin(),
-        new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:8].css',
-            chunkFilename: 'css/[name].[contenthash:8].css',
-        }),
         new webpack.DefinePlugin({
             // webpack.DefinePlugin плагин, который позволяет
             // получить доступ к глобальным переменным в приложении
@@ -28,11 +29,6 @@ export function buildPlugins({
             __IS_DEV__: JSON.stringify(isDev),
             __API_URL__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project),
-        }),
-        new CopyPlugin({
-            patterns: [
-                { from: paths.locales, to: paths.buildLocales },
-            ],
         }),
         new CircularDependencyPlugin({
             exclude: /node_modules/,
@@ -53,6 +49,18 @@ export function buildPlugins({
         plugins.push(new webpack.HotModuleReplacementPlugin()); // since webpack-dev-server v4.0.0, Hot Module Replacement is enabled by default
         plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
         plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+    }
+
+    if (isProd) {
+        plugins.push(new MiniCssExtractPlugin({
+            filename: 'css/[name].[contenthash:8].css',
+            chunkFilename: 'css/[name].[contenthash:8].css',
+        }));
+        plugins.push(new CopyPlugin({
+            patterns: [
+                { from: paths.locales, to: paths.buildLocales },
+            ],
+        }));
     }
 
     return plugins;
