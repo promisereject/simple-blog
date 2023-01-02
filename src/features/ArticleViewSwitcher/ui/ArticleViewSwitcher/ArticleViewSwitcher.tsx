@@ -1,9 +1,8 @@
 import { memo } from 'react';
 
-import { ArticleView } from '../../model/consts/consts';
-
 import classes from './ArticleViewSwitcher.module.scss';
 
+import { ArticleView } from '@/entities/Article';
 import ViewBlockIcon from '@/shared/assets/icons/articles-view-block-icon.svg';
 import ViewTileIcon from '@/shared/assets/icons/articles-view-tile-icon.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';

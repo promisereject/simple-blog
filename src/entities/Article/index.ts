@@ -1,6 +1,3 @@
-export { ArticlesTabsCategories } from './ui/ArticlesTabsCategories/ArticlesTabsCategories';
-export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
-export { ArticleViewSwitcher } from './ui/ArticleViewSwitcher/ArticleViewSwitcher';
 export type { Article } from './model/types/article';
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';

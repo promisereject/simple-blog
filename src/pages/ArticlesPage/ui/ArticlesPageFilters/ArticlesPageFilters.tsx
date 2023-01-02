@@ -16,12 +16,12 @@ import classes from './ArticlesPageFilters.module.scss';
 
 import {
     ArticleSortField,
-    ArticleSortSelector,
-    ArticlesTabsCategories,
     ArticleType,
     ArticleView,
-    ArticleViewSwitcher,
 } from '@/entities/Article';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleViewSwitcher } from '@/features/ArticleViewSwitcher';
+import { ArticlesTabsCategories } from '@/features/ArticlesTabsCategories';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';

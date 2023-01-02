@@ -8,7 +8,7 @@ import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecora
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'entities/Article/ArticlesTabsCategories',
+    title: 'features/Article/ArticlesTabsCategories',
     component: ArticlesTabsCategories,
 } as ComponentMeta<typeof ArticlesTabsCategories>;
 
