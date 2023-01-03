@@ -19,10 +19,11 @@ import classes from './ArticleDetails.module.scss';
 
 import DateIcon from '@/shared/assets/icons/article-date-icon.svg';
 import ViewsIcon from '@/shared/assets/icons/article-views-icon.svg';
+import ImageDefaultIcon from '@/shared/assets/icons/image-default-icon.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar';
+import { AppImage } from '@/shared/ui/AppImage';
 import { Icon } from '@/shared/ui/Icon';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { HStack, VStack } from '@/shared/ui/Stack';
@@ -39,6 +40,8 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         className,
         id,
     } = props;
+
+    const errorFallback = <Icon Svg={ImageDefaultIcon} width={200} height={200} />;
 
     const reducers: ReducersList = {
         articleDetails: articleDetailsReducers,
@@ -90,8 +93,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         content = (
             <article className={classNames(classes.ArticleDetails, {}, [className])}>
                 <HStack justify="center" max>
-                    <Avatar
-                        size={200}
+                    <AppImage
+                        fallback={<Skeleton className={classes.avatar} width={200} height={200} borderRadius="50%" />}
+                        errorFallback={errorFallback}
                         src={article?.img}
                         className={classes.avatar}
                     />

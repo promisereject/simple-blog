@@ -1,6 +1,7 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import ImageDefaultIcon from '../../../../shared/assets/icons/image-default-icon.svg';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import {
     Article, ArticleTextBlock,
@@ -12,11 +13,13 @@ import classes from './ArticleListItem.module.scss';
 import ArticleViewsIcon from '@/shared/assets/icons/article-views-icon.svg';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppImage } from '@/shared/ui/AppImage';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
 import { Card } from '@/shared/ui/Card';
 import { Icon } from '@/shared/ui/Icon';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { Text } from '@/shared/ui/Text';
 
 interface ArticleListItemProps {
@@ -43,6 +46,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <Icon Svg={ArticleViewsIcon} />
         </div>
     );
+
+    const errorFallback = <Icon Svg={ImageDefaultIcon} width={100} height={100} />;
 
     if (__PROJECT__ === 'storybook' && view === ArticleView.TILE) {
         return (
@@ -76,7 +81,15 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     </div>
                     <Text title={article.title} className={classes.title} />
                     {articleTypes}
-                    <img src={article.img} alt={article.title} className={classes.image} />
+                    <div className={classes.blockImageWrapper}>
+                        <AppImage
+                            fallback={<Skeleton width="100%" height={250} borderRadius="12px" />}
+                            errorFallback={errorFallback}
+                            src={article.img}
+                            alt={article.title}
+                            className={classes.image}
+                        />
+                    </div>
                     {textBlock && (
                         <ArticleTextBlockComponent block={textBlock} className={classes.textBlock} />
                     )}
@@ -101,7 +114,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         >
             <Card>
                 <div className={classes.imageWrapper}>
-                    <img src={article.img} alt={article.title} className={classes.image} />
+                    <AppImage
+                        fallback={<Skeleton width="100%" height={250} borderRadius="12px" />}
+                        errorFallback={errorFallback}
+                        src={article.img}
+                        alt={article.title}
+                        className={classes.image}
+                    />
                     <Text text={article.createdAt} className={classes.date} />
                 </div>
                 <div className={classes.infoWrapper}>
