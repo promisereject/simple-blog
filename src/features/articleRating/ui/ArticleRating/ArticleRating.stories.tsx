@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import withMock from 'storybook-addon-mock';
 
 import ArticleRating from './ArticleRating';
 
@@ -9,7 +8,6 @@ import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecora
 export default {
     title: 'features/Article/ArticleRating',
     component: ArticleRating,
-    decorators: [withMock],
 } as ComponentMeta<typeof ArticleRating>;
 
 const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />;
