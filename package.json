@@ -15,6 +15,7 @@
     "lint:ts:fix": "eslint \"**/*.{ts, tsx}\" --quiet --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \".scss\" --fix",
+    "test:e2e": "cypress open",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
@@ -67,6 +68,7 @@
     "circular-dependency-plugin": "5.2.2",
     "concurrently": "^7.0.0",
     "copy-webpack-plugin": "10.2.4",
+    "cypress": "11.0.0",
     "css-loader": "6.6.0",
     "eslint": "8.10.0",
     "eslint-config-airbnb": "19.0.4",
@@ -144,6 +146,6 @@
     }
   },
   "lint-staged": {
-    "**/*.{ts, tsx}": "lint:ts:fix"
+    "**/*.{ts, tsx}": "eslint --quiet --fix"
   }
 }
