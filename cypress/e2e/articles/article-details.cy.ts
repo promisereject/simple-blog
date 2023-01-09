@@ -34,4 +34,12 @@ describe('Пользователь заходит на страницу стат
         cy.setRate(2, 'Отзыв о статье из Cypress');
         cy.get('[data-selected=true]').should('have.length', 2);
     });
+
+    it('=> и оценивает статью из стабов (фикстур)', () => {
+        cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
+        cy.getByTestId('ArticleDetails.Data');
+        cy.getByTestId('Rating').scrollIntoView();
+        cy.setRate(3, 'Отзыв о статье из Cypress');
+        cy.get('[data-selected=true]').should('have.length', 3);
+    });
 });

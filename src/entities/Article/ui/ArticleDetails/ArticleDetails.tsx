@@ -100,14 +100,16 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                         className={classes.avatar}
                     />
                 </HStack>
-                <Text
-                    gap="4"
-                    className={classes.title}
-                    title={article?.title}
-                    titleTag="h1"
-                    text={article?.subtitle}
-                    size="l"
-                />
+                <div data-testid="ArticleDetails.Title">
+                    <Text
+                        gap="4"
+                        className={classes.title}
+                        title={article?.title}
+                        titleTag="h1"
+                        text={article?.subtitle}
+                        size="l"
+                    />
+                </div>
                 <HStack
                     gap="4"
                 >
