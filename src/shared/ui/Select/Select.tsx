@@ -10,7 +10,7 @@ export interface SelectOption<T extends string> {
 }
 
 interface SelectProps<T extends string> {
-    className?: string
+    className?: string;
     label?: string;
     options?: SelectOption<T>[];
     value?: T;
@@ -20,14 +20,7 @@ interface SelectProps<T extends string> {
 // дженерик-пропсы плохо работают с мемо, поэтому компонент не мемоизирован
 // TODO: покурить дженерик-пропсы
 export const Select = <T extends string>(props: SelectProps<T>) => {
-    const {
-        className,
-        label,
-        options = [],
-        value,
-        onChange,
-        readonly,
-    } = props;
+    const { className, label, options = [], value, onChange, readonly } = props;
 
     const mods: Mods = {
         [classes.readOnly]: readonly,
@@ -37,15 +30,19 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
         onChange?.(event.target.value as T);
     };
 
-    const optionsList = useMemo(() => options?.map((option) => (
-        <option
-            className={classes.option}
-            value={option.value}
-            key={option.value}
-        >
-            {option.content}
-        </option>
-    )), [options]);
+    const optionsList = useMemo(
+        () =>
+            options?.map((option) => (
+                <option
+                    className={classes.option}
+                    value={option.value}
+                    key={option.value}
+                >
+                    {option.content}
+                </option>
+            )),
+        [options],
+    );
     return (
         <div className={classNames(classes.wrapper, mods, [className])}>
             {label && (

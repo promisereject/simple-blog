@@ -13,8 +13,10 @@ interface ErrorBoundaryState {
     hasError: boolean;
 }
 
-class ErrorBoundary
-    extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+class ErrorBoundary extends React.Component<
+    ErrorBoundaryProps,
+    ErrorBoundaryState
+> {
     constructor(props: ErrorBoundaryProps) {
         super(props);
         this.state = { hasError: false };
@@ -25,7 +27,7 @@ class ErrorBoundary
         return { hasError: true };
     }
 
-    componentDidCatch(error:Error, errorInfo:ErrorInfo) {
+    componentDidCatch(error: Error, errorInfo: ErrorInfo) {
         // можно отправить ошибку в любой обработчик ошибок
         console.log(error, errorInfo);
     }

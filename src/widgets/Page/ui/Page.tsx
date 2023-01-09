@@ -1,6 +1,4 @@
-import {
-    MutableRefObject, ReactNode, useRef, UIEvent,
-} from 'react';
+import { MutableRefObject, ReactNode, useRef, UIEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -25,12 +23,7 @@ interface PageProps extends TestsProps {
 }
 
 export const Page = (props: PageProps) => {
-    const {
-        className,
-        children,
-        onScrollEnd,
-        removeScrollSaving,
-    } = props;
+    const { className, children, onScrollEnd, removeScrollSaving } = props;
 
     const wrapperRef = useRef() as MutableRefObject<HTMLElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -38,16 +31,18 @@ export const Page = (props: PageProps) => {
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
 
-    const scrollPosition = useSelector(
-        (state: StateSchema) => getScrollPositionByPathName(state, pathname),
+    const scrollPosition = useSelector((state: StateSchema) =>
+        getScrollPositionByPathName(state, pathname),
     );
 
     const onScrollHandler = useThrottle((e: UIEvent<HTMLDivElement>) => {
         if (!removeScrollSaving) {
-            dispatch(saveScrollPositionActions.setScrollPosition({
-                position: e.currentTarget.scrollTop,
-                path: pathname,
-            }));
+            dispatch(
+                saveScrollPositionActions.setScrollPosition({
+                    position: e.currentTarget.scrollTop,
+                    path: pathname,
+                }),
+            );
         }
     }, 500);
 
@@ -70,7 +65,9 @@ export const Page = (props: PageProps) => {
             data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
-            {onScrollEnd ? <div className={classes.triggerRef} ref={triggerRef} /> : null}
+            {onScrollEnd ? (
+                <div className={classes.triggerRef} ref={triggerRef} />
+            ) : null}
         </main>
     );
 };

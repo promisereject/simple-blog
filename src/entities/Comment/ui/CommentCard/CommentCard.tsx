@@ -19,11 +19,7 @@ interface CommentCardProps {
 }
 
 export const CommentCard = memo((props: CommentCardProps) => {
-    const {
-        className,
-        comment,
-        isLoading,
-    } = props;
+    const { className, comment, isLoading } = props;
 
     if (isLoading) {
         return (
@@ -31,7 +27,10 @@ export const CommentCard = memo((props: CommentCardProps) => {
                 data-testid="CommentCard.Loading"
                 gap="16"
                 max
-                className={classNames(classes.CommentCard, {}, [className, classes.loading])}
+                className={classNames(classes.CommentCard, {}, [
+                    className,
+                    classes.loading,
+                ])}
             >
                 <HStack gap="16">
                     <Skeleton width={50} height={50} borderRadius="50%" />
@@ -55,13 +54,13 @@ export const CommentCard = memo((props: CommentCardProps) => {
         >
             <AppLink to={getRouteProfile(comment.user.id)}>
                 <HStack gap="16">
-                    {comment.user.avatar ? <Avatar size={50} src={comment.user.avatar} /> : null}
+                    {comment.user.avatar ? (
+                        <Avatar size={50} src={comment.user.avatar} />
+                    ) : null}
                     <Text title={comment.user.username} />
                 </HStack>
             </AppLink>
-            <Text
-                text={comment.text}
-            />
+            <Text text={comment.text} />
         </VStack>
     );
 });

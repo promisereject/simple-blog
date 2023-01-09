@@ -39,14 +39,17 @@ export const Rating = memo((props: RatingProps) => {
     const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
     const { t } = useTranslation();
-    const onStarsSelect = useCallback((selectedStarsCount: number) => {
-        setStarsCount(selectedStarsCount);
-        if (hasFeedback) {
-            setIsModalOpen(true);
-        } else {
-            onAccept?.(selectedStarsCount);
-        }
-    }, [hasFeedback, onAccept]);
+    const onStarsSelect = useCallback(
+        (selectedStarsCount: number) => {
+            setStarsCount(selectedStarsCount);
+            if (hasFeedback) {
+                setIsModalOpen(true);
+            } else {
+                onAccept?.(selectedStarsCount);
+            }
+        },
+        [hasFeedback, onAccept],
+    );
 
     const acceptHandler = useCallback(() => {
         setIsModalOpen(false);
@@ -78,7 +81,11 @@ export const Rating = memo((props: RatingProps) => {
         >
             <VStack gap="8" align="center">
                 <Text title={starsCount ? t('Спасибо за оценку!') : title} />
-                <StarsRating selectedStars={starsCount} size={40} onSelect={onStarsSelect} />
+                <StarsRating
+                    selectedStars={starsCount}
+                    size={40}
+                    onSelect={onStarsSelect}
+                />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>
@@ -106,11 +113,7 @@ export const Rating = memo((props: RatingProps) => {
                 <Drawer isOpen={isModalOpen} onClose={cancelHandler}>
                     <VStack max gap="32">
                         {modalContent}
-                        <Button
-                            onClick={acceptHandler}
-                            size="size_l"
-                            fullWidth
-                        >
+                        <Button onClick={acceptHandler} size="size_l" fullWidth>
                             {t('Отправить')}
                         </Button>
                     </VStack>

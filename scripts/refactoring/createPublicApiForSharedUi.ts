@@ -13,7 +13,14 @@ const sharedUiDirectory = project.getDirectory(uiPath);
 const componentsDirs = sharedUiDirectory?.getDirectories();
 
 function isAbsolute(value: string) {
-    const layers = ['app', 'shared', 'entities', 'features', 'widgets', 'pages'];
+    const layers = [
+        'app',
+        'shared',
+        'entities',
+        'features',
+        'widgets',
+        'pages',
+    ];
     return layers.some((layer) => value.startsWith(layer));
 }
 
@@ -33,9 +40,15 @@ componentsDirs?.forEach((directory) => {
         filesInFolder.forEach((component) => {
             const moduleName = component.getBaseNameWithoutExtension();
             publicApiContent += `export { ${moduleName} } from './${directory.getBaseName()}';\n`;
-            const file = directory.createSourceFile(indexFilePath, publicApiContent, { overwrite: true });
+            const file = directory.createSourceFile(
+                indexFilePath,
+                publicApiContent,
+                { overwrite: true },
+            );
 
-            file.save().then(() => console.log(`${moduleName} --> index.ts created!`));
+            file.save().then(() =>
+                console.log(`${moduleName} --> index.ts created!`),
+            );
         });
     }
 });

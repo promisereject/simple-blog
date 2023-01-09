@@ -25,7 +25,10 @@ describe('Пользователь заходит на страницу стат
         cy.getByTestId('AddCommentForm').scrollIntoView();
         cy.addComment('Комментарий из Cypress');
         cy.getByTestId('CommentCard.Content').should('have.length', 1);
-        cy.getByTestId('CommentCard.Content').should('include.text', 'Комментарий из Cypress');
+        cy.getByTestId('CommentCard.Content').should(
+            'include.text',
+            'Комментарий из Cypress',
+        );
     });
 
     it('=> и оценивает статью', () => {
@@ -36,7 +39,9 @@ describe('Пользователь заходит на страницу стат
     });
 
     it('=> и оценивает статью из стабов (фикстур)', () => {
-        cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
+        cy.intercept('GET', '**/articles/*', {
+            fixture: 'article-details.json',
+        });
         cy.getByTestId('ArticleDetails.Data');
         cy.getByTestId('Rating').scrollIntoView();
         cy.setRate(3, 'Отзыв о статье из Cypress');

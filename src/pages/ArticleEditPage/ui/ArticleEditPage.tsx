@@ -12,11 +12,9 @@ interface ArticleEditPageProps {
 }
 
 const ArticleEditPage = memo((props: ArticleEditPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { t } = useTranslation('article');
-    const { id } = useParams<{id: string}>();
+    const { id } = useParams<{ id: string }>();
     return (
         <Page className={classNames(classes.ArticleEditPage, {}, [className])}>
             {t('Редактирование статьи с id = ') + id}

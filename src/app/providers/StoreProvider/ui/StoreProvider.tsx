@@ -16,29 +16,23 @@ interface StoreProviderProps {
 }
 
 export const StoreProvider = (props: StoreProviderProps) => {
-    const
-        {
-            children,
-            initialState,
-            asyncReducers,
-        } = props;
+    const { children, initialState, asyncReducers } = props;
 
     // const navigate = useNavigate(); - создавал новый стор при смене страницы, пока выпилен
 
-    const store = useMemo(() => createReduxStore(
-        initialState as StateSchema,
-        asyncReducers as ReducersMapObject<StateSchema>,
-        // navigate
-    ), [
-        asyncReducers,
-        initialState,
-        // navigate
-    ]);
-
-    return (
-        <Provider store={store}>
-            {children}
-        </Provider>
-
+    const store = useMemo(
+        () =>
+            createReduxStore(
+                initialState as StateSchema,
+                asyncReducers as ReducersMapObject<StateSchema>,
+                // navigate
+            ),
+        [
+            asyncReducers,
+            initialState,
+            // navigate
+        ],
     );
+
+    return <Provider store={store}>{children}</Provider>;
 };

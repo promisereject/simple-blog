@@ -14,7 +14,9 @@ const Template: ComponentStory<typeof Page> = (args) => <Page {...args} />;
 
 export const Wrapper = Template.bind({});
 Wrapper.args = {
-    children: <div style={{ background: 'grey', width: '100%', minHeight: '100%' }} />,
+    children: (
+        <div style={{ background: 'grey', width: '100%', minHeight: '100%' }} />
+    ),
     removeScrollSaving: true,
 };
 

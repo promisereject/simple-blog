@@ -21,12 +21,7 @@ const article = {
         avatar: 'https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg',
     },
     createdAt: '26.02.2022',
-    type: [
-        'IT',
-        'SCIENCE',
-        'ECONOMICS',
-        'POLITICS',
-    ],
+    type: ['IT', 'SCIENCE', 'ECONOMICS', 'POLITICS'],
     blocks: [
         {
             id: '1',
@@ -94,7 +89,9 @@ export default {
     component: ArticleListItem,
 } as ComponentMeta<typeof ArticleListItem>;
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
+const Template: ComponentStory<typeof ArticleListItem> = (args) => (
+    <ArticleListItem {...args} />
+);
 
 export const TileNormal = Template.bind({});
 TileNormal.args = {

@@ -40,38 +40,40 @@ export function ListBox(props: ListBoxProps) {
         label,
     } = props;
 
-    const optionsAdditional = [
-        mapPropsToDirectionClass[direction],
-    ];
+    const optionsAdditional = [mapPropsToDirectionClass[direction]];
 
     return (
         <HStack gap="8" align="center">
-            {label
-                && (
-                    <span
-                        className={classNames(
-                            '',
-                            { [generalClasses.disabled]: readonly },
-                            [],
-                        )}
-                    >
-                        {`${label}:>`}
-                    </span>
-                )}
+            {label && (
+                <span
+                    className={classNames(
+                        '',
+                        { [generalClasses.disabled]: readonly },
+                        [],
+                    )}
+                >
+                    {`${label}:>`}
+                </span>
+            )}
             <Listbox
                 as="div"
-                className={classNames('', {}, [className, generalClasses.popup])}
+                className={classNames('', {}, [
+                    className,
+                    generalClasses.popup,
+                ])}
                 value={value}
                 onChange={onChange}
                 disabled={readonly}
             >
                 <Listbox.Button as="div" className={generalClasses.trigger}>
-                    <Button disabled={readonly}>
-                        {value ?? defaultValue}
-                    </Button>
+                    <Button disabled={readonly}>{value ?? defaultValue}</Button>
                 </Listbox.Button>
                 <Listbox.Options
-                    className={classNames(classes.options, {}, optionsAdditional)}
+                    className={classNames(
+                        classes.options,
+                        {},
+                        optionsAdditional,
+                    )}
                 >
                     {items?.map((item) => (
                         <Listbox.Option
@@ -81,14 +83,16 @@ export function ListBox(props: ListBoxProps) {
                             disabled={item.disabled}
                         >
                             {({ active, selected }) => (
-                                <li className={classNames(
-                                    classes.option,
-                                    {
-                                        [generalClasses.active]: active,
-                                        [generalClasses.disabled]: item.disabled,
-                                    },
-                                    [],
-                                )}
+                                <li
+                                    className={classNames(
+                                        classes.option,
+                                        {
+                                            [generalClasses.active]: active,
+                                            [generalClasses.disabled]:
+                                                item.disabled,
+                                        },
+                                        [],
+                                    )}
                                 >
                                     <HStack gap="8" align="center">
                                         {/* eslint-disable-next-line i18next/no-literal-string */}
@@ -97,7 +101,6 @@ export function ListBox(props: ListBoxProps) {
                                     </HStack>
                                 </li>
                             )}
-
                         </Listbox.Option>
                     ))}
                 </Listbox.Options>

@@ -24,9 +24,7 @@ interface ArticlesInfiniteListProps {
 }
 
 export const ArticlesInfiniteList = memo((props: ArticlesInfiniteListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesPageIsLoading);
@@ -49,7 +47,9 @@ export const ArticlesInfiniteList = memo((props: ArticlesInfiniteListProps) => {
                     <Text
                         theme="error"
                         title={t('Ошибка при загрузке статей')}
-                        text={t('Перезагрузите страницу или попробуйте ещё раз позже')}
+                        text={t(
+                            'Перезагрузите страницу или попробуйте ещё раз позже',
+                        )}
                     />
                 </VStack>
             </Page>

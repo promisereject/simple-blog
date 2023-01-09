@@ -27,17 +27,15 @@ const viewTypes = [
 ];
 
 export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
-    const {
-        className,
-        view,
-        onViewClick,
-    } = props;
+    const { className, view, onViewClick } = props;
 
     const onClick = (newView: ArticleView) => () => {
         onViewClick?.(newView);
     };
     return (
-        <div className={classNames(classes.ArticleViewSwitcher, {}, [className])}>
+        <div
+            className={classNames(classes.ArticleViewSwitcher, {}, [className])}
+        >
             {viewTypes.map((viewType) => (
                 <Button
                     key={viewType.view}
@@ -46,7 +44,11 @@ export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
                 >
                     <Icon
                         Svg={viewType.icon}
-                        className={classNames('', { [classes.active]: viewType.view !== view }, [])}
+                        className={classNames(
+                            '',
+                            { [classes.active]: viewType.view !== view },
+                            [],
+                        )}
                     />
                 </Button>
             ))}

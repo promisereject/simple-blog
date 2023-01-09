@@ -5,7 +5,8 @@ import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecora
 import { Theme } from '@/shared/const/theme';
 import { Modal } from '@/shared/ui/Modal';
 
-const children = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consequuntur dolores eos eum ex labore magni necessitatibus praesentium sint sunt?';
+const children =
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consequuntur dolores eos eum ex labore magni necessitatibus praesentium sint sunt?';
 
 export default {
     title: 'shared/Modal',

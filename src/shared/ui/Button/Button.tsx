@@ -4,7 +4,13 @@ import classes from './Button.module.scss';
 
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
-type ButtonTheme = 'clear' | 'clearInverted' | 'outline' | 'outlineRed' | 'background' | 'backgroundInverted';
+type ButtonTheme =
+    | 'clear'
+    | 'clearInverted'
+    | 'outline'
+    | 'outlineRed'
+    | 'background'
+    | 'backgroundInverted';
 
 type ButtonSize = 'size_m' | 'size_l' | 'size_xl';
 
@@ -15,7 +21,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: ButtonSize;
     disabled?: boolean;
     children?: ReactNode;
-    fullWidth?: boolean
+    fullWidth?: boolean;
 }
 
 export const Button = (props: ButtonProps) => {
@@ -40,9 +46,7 @@ export const Button = (props: ButtonProps) => {
     return (
         <button
             type="button"
-            className={
-                classNames(classes.button, mods, [className])
-            }
+            className={classNames(classes.button, mods, [className])}
             disabled={disabled}
             {...otherProps}
         >

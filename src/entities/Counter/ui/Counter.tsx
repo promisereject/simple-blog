@@ -39,9 +39,15 @@ export const Counter = () => {
     return (
         <div data-testid="counter-container" className={classes.Counter}>
             <h1 data-testid="value-title">{counterValue}</h1>
-            <Button data-testid="increment-button" onClick={incrementHandler}>+</Button>
-            <Button data-testid="decrement-button" onClick={decrementHandler}>-</Button>
-            <Button data-testid="add-value-button" onClick={addValueHandler}>10</Button>
+            <Button data-testid="increment-button" onClick={incrementHandler}>
+                +
+            </Button>
+            <Button data-testid="decrement-button" onClick={decrementHandler}>
+                -
+            </Button>
+            <Button data-testid="add-value-button" onClick={addValueHandler}>
+                10
+            </Button>
         </div>
     );
 };

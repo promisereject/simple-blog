@@ -13,9 +13,12 @@ export type FlexGap = '4' | '8' | '16' | '32';
 // добавляет обёрткам HStack и VStack все пропсы обычного div
 // например, теперь можно удобно определять role
 // крайне удобная штука с точки зрения возможности определять разную семантическую принадлежность
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+type DivProps = DetailedHTMLProps<
+    HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+>;
 
-export interface FlexProps extends DivProps{
+export interface FlexProps extends DivProps {
     className?: string;
     children: ReactNode;
     justify?: FlexJustify;
@@ -63,7 +66,7 @@ export const Flex = (props: FlexProps) => {
         ...otherProps
     } = props;
 
-    const mods:Mods = {
+    const mods: Mods = {
         [classes.max]: max,
     };
 
@@ -76,7 +79,10 @@ export const Flex = (props: FlexProps) => {
     ];
 
     return (
-        <div className={classNames(classes.Flex, mods, additional)} {...otherProps}>
+        <div
+            className={classNames(classes.Flex, mods, additional)}
+            {...otherProps}
+        >
             {children}
         </div>
     );

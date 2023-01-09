@@ -7,9 +7,7 @@ export const validateProfileData = (profile?: Profile) => {
         return [ValidateProfileError.NO_DATA];
     }
 
-    const {
-        name, surname, age, country, city,
-    } = profile;
+    const { name, surname, age, country, city } = profile;
 
     const errors: ValidateProfileError[] = [];
 

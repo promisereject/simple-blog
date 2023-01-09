@@ -8,7 +8,6 @@ describe('getProfileReadOnly', () => {
             profile: {
                 readonly: true,
             },
-
         };
         expect(getProfileReadOnly(state as StateSchema)).toEqual(true);
     });

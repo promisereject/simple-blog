@@ -11,7 +11,9 @@ export default {
     component: CountrySelect,
 } as ComponentMeta<typeof CountrySelect>;
 
-const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />;
+const Template: ComponentStory<typeof CountrySelect> = (args) => (
+    <CountrySelect {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

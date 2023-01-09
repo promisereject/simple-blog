@@ -55,7 +55,15 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <HStack justify="center" max className={classNames(classes.profileCard, { [classes.loading]: true }, [className])}>
+            <HStack
+                justify="center"
+                max
+                className={classNames(
+                    classes.profileCard,
+                    { [classes.loading]: true },
+                    [className],
+                )}
+            >
                 <Loader />
             </HStack>
         );
@@ -63,7 +71,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (error) {
         return (
-            <HStack justify="center" max className={classNames(classes.profileCard, { }, [className, classes.error])}>
+            <HStack
+                justify="center"
+                max
+                className={classNames(classes.profileCard, {}, [
+                    className,
+                    classes.error,
+                ])}
+            >
                 <Text
                     theme="error"
                     title={t('Произошла ошибка при загрузке профиля')}
@@ -75,10 +90,18 @@ export const ProfileCard = (props: ProfileCardProps) => {
     }
 
     return (
-        <VStack gap="16" max className={classNames(classes.profileCard, mods, [className])}>
+        <VStack
+            gap="16"
+            max
+            className={classNames(classes.profileCard, mods, [className])}
+        >
             {data?.avatar && (
                 <HStack justify="center" max>
-                    <Avatar src={data?.avatar} alt={data?.username} size={150} />
+                    <Avatar
+                        src={data?.avatar}
+                        alt={data?.username}
+                        size={150}
+                    />
                 </HStack>
             )}
             <Input
@@ -105,7 +128,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 onChange={onChangeAge}
                 readOnly={readOnly}
                 onKeyPress={validateNumbers}
-
             />
             <Input
                 data-testid="ProfileCard.City"

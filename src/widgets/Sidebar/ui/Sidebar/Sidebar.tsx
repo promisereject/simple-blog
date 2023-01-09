@@ -24,30 +24,28 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 
     const sidebarItemsList = useSelector(getSidebarItems);
 
-    const sidebarItems = useMemo(() => sidebarItemsList.map((item) => (
-        <SidebarItem
-            key={item.path}
-            item={item}
-            collapsed={collapsed}
-        />
-    )), [collapsed, sidebarItemsList]);
+    const sidebarItems = useMemo(
+        () =>
+            sidebarItemsList.map((item) => (
+                <SidebarItem
+                    key={item.path}
+                    item={item}
+                    collapsed={collapsed}
+                />
+            )),
+        [collapsed, sidebarItemsList],
+    );
 
     return (
         <section
             data-testid="sidebar"
-            className={
-                classNames(
-                    classes.sidebar,
-                    { [classes.collapsed]: collapsed },
-                    [className],
-                )
-            }
+            className={classNames(
+                classes.sidebar,
+                { [classes.collapsed]: collapsed },
+                [className],
+            )}
         >
-            <VStack
-                role="navigation"
-                gap="8"
-                className={classes.items}
-            >
+            <VStack role="navigation" gap="8" className={classes.items}>
                 {sidebarItems}
             </VStack>
             <Button

@@ -6,7 +6,10 @@ import { Portal } from '../Portal/Portal';
 import classes from './Drawer.module.scss';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import {
+    AnimationProvider,
+    useAnimationLibs,
+} from '@/shared/lib/components/AnimationProvider';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 interface DrawerProps {
@@ -20,12 +23,7 @@ const height = window.innerHeight;
 
 // в DrawerContent ждём загрузки библиотек
 const DrawerContent = (props: DrawerProps) => {
-    const {
-        className,
-        children,
-        onClose,
-        isOpen,
-    } = props;
+    const { className, children, onClose, isOpen } = props;
     const { Spring, Gesture } = useAnimationLibs();
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
     const { theme } = useTheme();
@@ -33,17 +31,20 @@ const DrawerContent = (props: DrawerProps) => {
         api.start({ y: 0, immediate: false });
     }, [api]);
 
-    const close = useCallback((velocity = 0) => {
-        api.start({
-            y: height,
-            immediate: false,
-            config: {
-                ...Spring.config.stiff,
-                velocity,
-            },
-            onResolve: onClose,
-        });
-    }, [Spring.config.stiff, api, onClose]);
+    const close = useCallback(
+        (velocity = 0) => {
+            api.start({
+                y: height,
+                immediate: false,
+                config: {
+                    ...Spring.config.stiff,
+                    velocity,
+                },
+                onResolve: onClose,
+            });
+        },
+        [Spring.config.stiff, api, onClose],
+    );
 
     const bind = Gesture.useDrag(
         ({
@@ -66,7 +67,10 @@ const DrawerContent = (props: DrawerProps) => {
             }
         },
         {
-            from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+            from: () => [0, y.get()],
+            filterTaps: true,
+            bounds: { top: 0 },
+            rubberband: true,
         },
     );
 
@@ -80,11 +84,14 @@ const DrawerContent = (props: DrawerProps) => {
 
     return (
         <Portal>
-            <div className={classNames(classes.Drawer, {}, [className, theme, 'app_drawer'])}>
-                <Overlay
-                    isOpening={isOpen}
-                    onClick={() => close()}
-                />
+            <div
+                className={classNames(classes.Drawer, {}, [
+                    className,
+                    theme,
+                    'app_drawer',
+                ])}
+            >
+                <Overlay isOpening={isOpen} onClick={() => close()} />
                 <Spring.a.div
                     className={classes.sheet}
                     style={{ display, bottom: `calc(-100vh + ${height}px)`, y }}

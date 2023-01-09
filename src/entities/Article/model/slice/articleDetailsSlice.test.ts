@@ -5,7 +5,11 @@
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 
 import {
-    Article, articleDetailsReducers, ArticleDetailsSchema, ArticleType, ArticleBlockType,
+    Article,
+    articleDetailsReducers,
+    ArticleDetailsSchema,
+    ArticleType,
+    ArticleBlockType,
 } from '@/entities/Article';
 
 const data: Article = {
@@ -89,10 +93,12 @@ describe('articleDetailsSlice', () => {
             isLoading: false,
             error: undefined,
         };
-        expect(articleDetailsReducers(
-            state as ArticleDetailsSchema,
-            fetchArticleById.pending,
-        )).toEqual({
+        expect(
+            articleDetailsReducers(
+                state as ArticleDetailsSchema,
+                fetchArticleById.pending,
+            ),
+        ).toEqual({
             isLoading: true,
             error: undefined,
         });
@@ -103,10 +109,12 @@ describe('articleDetailsSlice', () => {
             isLoading: true,
             error: undefined,
         };
-        expect(articleDetailsReducers(
-            state as ArticleDetailsSchema,
-            fetchArticleById.fulfilled(data, '', ''),
-        )).toEqual({
+        expect(
+            articleDetailsReducers(
+                state as ArticleDetailsSchema,
+                fetchArticleById.fulfilled(data, '', ''),
+            ),
+        ).toEqual({
             isLoading: false,
             data,
             error: undefined,

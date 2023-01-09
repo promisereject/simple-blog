@@ -8,7 +8,9 @@ export default {
     component: StarsRating,
 } as ComponentMeta<typeof StarsRating>;
 
-const Template: ComponentStory<typeof StarsRating> = (args) => <StarsRating {...args} />;
+const Template: ComponentStory<typeof StarsRating> = (args) => (
+    <StarsRating {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {};

@@ -1,14 +1,14 @@
 {
-  "Страница статьи": "Article page",
-  "Статья не найдена": "Article not found",
-  "Произошла ошибка при загрузке статьи": "An error occurred while loading the article",
-  "Попробуйте обновить страницу": "Try refreshing the page",
-  "Комментарии": "Comments",
-  "Назад к списку": "Back to list",
-  "Редактировать статью": "Edit article",
-  "Редактирование статьи с id = ": "Edit article page with id = ",
-  "Страница создания новой статьи": "Create new article page",
-  "Рекомендуем": "Recommend",
-  "Оцените статью": "Rate this article",
-  "Ваш отзыв": "Your review"
+    "Страница статьи": "Article page",
+    "Статья не найдена": "Article not found",
+    "Произошла ошибка при загрузке статьи": "An error occurred while loading the article",
+    "Попробуйте обновить страницу": "Try refreshing the page",
+    "Комментарии": "Comments",
+    "Назад к списку": "Back to list",
+    "Редактировать статью": "Edit article",
+    "Редактирование статьи с id = ": "Edit article page with id = ",
+    "Страница создания новой статьи": "Create new article page",
+    "Рекомендуем": "Recommend",
+    "Оцените статью": "Rate this article",
+    "Ваш отзыв": "Your review"
 }

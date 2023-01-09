@@ -1,12 +1,15 @@
 const fs = require('fs/promises');
-const resolveRoot = require('../resolveRoot');
+
 const firstCharUpperCase = require('../firstCharUpperCase');
+const resolveRoot = require('../resolveRoot');
+
 const componentTemplate = require('./componentTemplate');
 const storyTemplate = require('./storyTemplate');
 const styleTemplate = require('./styleTemplate');
 
 module.exports = async (layer, sliceName) => {
-    const resolveUIPath = (...segments) => resolveRoot('src', layer, sliceName, 'ui', ...segments);
+    const resolveUIPath = (...segments) =>
+        resolveRoot('src', layer, sliceName, 'ui', ...segments);
 
     const createUIDir = async () => {
         try {

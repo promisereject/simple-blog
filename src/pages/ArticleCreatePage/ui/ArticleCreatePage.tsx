@@ -11,15 +11,14 @@ interface ArticleCreatePageProps {
 }
 
 const ArticleCreatePage = memo((props: ArticleCreatePageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { t } = useTranslation('article');
     return (
-        <Page className={classNames(classes.ArticleCreatePage, {}, [className])}>
+        <Page
+            className={classNames(classes.ArticleCreatePage, {}, [className])}
+        >
             {t('Страница создания новой статьи')}
         </Page>
-
     );
 });
 

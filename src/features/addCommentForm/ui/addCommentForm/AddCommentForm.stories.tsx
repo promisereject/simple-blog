@@ -13,30 +13,24 @@ export default {
     component: AddCommentForm,
 } as ComponentMeta<typeof AddCommentForm>;
 
-const Template: ComponentStory<typeof AddCommentForm> = (args) => <AddCommentForm {...args} />;
+const Template: ComponentStory<typeof AddCommentForm> = (args) => (
+    <AddCommentForm {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
     onSendComment: action('onSendComment'),
 };
-Normal.decorators = [
-    storeDecorator({}),
-];
+Normal.decorators = [storeDecorator({})];
 
 export const Dark = Template.bind({});
 Dark.args = {
     onSendComment: action('onSendComment'),
 };
-Dark.decorators = [
-    storeDecorator({}),
-    themeDecorator(Theme.DARK),
-];
+Dark.decorators = [storeDecorator({}), themeDecorator(Theme.DARK)];
 
 export const Orange = Template.bind({});
 Orange.args = {
     onSendComment: action('onSendComment'),
 };
-Orange.decorators = [
-    storeDecorator({}),
-    themeDecorator(Theme.ORANGE),
-];
+Orange.decorators = [storeDecorator({}), themeDecorator(Theme.ORANGE)];

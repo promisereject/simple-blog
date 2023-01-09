@@ -17,21 +17,18 @@ interface StarsRatingProps {
 const stars = [1, 2, 3, 4, 5];
 
 export const StarsRating = memo((props: StarsRatingProps) => {
-    const {
-        className,
-        onSelect,
-        size = 30,
-        selectedStars = 0,
-    } = props;
+    const { className, onSelect, size = 30, selectedStars = 0 } = props;
 
     const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
-    const [isStarsSelected, setIsStarsSelected] = useState(Boolean(selectedStars));
+    const [isStarsSelected, setIsStarsSelected] = useState(
+        Boolean(selectedStars),
+    );
 
-    const mods:Mods = {
+    const mods: Mods = {
         [classes.selected]: isStarsSelected,
     };
 
-    const onStarHover = (starsCount:number) => () => {
+    const onStarHover = (starsCount: number) => () => {
         if (!isStarsSelected) {
             setCurrentStarsCount(starsCount);
         }
@@ -43,7 +40,7 @@ export const StarsRating = memo((props: StarsRatingProps) => {
         }
     };
 
-    const onStarClick = (starsCount:number) => () => {
+    const onStarClick = (starsCount: number) => () => {
         if (!isStarsSelected) {
             onSelect?.(starsCount);
             setCurrentStarsCount(starsCount);
@@ -57,11 +54,11 @@ export const StarsRating = memo((props: StarsRatingProps) => {
                 <Icon
                     data-testid={`StarsRating.${star}`}
                     data-selected={currentStarsCount >= star}
-                    className={classNames(
-                        classes.starIcon,
-                        mods,
-                        [currentStarsCount >= star ? classes.hovered : classes.normal],
-                    )}
+                    className={classNames(classes.starIcon, mods, [
+                        currentStarsCount >= star
+                            ? classes.hovered
+                            : classes.normal,
+                    ])}
                     width={size}
                     height={size}
                     Svg={StarIcon}

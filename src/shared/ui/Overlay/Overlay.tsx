@@ -12,12 +12,7 @@ interface OverlayProps {
 }
 
 export const Overlay = memo((props: OverlayProps) => {
-    const {
-        className,
-        onClick,
-        isOpening,
-        isClosing,
-    } = props;
+    const { className, onClick, isOpening, isClosing } = props;
 
     const mods: Mods = {
         [classes.opening]: isOpening,
@@ -25,6 +20,9 @@ export const Overlay = memo((props: OverlayProps) => {
     };
 
     return (
-        <div onClick={onClick} className={classNames(classes.Overlay, mods, [className])} />
+        <div
+            onClick={onClick}
+            className={classNames(classes.Overlay, mods, [className])}
+        />
     );
 });

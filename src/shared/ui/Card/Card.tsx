@@ -6,7 +6,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 type CardTheme = 'normal' | 'outlined';
 
-interface CardProps extends HTMLAttributes<HTMLDivElement>{
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     children: ReactNode;
     theme?: CardTheme;
@@ -14,13 +14,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement>{
 }
 
 export const Card = (props: CardProps) => {
-    const {
-        className,
-        children,
-        theme = 'normal',
-        max,
-        ...otherProps
-    } = props;
+    const { className, children, theme = 'normal', max, ...otherProps } = props;
 
     const mods = {
         [classes.max]: max,
@@ -28,7 +22,10 @@ export const Card = (props: CardProps) => {
     return (
         <div
             {...otherProps}
-            className={classNames(classes.Card, mods, [className, classes[theme]])}
+            className={classNames(classes.Card, mods, [
+                className,
+                classes[theme],
+            ])}
         >
             {children}
         </div>

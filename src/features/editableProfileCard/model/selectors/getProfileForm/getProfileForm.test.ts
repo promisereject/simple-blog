@@ -19,7 +19,6 @@ describe('getProfileForm', () => {
             profile: {
                 form,
             },
-
         };
         expect(getProfileForm(state as StateSchema)).toEqual(form);
     });

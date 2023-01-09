@@ -13,22 +13,21 @@ interface CodeProps {
 }
 
 export const Code = memo((props: CodeProps) => {
-    const {
-        className,
-        code,
-    } = props;
+    const { className, code } = props;
 
     const onCopy = useCallback(() => {
         navigator.clipboard.writeText(code);
     }, [code]);
     return (
         <pre className={classNames(classes.Code, {}, [className])}>
-            <Button onClick={onCopy} className={classes.copyButton} theme="clear">
+            <Button
+                onClick={onCopy}
+                className={classes.copyButton}
+                theme="clear"
+            >
                 <CopyIcon className={classes.copyIcon} />
             </Button>
-            <code>
-                {code}
-            </code>
+            <code>{code}</code>
         </pre>
     );
 });

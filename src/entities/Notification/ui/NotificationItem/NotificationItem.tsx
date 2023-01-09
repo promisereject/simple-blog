@@ -15,13 +15,13 @@ interface NotificationItemProps {
 }
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
-    const {
-        className,
-        item,
-    } = props;
+    const { className, item } = props;
 
     const content = (
-        <Card theme="outlined" className={classNames(classes.NotificationItem, {}, [className])}>
+        <Card
+            theme="outlined"
+            className={classNames(classes.NotificationItem, {}, [className])}
+        >
             <Text gap="8" title={item.title} text={item.description} />
         </Card>
     );
@@ -29,8 +29,12 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
     if (item.href) {
         return (
             <AppLink to={item.href} className={classes.withLink}>
-
-                <Card theme="outlined" className={classNames(classes.NotificationItem, {}, [className])}>
+                <Card
+                    theme="outlined"
+                    className={classNames(classes.NotificationItem, {}, [
+                        className,
+                    ])}
+                >
                     <Text gap="8" title={item.title} text={item.description} />
                 </Card>
             </AppLink>

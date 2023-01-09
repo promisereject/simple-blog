@@ -22,14 +22,15 @@ const items = [
 ];
 
 const storyAlign = (Story: any) => (
-    <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-        height: '100vh',
-        alignItems: 'center',
-        justifyContent: 'center',
-    }}
+    <div
+        style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
+            height: '100vh',
+            alignItems: 'center',
+            justifyContent: 'center',
+        }}
     >
         <Story />
     </div>
@@ -40,7 +41,9 @@ export default {
     component: ListBox,
 } as ComponentMeta<typeof ListBox>;
 
-const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
+const Template: ComponentStory<typeof ListBox> = (args) => (
+    <ListBox {...args} />
+);
 
 export const TopLeft = Template.bind({});
 TopLeft.args = {

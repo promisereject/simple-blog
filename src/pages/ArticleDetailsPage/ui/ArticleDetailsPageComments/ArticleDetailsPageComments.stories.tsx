@@ -10,7 +10,9 @@ export default {
     component: ArticleDetailsPageComments,
 } as ComponentMeta<typeof ArticleDetailsPageComments>;
 
-const Template: ComponentStory<typeof ArticleDetailsPageComments> = (args) => <ArticleDetailsPageComments {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsPageComments> = (args) => (
+    <ArticleDetailsPageComments {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

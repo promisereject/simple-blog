@@ -7,7 +7,10 @@ describe('Пользователь заходит на страницу со с�
 
         it('=> и статьи успешно подгружаются', () => {
             cy.getByTestId('ArticlesList').should('exist');
-            cy.getByTestId('ArticlesListItem').should('have.length.greaterThan', 3);
+            cy.getByTestId('ArticlesListItem').should(
+                'have.length.greaterThan',
+                3,
+            );
         });
 
         it.skip('=> заскипанный тест с намеренной ошибкой', () => {
@@ -17,9 +20,14 @@ describe('Пользователь заходит на страницу со с�
 
     describe('Работа на стабах (фикстурах)', () => {
         it('=> и статьи успешно подгружаются из стабов (фикстур)', () => {
-            cy.intercept('GET', '**/articles?*', { fixture: 'articles-list.json' });
+            cy.intercept('GET', '**/articles?*', {
+                fixture: 'articles-list.json',
+            });
             cy.getByTestId('ArticlesList').should('exist');
-            cy.getByTestId('ArticlesListItem').should('have.length.greaterThan', 11);
+            cy.getByTestId('ArticlesListItem').should(
+                'have.length.greaterThan',
+                11,
+            );
         });
     });
 });

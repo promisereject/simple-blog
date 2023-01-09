@@ -4,7 +4,13 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+    extends: [
+        'plugin:react/recommended',
+        'airbnb',
+        'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
+        'prettier',
+    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -13,14 +19,22 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'fsd-stable', 'unused-imports'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+        'react-hooks',
+        'fsd-stable',
+        'unused-imports',
+    ],
     rules: {
-        'react/jsx-indent': [2, 4],
-        indent: [2, 4],
-        'react/jsx-indent-props': [2, 4],
-        'react/jsx-filename-extension': [2, {
-            extensions: ['.js', '.jsx', '.tsx'],
-        }],
+        'react/jsx-filename-extension': [
+            2,
+            {
+                extensions: ['.js', '.jsx', '.tsx'],
+            },
+        ],
+        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
         'react/react-in-jsx-scope': 'off',
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
@@ -31,22 +45,30 @@ module.exports = {
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'import/extensions': 'off',
-        'import/no-extraneous-dependencies': ['warn', {
-            devDependencies: true,
-        }],
+        'import/no-extraneous-dependencies': [
+            'warn',
+            {
+                devDependencies: true,
+            },
+        ],
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', {
-            markupOnly: true,
-            onlyAttribute: [''],
-        },
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                onlyAttribute: [''],
+            },
             // можно использовать ignoreAttribute: [''] с перечислением аттрибутов, проверку в которых необходимо игнорировать
         ],
 
         // ошибка отсутствия перевода только для JSX
-        'max-len': ['error', {
-            ignoreComments: true,
-            code: 140,
-        }],
+        'max-len': [
+            'error',
+            {
+                ignoreComments: true,
+                code: 140,
+            },
+        ],
         // не учитывать превышение длины строки в комментариях
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
@@ -54,42 +76,62 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'no-undef': 'off',
-        'fsd-stable/fsd-paths-checker': ['error', {
-            alias: '@',
-        }],
-        'fsd-stable/public-api-imports-only': ['error', {
-            alias: '@',
-            testFilesPatterns: ['**/*.test.ts', '**/*.test.ts', '**/storeDecorator.tsx'],
-        }],
-        'fsd-stable/fsd-layer-imports': ['error', {
-            alias: '@',
-            ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
-        }],
-        'unused-imports/no-unused-imports': 'error',
-        'import/order': ['error', {
-            pathGroups: [{
-                pattern: '@/**',
-                group: 'internal',
-                position: 'after',
-            }],
-            'newlines-between': 'always',
-            alphabetize: {
-                order: 'asc',
-                caseInsensitive: false,
+        'fsd-stable/fsd-paths-checker': [
+            'error',
+            {
+                alias: '@',
             },
-        }],
+        ],
+        'fsd-stable/public-api-imports-only': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: [
+                    '**/*.test.ts',
+                    '**/*.test.ts',
+                    '**/storeDecorator.tsx',
+                ],
+            },
+        ],
+        'fsd-stable/fsd-layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
+        'unused-imports/no-unused-imports': 'error',
+        'import/order': [
+            'error',
+            {
+                pathGroups: [
+                    {
+                        pattern: '@/**',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                ],
+                'newlines-between': 'always',
+                alphabetize: {
+                    order: 'asc',
+                    caseInsensitive: false,
+                },
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
         __API_URL__: true,
         __PROJECT__: true,
     },
-    overrides: [{
-        files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
-        rules: {
-            'i18next/no-literal-string': 'off',
-            'max-len': 'off',
-            'fsd-stable/fsd-paths-checker': 'off',
+    overrides: [
+        {
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+                'max-len': 'off',
+                'fsd-stable/fsd-paths-checker': 'off',
+            },
         },
-    }],
+    ],
 };

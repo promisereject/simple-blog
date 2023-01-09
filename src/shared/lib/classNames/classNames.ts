@@ -10,9 +10,8 @@ export function classNames(
         ...additional.filter(Boolean),
         ...Object.entries(mods)
             .filter(([_, value]) => Boolean(value))
-        // исключаем из массива все false
+            // исключаем из массива все false
             .map(([className]) => className),
         // возвращаем оставшиеся классы
-    ]
-        .join(' ');
+    ].join(' ');
 }

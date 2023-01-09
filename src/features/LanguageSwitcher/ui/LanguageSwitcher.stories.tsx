@@ -11,7 +11,9 @@ export default {
     component: LanguageSwitcher,
 } as ComponentMeta<typeof LanguageSwitcher>;
 
-const Template: ComponentStory<typeof LanguageSwitcher> = (args) => <LanguageSwitcher {...args} />;
+const Template: ComponentStory<typeof LanguageSwitcher> = (args) => (
+    <LanguageSwitcher {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

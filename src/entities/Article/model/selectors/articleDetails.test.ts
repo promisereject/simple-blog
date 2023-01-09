@@ -2,7 +2,11 @@
  * Created by Sergei Mitrofanov from rjadysh.com on вс, 04-11-22, 13:14
  */
 
-import { getArticleDetailsData, getArticleDetailsIsLoading, getArticleDetailsError } from './articleDetails';
+import {
+    getArticleDetailsData,
+    getArticleDetailsIsLoading,
+    getArticleDetailsError,
+} from './articleDetails';
 
 import { StateSchema } from '@/app/providers/StoreProvider';
 

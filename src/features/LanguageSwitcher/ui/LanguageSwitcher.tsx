@@ -11,10 +11,7 @@ interface LanguageSwitcherProps {
 }
 
 export const LanguageSwitcher = memo((props: LanguageSwitcherProps) => {
-    const {
-        className,
-        short,
-    } = props;
+    const { className, short } = props;
     const { t, i18n } = useTranslation();
 
     const toggle = async () => {

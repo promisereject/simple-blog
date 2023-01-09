@@ -1,11 +1,11 @@
 {
-  "id": "3",
-  "name": "Профайл",
-  "surname": "Со стаба на фикстурах",
-  "age": 99,
-  "currency": "RUB",
-  "country": "Russia",
-  "city": "Москва",
-  "username": "testuser",
-  "avatar": "https://ru-static.z-dn.net/files/ddd/02bd3a23f077cda4cc1843b6467a4db1.jpg"
+    "id": "3",
+    "name": "Профайл",
+    "surname": "Со стаба на фикстурах",
+    "age": 99,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Москва",
+    "username": "testuser",
+    "avatar": "https://ru-static.z-dn.net/files/ddd/02bd3a23f077cda4cc1843b6467a4db1.jpg"
 }

@@ -17,44 +17,46 @@ interface ArticleSortSelectorProps {
 }
 
 export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
-    const {
-        className,
-        sort,
-        order,
-        onChangeSort,
-        onChangeOrder,
-    } = props;
+    const { className, sort, order, onChangeSort, onChangeOrder } = props;
 
     const { t } = useTranslation();
 
-    const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
-        {
-            value: 'asc',
-            content: t('по возрастанию'),
-        },
-        {
-            value: 'desc',
-            content: t('по убыванию'),
-        },
-    ], [t]);
+    const orderOptions = useMemo<SelectOption<SortOrder>[]>(
+        () => [
+            {
+                value: 'asc',
+                content: t('по возрастанию'),
+            },
+            {
+                value: 'desc',
+                content: t('по убыванию'),
+            },
+        ],
+        [t],
+    );
 
-    const sortOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
-        {
-            value: ArticleSortField.CREATED,
-            content: t('по дате создания'),
-        },
-        {
-            value: ArticleSortField.TITLE,
-            content: t('по названию'),
-        },
-        {
-            value: ArticleSortField.VIEWS,
-            content: t('по количеству просмотров'),
-        },
-    ], [t]);
+    const sortOptions = useMemo<SelectOption<ArticleSortField>[]>(
+        () => [
+            {
+                value: ArticleSortField.CREATED,
+                content: t('по дате создания'),
+            },
+            {
+                value: ArticleSortField.TITLE,
+                content: t('по названию'),
+            },
+            {
+                value: ArticleSortField.VIEWS,
+                content: t('по количеству просмотров'),
+            },
+        ],
+        [t],
+    );
 
     return (
-        <div className={classNames(classes.ArticleSortSelector, {}, [className])}>
+        <div
+            className={classNames(classes.ArticleSortSelector, {}, [className])}
+        >
             <Select
                 options={sortOptions}
                 label={t('Сортировать по')}

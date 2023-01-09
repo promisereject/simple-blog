@@ -12,7 +12,9 @@ export default {
     component: ArticlesTabsCategories,
 } as ComponentMeta<typeof ArticlesTabsCategories>;
 
-const Template: ComponentStory<typeof ArticlesTabsCategories> = (args) => <ArticlesTabsCategories {...args} />;
+const Template: ComponentStory<typeof ArticlesTabsCategories> = (args) => (
+    <ArticlesTabsCategories {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {

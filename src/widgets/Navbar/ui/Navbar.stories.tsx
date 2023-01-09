@@ -36,8 +36,14 @@ NormalAuth.decorators = [storeDecorator({ user: { authData: { avatar } } })];
 
 export const DarkAuth = Template.bind({});
 DarkAuth.args = {};
-DarkAuth.decorators = [themeDecorator(Theme.DARK), storeDecorator({ user: { authData: { avatar } } })];
+DarkAuth.decorators = [
+    themeDecorator(Theme.DARK),
+    storeDecorator({ user: { authData: { avatar } } }),
+];
 
 export const OrangeAuth = Template.bind({});
 OrangeAuth.args = {};
-OrangeAuth.decorators = [themeDecorator(Theme.ORANGE), storeDecorator({ user: { authData: { avatar } } })];
+OrangeAuth.decorators = [
+    themeDecorator(Theme.ORANGE),
+    storeDecorator({ user: { authData: { avatar } } }),
+];

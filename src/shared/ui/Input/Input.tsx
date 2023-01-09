@@ -1,5 +1,9 @@
 import React, {
-    InputHTMLAttributes, memo, useEffect, useRef, useState,
+    InputHTMLAttributes,
+    memo,
+    useEffect,
+    useRef,
+    useState,
 } from 'react';
 
 import classes from './Input.module.scss';
@@ -8,9 +12,12 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
 // решение при конфликте типов
 // Omit позволяет забрать из типа все пропсы и исключить те, что не нужны
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly' | 'numberOnly'>;
+type HTMLInputProps = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'readOnly' | 'numberOnly'
+>;
 
-interface InputProps extends HTMLInputProps{
+interface InputProps extends HTMLInputProps {
     className?: string;
     value?: string | number;
     onChange?: (value: string) => void;
@@ -29,7 +36,6 @@ export const Input = memo((props: InputProps) => {
         autoFocus,
         readOnly,
         ...otherProps
-
     } = props;
 
     const [isFocused, setIsFocused] = useState(false);
@@ -50,7 +56,7 @@ export const Input = memo((props: InputProps) => {
     };
 
     // из-за отсутствия поддержки нужных типов и в виде исключения используем any
-    const onSelectInput = (e:any) => {
+    const onSelectInput = (e: any) => {
         setCaretPosition(e?.target?.selectionStart || 0);
     };
 

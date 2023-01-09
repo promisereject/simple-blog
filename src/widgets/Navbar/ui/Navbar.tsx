@@ -16,13 +16,11 @@ import { HStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 
 interface NavbarProps {
-    className?: string
+    className?: string;
 }
 
 export const Navbar = memo((props: NavbarProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const [isAuthModal, setIsAuthModal] = useState(false);
     const { t } = useTranslation();
     const authData = useSelector(getUserAuthData);
@@ -58,11 +56,7 @@ export const Navbar = memo((props: NavbarProps) => {
     }
     return (
         <header className={classNames(classes.navbar, {}, [className])}>
-            <Text
-                theme="inverted"
-                className={classes.logo}
-                title="APP_LOGO"
-            />
+            <Text theme="inverted" className={classes.logo} title="APP_LOGO" />
             <Button
                 theme="clearInverted"
                 className={classes.items}

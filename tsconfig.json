@@ -1,47 +1,47 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    // esModuleInterop позволяет работать с пакетами, которые используют common js,
-    "esModuleInterop": true,
-    "outDir": "./build/",
-    "noImplicitAny": true,
-    // подсвечивает все места, где не указан тип
-    // однако это не означает, что теперь вовсе нельзя использовать any
-    // это лишь означает, что в подобных ситуациях разработчик должен явно писать any
-    "module": "ESNext",
-    // в какую спецификацию компилируем (для поддержки большинства браузеров)
-    "target": "ESNext",
-    "jsx": "react-jsx",
-    "allowJs": true,
-    // компилятор будет обрабатывать не только .ts файлы, но и .js файлы
-    "moduleResolution": "node",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-      // все абсолютные импорты и экспорты начинаются с папки src
-    },
-    // для поддержки абсолютного импорта
-    // как с обычными пакетами с помощью import ( require() module.export === common js )
-    // import Moment from 'moment';
-    // console.log(Moment)
-    // без флага esModuleInterop результат undefined
-    // с флагом результат [object Object]
-    "allowSyntheticDefaultImports": true,
-    // если какая-либо библиотека не имеет default exports,
-    // лоадеры, вроде ts-loader или babel-loader автоматически создают их
-    // и вместо такого импорта: import * as React from 'react'
-    // можно использовать такой: import React from 'react'
-    "isolatedModules": true
-  },
-  "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
-    }
-  },
-  "include": [
-    "./config/jest/setupTests.ts",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./src/**/*.scss"
-  ]
+        "strict": true,
+        // esModuleInterop позволяет работать с пакетами, которые используют common js,
+        "esModuleInterop": true,
+        "outDir": "./build/",
+        "noImplicitAny": true,
+        // подсвечивает все места, где не указан тип
+        // однако это не означает, что теперь вовсе нельзя использовать any
+        // это лишь означает, что в подобных ситуациях разработчик должен явно писать any
+        "module": "ESNext",
+        // в какую спецификацию компилируем (для поддержки большинства браузеров)
+        "target": "ESNext",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        // компилятор будет обрабатывать не только .ts файлы, но и .js файлы
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+            // все абсолютные импорты и экспорты начинаются с папки src
+        },
+        // для поддержки абсолютного импорта
+        // как с обычными пакетами с помощью import ( require() module.export === common js )
+        // import Moment from 'moment';
+        // console.log(Moment)
+        // без флага esModuleInterop результат undefined
+        // с флагом результат [object Object]
+        "allowSyntheticDefaultImports": true,
+        // если какая-либо библиотека не имеет default exports,
+        // лоадеры, вроде ts-loader или babel-loader автоматически создают их
+        // и вместо такого импорта: import * as React from 'react'
+        // можно использовать такой: import React from 'react'
+        "isolatedModules": true
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    },
+    "include": [
+        "./config/jest/setupTests.ts",
+        "./src/**/*.ts",
+        "./src/**/*.tsx",
+        "./src/**/*.scss"
+    ]
 }

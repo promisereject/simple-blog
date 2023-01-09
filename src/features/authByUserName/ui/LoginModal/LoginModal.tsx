@@ -7,17 +7,13 @@ import { Loader } from '@/shared/ui/Loader';
 import { Modal } from '@/shared/ui/Modal';
 
 interface LoginModalProps {
-    className?: string
+    className?: string;
     isOpen?: boolean;
     onClose: () => void;
 }
 
 export const LoginModal = (props: LoginModalProps) => {
-    const {
-        className,
-        isOpen,
-        onClose,
-    } = props;
+    const { className, isOpen, onClose } = props;
     return (
         <Modal
             lazy

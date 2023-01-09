@@ -8,41 +8,41 @@ import ArticlesIcon from '@/shared/assets/icons/sidebar-articles-icon.svg';
 import HomeIcon from '@/shared/assets/icons/sidebar-home-icon.svg';
 import ProfileIcon from '@/shared/assets/icons/sidebar-profile-icon.svg';
 import {
-    getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile,
+    getRouteAbout,
+    getRouteArticles,
+    getRouteMain,
+    getRouteProfile,
 } from '@/shared/const/router';
 
-export const getSidebarItems = createSelector(
-    getUserAuthData,
-    (userData) => {
-        const sidebarItemsList: SidebarItemType[] = [
+export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
+    const sidebarItemsList: SidebarItemType[] = [
+        {
+            path: getRouteMain(),
+            text: 'Главная',
+            Icon: HomeIcon,
+        },
+        {
+            path: getRouteAbout(),
+            text: 'О сайте',
+            Icon: AboutIcon,
+        },
+    ];
+    if (userData) {
+        sidebarItemsList.push(
             {
-                path: getRouteMain(),
-                text: 'Главная',
-                Icon: HomeIcon,
+                path: getRouteProfile(userData.id),
+                text: 'Профиль',
+                Icon: ProfileIcon,
+                authOnly: true,
             },
             {
-                path: getRouteAbout(),
-                text: 'О сайте',
-                Icon: AboutIcon,
+                path: getRouteArticles(),
+                text: 'Статьи',
+                Icon: ArticlesIcon,
+                authOnly: true,
             },
-        ];
-        if (userData) {
-            sidebarItemsList.push(
-                {
-                    path: getRouteProfile(userData.id),
-                    text: 'Профиль',
-                    Icon: ProfileIcon,
-                    authOnly: true,
-                },
-                {
-                    path: getRouteArticles(),
-                    text: 'Статьи',
-                    Icon: ArticlesIcon,
-                    authOnly: true,
-                },
-            );
-        }
+        );
+    }
 
-        return sidebarItemsList;
-    },
-);
+    return sidebarItemsList;
+});

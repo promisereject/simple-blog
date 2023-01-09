@@ -17,7 +17,7 @@ interface TextProps {
     theme?: TextTheme;
     gap?: TextGap;
     align?: TextAlign;
-    size?: TextSizes
+    size?: TextSizes;
     titleTag?: SemanticHeadingTagType;
     'data-testid'?: string;
 }

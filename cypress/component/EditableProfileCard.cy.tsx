@@ -6,15 +6,16 @@ describe('EditableProfileCard.cy.ts', () => {
     it('Изменить имя', () => {
         cy.intercept('GET', '**/profile/*', { fixture: 'profile-card.json' });
         cy.mount(
-            <TestProvider options={{
-                initialState: {
-                    user: {
-                        authData: {
-                            id: '3',
+            <TestProvider
+                options={{
+                    initialState: {
+                        user: {
+                            authData: {
+                                id: '3',
+                            },
                         },
                     },
-                },
-            }}
+                }}
             >
                 <EditableProfileCard id="3" />
             </TestProvider>,

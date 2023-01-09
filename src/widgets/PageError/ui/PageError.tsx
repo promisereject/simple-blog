@@ -11,13 +11,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button';
 
 interface PageErrorProps {
-    className?: string
+    className?: string;
 }
 
 export const PageError = memo((props: PageErrorProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { t } = useTranslation();
 
     const reloadPage = () => {
@@ -26,16 +24,10 @@ export const PageError = memo((props: PageErrorProps) => {
     };
     return (
         <div className={classNames(classes.PageError, {}, [className])}>
-            <p
-                className={classNames(classes.message, {}, [])}
-            >
+            <p className={classNames(classes.message, {}, [])}>
                 {t('Произошла непредвиденная ошибка')}
             </p>
-            <Button
-                onClick={reloadPage}
-            >
-                {t('Обновить страницу')}
-            </Button>
+            <Button onClick={reloadPage}>{t('Обновить страницу')}</Button>
         </div>
     );
 });

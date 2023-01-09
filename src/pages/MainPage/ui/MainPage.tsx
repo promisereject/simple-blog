@@ -14,10 +14,7 @@ const MainPage = memo(() => {
     const { t } = useTranslation('main');
 
     return (
-        <Page
-            data-testid="MainPage"
-            className={classNames('', {}, [])}
-        >
+        <Page data-testid="MainPage" className={classNames('', {}, [])}>
             <VStack max gap="32">
                 <Text text={t('Главная страница')} />
                 <Counter />

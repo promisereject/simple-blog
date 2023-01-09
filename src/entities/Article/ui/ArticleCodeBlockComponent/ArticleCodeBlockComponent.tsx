@@ -9,17 +9,20 @@ import { Code } from '@/shared/ui/Code';
 
 interface ArticleCodeBlockComponentProps {
     className?: string;
-    block: ArticleCodeBlock
+    block: ArticleCodeBlock;
 }
 
-export const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockComponentProps) => {
-    const {
-        className,
-        block,
-    } = props;
-    return (
-        <div className={classNames(classes.ArticleCodeBlockComponent, {}, [className])}>
-            <Code code={block.code} />
-        </div>
-    );
-});
+export const ArticleCodeBlockComponent = memo(
+    (props: ArticleCodeBlockComponentProps) => {
+        const { className, block } = props;
+        return (
+            <div
+                className={classNames(classes.ArticleCodeBlockComponent, {}, [
+                    className,
+                ])}
+            >
+                <Code code={block.code} />
+            </div>
+        );
+    },
+);

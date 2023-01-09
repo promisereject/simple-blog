@@ -10,7 +10,9 @@ export default {
     component: NotificationsList,
 } as ComponentMeta<typeof NotificationsList>;
 
-const Template: ComponentStory<typeof NotificationsList> = (args) => <NotificationsList {...args} />;
+const Template: ComponentStory<typeof NotificationsList> = (args) => (
+    <NotificationsList {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
@@ -31,14 +33,16 @@ Normal.parameters = {
                 {
                     id: '2',
                     title: 'Про админку',
-                    description: 'Можно нажать и перейти в панель администратора прямо отсюда',
+                    description:
+                        'Можно нажать и перейти в панель администратора прямо отсюда',
                     userId: '2',
                     href: '/admin',
                 },
                 {
                     id: '3',
                     title: 'Про статьи',
-                    description: 'Можно нажать и перейти к списку статей прямо отсюда',
+                    description:
+                        'Можно нажать и перейти к списку статей прямо отсюда',
                     userId: '1',
                     href: '/articles',
                 },

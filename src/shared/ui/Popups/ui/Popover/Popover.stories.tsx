@@ -8,7 +8,9 @@ export default {
     component: Popover,
 } as ComponentMeta<typeof Popover>;
 
-const Template: ComponentStory<typeof Popover> = (args) => <Popover {...args}>Сообщение</Popover>;
+const Template: ComponentStory<typeof Popover> = (args) => (
+    <Popover {...args}>Сообщение</Popover>
+);
 
 export const Default = Template.bind({});
 Default.args = {};

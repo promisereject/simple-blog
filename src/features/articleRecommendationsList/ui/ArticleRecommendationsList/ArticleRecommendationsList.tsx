@@ -14,31 +14,39 @@ interface ArticleRecommendationsListProps {
     className?: string;
 }
 
-export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
-    const { className } = props;
-    const { t } = useTranslation('article');
-    const { isLoading, data: articles, error } = useArticleRecommendationsList(10);
+export const ArticleRecommendationsList = memo(
+    (props: ArticleRecommendationsListProps) => {
+        const { className } = props;
+        const { t } = useTranslation('article');
+        const {
+            isLoading,
+            data: articles,
+            error,
+        } = useArticleRecommendationsList(10);
 
-    // TODO: реализовать нормальную обработку загрузки и ошибок
-    if (isLoading || error || !articles) {
-        return null;
-    }
-    return (
-        <VStack
-            data-testid="ArticleRecommendationsList"
-            gap="16"
-            className={classNames(classes.recommendationsWrapper, {}, [className])}
-        >
-            <Text
-                className={classes.title}
-                title={t('Рекомендуем')}
-                size="l"
-            />
-            <ArticleList
-                className={classes.recommendations}
-                target="_blank"
-                articles={articles}
-            />
-        </VStack>
-    );
-});
+        // TODO: реализовать нормальную обработку загрузки и ошибок
+        if (isLoading || error || !articles) {
+            return null;
+        }
+        return (
+            <VStack
+                data-testid="ArticleRecommendationsList"
+                gap="16"
+                className={classNames(classes.recommendationsWrapper, {}, [
+                    className,
+                ])}
+            >
+                <Text
+                    className={classes.title}
+                    title={t('Рекомендуем')}
+                    size="l"
+                />
+                <ArticleList
+                    className={classes.recommendations}
+                    target="_blank"
+                    articles={articles}
+                />
+            </VStack>
+        );
+    },
+);

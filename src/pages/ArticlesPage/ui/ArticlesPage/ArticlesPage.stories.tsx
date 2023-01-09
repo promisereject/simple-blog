@@ -3,7 +3,11 @@ import React from 'react';
 
 import ArticlesPage from './ArticlesPage';
 
-import { ArticleSortField, ArticleType, ArticleBlockType } from '@/entities/Article';
+import {
+    ArticleSortField,
+    ArticleType,
+    ArticleBlockType,
+} from '@/entities/Article';
 import { storeDecorator } from '@/shared/config/storybook/decorators/storeDecorator';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
 import { Theme } from '@/shared/const/theme';
@@ -172,46 +176,56 @@ export default {
     component: ArticlesPage,
 } as ComponentMeta<typeof ArticlesPage>;
 
-const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {...args} />;
+const Template: ComponentStory<typeof ArticlesPage> = (args) => (
+    <ArticlesPage {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [storeDecorator({
-    articlesPage: {
-        _initiated: true,
-        search: 'javascript',
-        sort: ArticleSortField.VIEWS,
-        order: 'desc',
-        type: ArticleType.IT,
-        ids: ['1', '2', '3', '4', '5', '6'],
-        entities,
-    },
-})];
+Normal.decorators = [
+    storeDecorator({
+        articlesPage: {
+            _initiated: true,
+            search: 'javascript',
+            sort: ArticleSortField.VIEWS,
+            order: 'desc',
+            type: ArticleType.IT,
+            ids: ['1', '2', '3', '4', '5', '6'],
+            entities,
+        },
+    }),
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [themeDecorator(Theme.DARK), storeDecorator({
-    articlesPage: {
-        _initiated: true,
-        search: 'javascript',
-        sort: ArticleSortField.VIEWS,
-        order: 'desc',
-        type: ArticleType.IT,
-        ids: ['1', '2', '3', '4', '5', '6'],
-        entities,
-    },
-})];
+Dark.decorators = [
+    themeDecorator(Theme.DARK),
+    storeDecorator({
+        articlesPage: {
+            _initiated: true,
+            search: 'javascript',
+            sort: ArticleSortField.VIEWS,
+            order: 'desc',
+            type: ArticleType.IT,
+            ids: ['1', '2', '3', '4', '5', '6'],
+            entities,
+        },
+    }),
+];
 
 export const Orange = Template.bind({});
 Orange.args = {};
-Orange.decorators = [themeDecorator(Theme.ORANGE), storeDecorator({
-    articlesPage: {
-        _initiated: true,
-        search: 'javascript',
-        sort: ArticleSortField.VIEWS,
-        order: 'desc',
-        type: ArticleType.IT,
-        ids: ['1', '2', '3', '4', '5', '6'],
-        entities,
-    },
-})];
+Orange.decorators = [
+    themeDecorator(Theme.ORANGE),
+    storeDecorator({
+        articlesPage: {
+            _initiated: true,
+            search: 'javascript',
+            sort: ArticleSortField.VIEWS,
+            order: 'desc',
+            type: ArticleType.IT,
+            ids: ['1', '2', '3', '4', '5', '6'],
+            entities,
+        },
+    }),
+];

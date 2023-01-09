@@ -1,0 +1,11 @@
+# Ignore artifacts:
+build
+node_modules
+extractedTranslations
+storybook-static
+
+# Ignore all HTML files:
+*.html
+
+# Ignore all CSS or SCSS files:
+*.scss

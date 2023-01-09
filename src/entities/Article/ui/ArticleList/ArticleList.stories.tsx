@@ -4,7 +4,10 @@ import React from 'react';
 import { ArticleList } from './ArticleList';
 
 import {
-    Article, ArticleView, ArticleBlockType, ArticleType,
+    Article,
+    ArticleView,
+    ArticleBlockType,
+    ArticleType,
 } from '@/entities/Article';
 import { themeDecorator } from '@/shared/config/storybook/decorators/themeDecorator';
 import { Theme } from '@/shared/const/theme';
@@ -84,19 +87,19 @@ const article = {
     ],
 } as Article;
 
-const articles = new Array(15)
-    .fill(0)
-    .map((item, index) => ({
-        ...article,
-        id: String(index),
-    }));
+const articles = new Array(15).fill(0).map((item, index) => ({
+    ...article,
+    id: String(index),
+}));
 
 export default {
     title: 'entities/Article/ArticleList',
     component: ArticleList,
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+    <ArticleList {...args} />
+);
 
 export const TileNormal = Template.bind({});
 TileNormal.args = {
@@ -108,13 +111,10 @@ TileNormal.args = {
 export const TileDark = Template.bind({});
 TileDark.args = {
     view: ArticleView.TILE,
-    articles:
-        new Array(15)
-            .fill(0)
-            .map((item, index) => ({
-                ...article,
-                id: String(index),
-            })),
+    articles: new Array(15).fill(0).map((item, index) => ({
+        ...article,
+        id: String(index),
+    })),
     isLoading: false,
 };
 TileDark.decorators = [themeDecorator(Theme.DARK)];

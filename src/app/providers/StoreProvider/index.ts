@@ -1,5 +1,8 @@
 export type {
-    StateSchema, ReduxStoreWithReducerManager, ThunkConfig, StateSchemaKey,
+    StateSchema,
+    ReduxStoreWithReducerManager,
+    ThunkConfig,
+    StateSchemaKey,
 } from './config/StateSchema';
 export type { AppDispatch } from './config/store';
 export { StoreProvider } from './ui/StoreProvider';

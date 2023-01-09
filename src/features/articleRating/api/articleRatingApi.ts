@@ -29,7 +29,6 @@ const articleRatingApi = rtkApi.injectEndpoints({
                 url: '/article-ratings',
                 method: 'POST',
                 body: arg,
-
             }),
         }),
     }),

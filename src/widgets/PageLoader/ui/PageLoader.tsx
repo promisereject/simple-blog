@@ -6,13 +6,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Loader } from '@/shared/ui/Loader';
 
 interface PageLoaderProps {
-    className?: string
+    className?: string;
 }
 
 export const PageLoader = memo((props: PageLoaderProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     return (
         <div className={classNames(classes.pageLoader, {}, [className])}>
             <Loader />

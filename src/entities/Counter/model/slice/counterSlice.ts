@@ -3,7 +3,7 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { buildSlice } from '@/shared/lib/store';
 
 export interface CounterState {
-    value: number
+    value: number;
 }
 
 const initialState: CounterState = {

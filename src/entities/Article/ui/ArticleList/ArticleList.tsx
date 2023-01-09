@@ -19,9 +19,8 @@ interface ArticleListProps {
     target?: HTMLAttributeAnchorTarget;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.TILE ? 15 : 2)
-    .fill(0)
-    .map((item, index) => (
+const getSkeletons = (view: ArticleView) =>
+    new Array(view === ArticleView.TILE ? 15 : 2).fill(0).map((item, index) => (
         // элемент списка не изменяется и не удаляется, можем использовать индекс в качестве ключа
         // eslint-disable-next-line react/no-array-index-key
         <ArticleListItemSkeleton view={view} key={index} />
@@ -49,12 +48,17 @@ export const ArticleList = memo((props: ArticleListProps) => {
         return (
             <div
                 data-testid="ArticlesList"
-                className={classNames(classes.ArticleList, {}, [className, classes[view]])}
+                className={classNames(classes.ArticleList, {}, [
+                    className,
+                    classes[view],
+                ])}
             >
                 <Text
                     theme="error"
                     title={t('Нет статей')}
-                    text={t('Попробуйте расширить поисковый запрос или изменить фильтры')}
+                    text={t(
+                        'Попробуйте расширить поисковый запрос или изменить фильтры',
+                    )}
                 />
             </div>
         );
@@ -63,13 +67,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
     return (
         <div
             data-testid="ArticlesList"
-            className={classNames(classes.ArticleList, {}, [className, classes[view]])}
+            className={classNames(classes.ArticleList, {}, [
+                className,
+                classes[view],
+            ])}
         >
-            {
-                articles.length > 0
-                    ? articles.map(renderArticle)
-                    : null
-            }
+            {articles.length > 0 ? articles.map(renderArticle) : null}
             {isLoading && getSkeletons(view)}
         </div>
     );

@@ -9,16 +9,20 @@ import { loginActions, loginReducers } from './loginSlice';
 describe('loginSlice', () => {
     test('set username test', () => {
         const state: DeepPartial<LoginSchema> = { username: '' };
-        expect(loginReducers(
-            state as LoginSchema,
-            loginActions.setUserName('boom'),
-        )).toEqual({ username: 'boom' });
+        expect(
+            loginReducers(
+                state as LoginSchema,
+                loginActions.setUserName('boom'),
+            ),
+        ).toEqual({ username: 'boom' });
     });
     test('set password test', () => {
         const state: DeepPartial<LoginSchema> = { password: '' };
-        expect(loginReducers(
-            state as LoginSchema,
-            loginActions.setUserPassword('12345'),
-        )).toEqual({ password: '12345' });
+        expect(
+            loginReducers(
+                state as LoginSchema,
+                loginActions.setUserPassword('12345'),
+            ),
+        ).toEqual({ password: '12345' });
     });
 });

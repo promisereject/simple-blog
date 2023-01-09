@@ -25,24 +25,22 @@ interface DropdownProps {
 }
 
 export function Dropdown(props: DropdownProps) {
-    const {
-        className,
-        items,
-        trigger,
-        direction,
-    } = props;
+    const { className, items, trigger, direction } = props;
 
-    const dropdownAdditional = [
-        mapPropsToDirectionClass[direction],
-    ];
+    const dropdownAdditional = [mapPropsToDirectionClass[direction]];
     return (
-        <Menu as="div" className={classNames('', {}, [className, generalClasses.popup])}>
+        <Menu
+            as="div"
+            className={classNames('', {}, [className, generalClasses.popup])}
+        >
             <Menu.Button className={generalClasses.trigger}>
                 {trigger}
             </Menu.Button>
-            <Menu.Items className={classNames(classes.items, {}, dropdownAdditional)}>
+            <Menu.Items
+                className={classNames(classes.items, {}, dropdownAdditional)}
+            >
                 {items.map((item, index) => {
-                    const content = ({ active }: {active: boolean}) => (
+                    const content = ({ active }: { active: boolean }) => (
                         <button
                             type="button"
                             disabled={item.disabled}
@@ -55,24 +53,30 @@ export function Dropdown(props: DropdownProps) {
                         >
                             {item.content}
                         </button>
-
                     );
 
                     if (item.href) {
                         return (
-                            // eslint-disable-next-line react/no-array-index-key
-                            <Menu.Item as={AppLink} to={item.href} disabled={item.disabled} key={index}>
+                            <Menu.Item
+                                as={AppLink}
+                                to={item.href}
+                                disabled={item.disabled}
+                                // eslint-disable-next-line react/no-array-index-key
+                                key={index}
+                            >
                                 {content}
                             </Menu.Item>
-
                         );
                     }
                     return (
-                        // eslint-disable-next-line react/no-array-index-key
-                        <Menu.Item as={Fragment} disabled={item.disabled} key={index}>
+                        <Menu.Item
+                            as={Fragment}
+                            disabled={item.disabled}
+                            // eslint-disable-next-line react/no-array-index-key
+                            key={index}
+                        >
                             {content}
                         </Menu.Item>
-
                     );
                 })}
             </Menu.Items>

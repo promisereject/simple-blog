@@ -8,7 +8,6 @@ describe('getProfileError', () => {
             profile: {
                 error: 'error message',
             },
-
         };
         expect(getProfileError(state as StateSchema)).toEqual('error message');
     });
