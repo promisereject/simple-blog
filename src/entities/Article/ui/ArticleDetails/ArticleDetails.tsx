@@ -108,7 +108,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     text={article?.subtitle}
                     size="l"
                 />
-                <HStack gap="4">
+                <HStack
+                    gap="4"
+                >
                     <Icon Svg={ViewsIcon} />
                     <Text text={String(article?.views)} />
                 </HStack>
@@ -116,7 +118,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     <Icon Svg={DateIcon} />
                     <Text text={article?.createdAt} />
                 </HStack>
-                <VStack gap="32">
+                <VStack
+                    data-testid="ArticleDetails.Data"
+                    gap="32"
+                >
                     {article?.blocks.map(renderBlock)}
                 </VStack>
             </article>

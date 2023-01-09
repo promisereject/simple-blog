@@ -14,7 +14,7 @@ export const loginByUserName = createAsyncThunk<
     loginByUsernameProps,
     ThunkConfig<string>
     >(
-        'login/loginByUserName',
+        'common/loginByUserName',
         async (authData, thunkAPI) => {
             const { extra, dispatch, rejectWithValue } = thunkAPI;
             try {

@@ -47,7 +47,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     if (!isLoading && !articles.length) {
         return (
-            <div className={classNames(classes.ArticleList, {}, [className, classes[view]])}>
+            <div
+                data-testid="ArticlesList"
+                className={classNames(classes.ArticleList, {}, [className, classes[view]])}
+            >
                 <Text
                     theme="error"
                     title={t('Нет статей')}
@@ -58,7 +61,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
 
     return (
-        <div className={classNames(classes.ArticleList, {}, [className, classes[view]])}>
+        <div
+            data-testid="ArticlesList"
+            className={classNames(classes.ArticleList, {}, [className, classes[view]])}
+        >
             {
                 articles.length > 0
                     ? articles.map(renderArticle)
