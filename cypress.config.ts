@@ -9,4 +9,13 @@ export default defineConfig({
         viewportWidth: 1920,
         viewportHeight: 1080,
     },
+
+    component: {
+        devServer: {
+            framework: 'react',
+            bundler: 'webpack',
+        },
+        viewportWidth: 1920,
+        viewportHeight: 1080,
+    },
 });
